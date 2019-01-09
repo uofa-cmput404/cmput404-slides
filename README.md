@@ -1,6 +1,6 @@
 # Slides for CMPUT404
 
-[![Build Status](https://travis-ci.com/hazelybell/cmput404-slides.svg?branch=master)](https://travis-ci.com/hazelybell/cmput404-slides)
+[![Build Status](https://travis-ci.com/uofa-cmput404/cmput404-slides.svg?branch=master)](https://travis-ci.com/uofa-cmput404/cmput404-slides)
 
 ## Based on [Reveal.js](https://github.com/hakimel/reveal.js)
 
