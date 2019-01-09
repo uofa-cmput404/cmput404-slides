@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 9
+after_script:
+  - npm run build -- retire
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  verbose: true
