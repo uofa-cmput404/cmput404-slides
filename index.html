@@ -71,6 +71,9 @@
         width: 100%;
         line-height: 1;
       }
+      .reveal .slides samp>pre {
+        font-size: 50%;
+      }
     </style>
     <script src="node_modules/fitty/dist/fitty.min.js"></script>
   </head>
@@ -1230,7 +1233,246 @@ Received 70 bytes from 8.8.8.8#53 in 152 ms
           </section>
           <section>
             <h3>TCP Connections</h3>
-            <cite><a title="Scil100 [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)]" href="https://commons.wikimedia.org/wiki/File:Tcp_state_diagram_fixed_new.svg"><img width="512" alt="Tcp state diagram fixed new" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Tcp_state_diagram_fixed_new.svg/512px-Tcp_state_diagram_fixed_new.svg.png"></a></cite>
+            <img class="noborder stretch" src="images/Tcp_state_diagram_fixed_new.svg"
+              style="background: white;"
+            />
+            <cite><a title="Scil100 [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)]" href="https://commons.wikimedia.org/wiki/File:Tcp_state_diagram_fixed_new.svg">Sergiodc2, Marty Pauley, Scil100 [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)]</a></cite>
+          </section>
+          <section>
+            <h3>Firewalls</h3>
+            <ul>
+              <li>Usually prevent hosts from communicating on certain ports, or hosting services.</li>
+              <li>HTTP and firewalls means that webclients are unlikely to be webservers as well. That communication must be initiated by clients rather than webservices.</li>
+              <li>IETF seems unaware of their existence but at least HTTP gets through.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Scenario</h3>
+            Get http://slashdot.org
+            <ul>
+              <li>Context
+                <ul>
+                  <li>I am at home on a Friday evening. It is 10pm and I haven't been outside all day.</li>
+                  <li>I need to read slashdot because I'm bored</li>
+                  <li>I have a cable modem internet connection from Shaw.</li>
+                  <li>I've connected to the cable modem with CAT5 cables and ethernet.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <samp><pre>
+$ python3
+Python 3.7.2 (default, Jan  3 2019, 02:55:40) 
+[GCC 8.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> requests.get("http://slashdot.org")
+&lt;Response [200]&gt;
+>>> 
+            </samp></pre>
+            <ul style="font-size: 70%">
+              <li>Python <var>requests</var> tells the OS to connect to <var>slashdot.org</var> via TCP on TCP port 80.</li>
+              <li>The OS looks up <var>slashdot.org</var> and needs to contact a nameserver</li>
+              <li>OS Sends a UDP packet on port 53 to the nameserver configured (my Shaw router, 192.168.0.1)</li>
+              <li>The UDP packet is over IP</li>
+              <li>The IP packet is over ethernet</li>
+              <li>Cable modem accepts this packet, contacts Shaw's DNS server behalf of my computer, over UDP over IP over the cable modem link.</li>
+            </ul>
+          </section>
+          <section>
+            <ul style="font-size: 70%">
+              <li>Shaw's DNS server receives my query and doesn't know <var>slashdot.org</var> so it asks a more authoritative server.</li>
+              <li>Sends DNS request over UDP over IP over ethernet to the switch in its datacenter, to an edge router, over the internet, to the root DNS server, asking about <var>org</var>.</li>
+              <li>Gets a DNS response indicating the address of the <var>org</var> server.</li>
+              <li>Sends a DNS request to the <var>org</var> server asking for the <var>SOA</var> (Start of Authority) of <var>slashdot.org</var></li>
+              <li>Gets a DNS response indicating the DNS server that knows about <var>slashdot.org</var></li>
+              <li>Sends a DNS request to the authoritative server for <var>slashdot.org</var></li>
+              <li>Gets a response back on the UDP port, response contains an A record listing an IP of <var>slashdot.org</var></li>
+              <li>Shaw's DNS server makes a DNS response packet and sends it back to
+                  me over UDP, over IP, over ethernet, over their
+                  private network, back to my cable modem, 
+                  back on to ethernet, IP, and UDP back to my home computer.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul style="font-size: 80%">
+              <li>My OS receives the DNS response, records the IP address and then initiates a TCP connection to port 80 of the slashdot.org IP.</li>
+              <li>A TCP SYN packet is sent to the slashdot.org IP at port 80, over IP, over
+                ethernet to the cable modem, through shaw and through the internet to
+                slashdot's datacenter where a copy of the packet appears on some
+                ethernet cable, decoded as an IP, TCP connect SYN packet.
+              </li>
+              <li>Slashdot.org sends a TCP SYN+ACK packet back across IP, across
+              ethernet, over their network and internet back to shaw, over shaw's
+              network, to my cable modem, over ethernet, over IP, back to my
+              computer
+              </li>
+              <li>My computer sends a TCP ACK packet back across all the way to slashdot.org through all the prior layers</li>
+              <li>A connection is established!
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul style="font-size: 90%">
+              <li>Now that my home computer is connected with
+                slashdot.org over TCP I can send data packets
+                across that TCP connection.
+              </li>
+              <li>Python eventually runs <br/><code>send(ourSlashdotConnection, “GET / HTTP/1.0\r\nHost: slashdot.org\r\n\r\n”);</code></li>
+              <li>This causes a TCP data packet on the slashdot
+                connection to be made, shuffled off to IP and ethernet,
+                across to cable modem and back all the way to
+                slashdot.org
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul style="font-size: 90%">
+              <li>Slashdot's webserver is waiting on the connection and it is
+                reading bytes from the connection. After my packet is
+                delivered to the webserver (over TCP, over IP, over
+                ethernet, over the datacenter network, over the internet, ...)
+                <code>“GET / HTTP/1.0\r\nHost: slashdot.org\r\n\r\n”</code>
+                </li>
+              </li>
+              <li>Slashdot.org's webserver's TCP layers send a TCP ACK packet back
+                to my IP address acknowledging the receipt of the packet that
+                contained the GET request I sent.
+              </li>
+              <li>Slashdot.org's webserver sends an HTTP response which is over
+                40kb in size broken up across 29 packets. All these packets needs
+                to be acknowledged by my home computer.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="columns">
+              <div class="column">
+                <ul style="font-size: 60%">
+                  <li>1 UDP DNS Request for slashdot.org</li>
+                  <li> 1 UDP DNS Response from my nameserver for slashdot.org of 1.2.3.4</li>
+                  <li> 1 TCP SYN for 1.2.3.4 on port 80</li>
+                  <li> 1 TCP SYN+ACK from 1.2.3.4 port 80</li>
+                  <li> 1 TCP ACK to 1.2.3.4 on port 80</li>
+                  <li> 1 TCP data packet with the GET request to 1.2.3.4</li>
+                  <li>1 TCP ACK from 1.2.3.4</li>
+                  <li>1 TCP data packet from 1.2.3.4</li>
+                  <li>1 TCP ACK to 1.2.3.4</li>
+                  <li>... 26 data & ACKs later</li>
+                  <li>1 TCP data packet from 1.2.3.4</li>
+                  <li> 1 TCP ACK to 1.2.3.4</li>
+                  <li>1 TCP FIN close from 1.2.3.4</li>
+                  <li>1 TCP FIN+ACK to 1.2.3.4</li>
+                  <li>1 TCP ACK from 1.2.3.4</li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul style="font-size: 80%">
+                  <li>~2 UDP packets (except all the ones I didn't see because they were done on my behalf by Shaw's DNS server)</li>
+                  <li>~60 TCP packets</li>
+                  <li>~62 Ethernet packets</li>
+                  <li>The TCP packets are probably copied at least 10 times across 10 or more links.</li>
+                  <li>So my 1 request of 50KiB in size could cost the entire network more than 500KiB in traffic.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            How did we get routed to slashdot?
+            <samp><pre>
+hindle1@piggy:~$ sudo traceroute slashdot.org
+traceroute to slashdot.org (216.34.181.45), 30 hops max, 60 byte packets
+1 192.168.0.1 (192.168.0.1) 0.171 ms
+2 * * *
+3 xxxxxxxxxxxx.ed.shawcable.net (64.59.184.245) 33.812 ms
+4 rc3sc-tge0-0-0-10.wp.shawcable.net (66.163.74.226) 44.058 ms
+5 rc2so-tge0-4-0-1.cg.shawcable.net (66.163.77.98) 77.525 ms
+6 ix-3-3-2-0.tcore1.CT8-Chicago.as6453.net (66.110.14.13) 74.733 ms
+7 64.86.78.10 (64.86.78.10) 70.375 ms
+8 hr1-te-9-0-0.elkgrovech3.savvis.net (204.70.196.14) 74.230 ms
+9 das5-v3032.ch3.savvis.net (64.37.207.158) 71.660 ms
+10 64.27.160.194 (64.27.160.194) 83.311 ms
+11 slashdot.org (216.34.181.45) 73.920 ms
+            </pre></samp>
+          </section>
+          <section>
+            <h3>Takeaways</h3>
+            <ul>
+              <li>The bandwidth used to send large or small messages.</li>
+              <li>If latency matters which transport should you use?</li>
+              <li>Packets get routed!</li>
+              <li>Ethernet often imposes requirements on communication</li>
+              <li>Can you think of any other takeaways?</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Special IPs and Ports</h3>
+            <ul>
+              <li>127.0.0.1 localhost (packets loop back to your computer)</li>
+              <li>192.168.*.* and 10.*.*.* are common private subnets for local IP communication. E.g. 192.168.0.2 is my computer and 192.168.0.1 is my Shaw cable modem.</li>
+              <li>TCP Port 80 - HTTP</li>
+              <li>TCP Port 443 - HTTPS</li>
+              <li>UDP Port 53 - DNS</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <ul style="font-size: 70%">
+              <li>
+                Wikipedia
+                <ul>
+                  <li><a href="http://en.wikipedia.org/wiki/Transmission_Control_Protocol">http://en.wikipedia.org/wiki/Transmission_Control_Protocol</a></li>
+                  <li><a href="http://en.wikipedia.org/wiki/User_Datagram_Protocol">http://en.wikipedia.org/wiki/User_Datagram_Protocol</a></li>
+                  <li><a href="http://en.wikipedia.org/wiki/Ethernet">http://en.wikipedia.org/wiki/Ethernet</a></li>
+                  <li><a href="http://en.wikipedia.org/wiki/802.11">http://en.wikipedia.org/wiki/802.11</a></li>
+                  <li><a href="http://en.wikipedia.org/wiki/Domain_Name_System">http://en.wikipedia.org/wiki/Domain_Name_System</a></li>
+                </ul>
+              </li>
+              <li>
+                Ethernet
+                <ul>
+                  <li><a href="http://standards.ieee.org/about/get/802/802.3.html">http://standards.ieee.org/about/get/802/802.3.html</a></li>
+                  <li><a href="http://www.osnews.com/story/21132/Metcalfe_on_Ethernet_s_History/">http://www.osnews.com/story/21132/Metcalfe_on_Ethernet_s_History/</a></li>
+                  <li><a href="http://timeline.ethernethistory.com/">http://timeline.ethernethistory.com/</a></li>
+                  <li><a href="http://theinstitute.ieee.org/technology-focus/technology-history/ethernet-turns-40">http://theinstitute.ieee.org/technology-focus/technology-history/ethernet-turns-40</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <ul style="font-size: 80%">
+              <li>
+                DNS
+                <ul>
+                  <li>
+                    Domain Names
+                    <ul>
+                      <li><a href="http://tools.ietf.org/html/rfc1035">http://tools.ietf.org/html/rfc1035</a></li>
+                      <li><a href="http://tools.ietf.org/html/rfc1123">http://tools.ietf.org/html/rfc1123</a></li>
+                      <li><a href="http://tools.ietf.org/html/rfc2181">http://tools.ietf.org/html/rfc2181</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    Paul Vixie on DNS
+                    <ul>
+                      <li><a href="http://queue.acm.org/detail.cfm?id=1242499">http://queue.acm.org/detail.cfm?id=1242499</a></li>
+                      <li><a href="http://tools.ietf.org/html/rfc1123">http://tools.ietf.org/html/rfc1123</a></li>
+                      <li><a href="http://tools.ietf.org/html/rfc2181">http://tools.ietf.org/html/rfc2181</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    Tools
+                    <ul>
+                      <li>On linux: <var>host</var> and <var>whois</var> and <var>pwhois</var></li>
+                      <li><a href="http://network-tools.com/nslook/">http://network-tools.com/nslook/</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </section>
         </section>
       </div>
