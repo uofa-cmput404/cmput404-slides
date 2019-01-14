@@ -80,7 +80,9 @@ def extract_header_footer(from_):
     with open(from_, 'r') as fromfile:
         fromhtml = fromfile.read()
     (h, hb_sep, b) = fromhtml.partition(HEADER)
-    (b, bf_sep, f) = fromhtml.partition(FOOTER)
+    assert hb_sep == HEADER
+    (b, bf_sep, f) = fromhtml.rpartition(FOOTER)
+    assert bf_sep == FOOTER
     return (h, hb_sep, b, bf_sep, f)
 
 def modify_header_footer(from_, to):
