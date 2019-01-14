@@ -87,7 +87,17 @@ def extract_header_footer(from_):
 
 def modify_header_footer(from_, to):
     assert HEADER not in from_[0]
+    assert HEADER not in to[0]
+    assert from_[1] == HEADER
+    assert to[1] == HEADER
+    assert HEADER not in from_[2]
+    assert HEADER not in to[2]
+    assert from_[3] == FOOTER
+    assert to[3] == FOOTER
+    assert FOOTER not in to[4]
     assert FOOTER not in from_[4]
+    assert len(from_) == 5
+    assert len(to) == 5
     return (
         from_[0],
         to[1],
