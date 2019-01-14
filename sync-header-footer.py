@@ -86,6 +86,8 @@ def extract_header_footer(from_):
     return (h, hb_sep, b, bf_sep, f)
 
 def modify_header_footer(from_, to):
+    assert HEADER not in from_[0]
+    assert FOOTER not in from_[4]
     return (
         from_[0],
         to[1],
