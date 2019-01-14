@@ -79,9 +79,9 @@ def find_latest(file_list, repo):
 def extract_header_footer(from_):
     with open(from_, 'r') as fromfile:
         fromhtml = fromfile.read()
-    (h, hb_sep, b) = fromhtml.partition(HEADER)
+    (h, hb_sep, bf) = fromhtml.partition(HEADER)
     assert hb_sep == HEADER
-    (b, bf_sep, f) = fromhtml.rpartition(FOOTER)
+    (b, bf_sep, f) = bf.rpartition(FOOTER)
     assert bf_sep == FOOTER
     return (h, hb_sep, b, bf_sep, f)
 
