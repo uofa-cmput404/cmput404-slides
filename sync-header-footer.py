@@ -15,8 +15,8 @@ WARNING = logger.warning
 ERROR = logger.error
 CRITICAL = logger.critical
 
-HEADER="HEADER"
-FOOTER="FOOTER"
+HEADER="HEADER --------------------------"
+FOOTER="FOOTER --------------------------"
 
 def get_file_list(pattern):
     return [glob.glob(pattern)]
