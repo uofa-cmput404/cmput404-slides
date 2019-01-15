@@ -56,3 +56,11 @@ font-size: 50%;
 .rare {
     opacity: 0.66;
 }
+.reveal .slides img.emoji {
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 1.75ex;
+    vertical-align: baseline;
+    background: none;
+}
