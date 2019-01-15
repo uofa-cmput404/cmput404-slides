@@ -43,9 +43,16 @@ font-weight: bold;
 }
 .reveal .slides pre {
 font-family: "Lucida Console", Monaco, monospace;
-width: 100%;
+width: 90%;
 line-height: 1;
+}
+.reveal .slides pre code {
+    overflow-x: scroll;
+    width: max-content;
 }
 .reveal .slides samp>pre {
 font-size: 50%;
+}
+.rare {
+    opacity: 0.66;
 }
