@@ -1,0 +1,58 @@
+.reveal section img.noborder { 
+background:none; 
+border:none; 
+box-shadow:none;
+max-width:100%;
+max-height:100%;
+}
+.fit {
+display: inline-block;
+white-space: nowrap;
+}
+.columns{
+    display: flex;
+}
+.column{
+    flex: 1;
+}
+table.shrinky td {
+padding-left: 0.2em;
+padding-right: 0.2em;
+}
+table.wikitable {
+margin: 0 0;
+text-align: center;
+font-size: 40%;
+border: 1px solid white;
+}
+table.wikitable td, table.wikitable th {
+text-align: center;
+vertical-align: middle;
+border: 1px solid white;
+padding: 0.2em 0.2em 0.2em 0.2em;
+}
+.reveal .slides section>cite {
+font-size: 50%;
+text-align: left;
+line-height: 1;
+display: block;
+}
+.reveal .slides var {
+font-family: "Lucida Console", Monaco, monospace;
+font-weight: bold;
+}
+.reveal .slides pre {
+font-family: "Lucida Console", Monaco, monospace;
+width: 90%;
+line-height: 1;
+}
+.reveal .slides pre code {
+    overflow-x: scroll;
+    width: max-content;
+}
+.reveal .slides samp>pre {
+font-size: 50%;
+}
+.rare {
+    opacity: 0.66;
+}
