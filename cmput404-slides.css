@@ -63,4 +63,6 @@ font-size: 50%;
     height: 1.75ex;
     vertical-align: baseline;
     background: none;
+    position: relative;
+    top: 0.25ex;
 }
