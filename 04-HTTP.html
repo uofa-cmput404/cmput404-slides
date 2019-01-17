@@ -4979,6 +4979,194 @@ googletag.display('div-gpt-ad-1x1');});&lt;/script>&lt;/div>
             <li>It is considered bad if GET request causes the server to change data&mdash;we should use a different HTTP method for that</li>
           </ul>
         </section>
+        <section>
+          <h3>HTTP POST</h3>
+          <ul style="font-size: 85%">
+            <li>HTTP POST is a request to update, create, or generally interact with a URL.
+              <ul>
+                <li>Can do things like ?queries but not limited by length.</li>
+                <li>Used to submit HTML forms</li>
+                <li>POST is expected to add or mutate data</li>
+              </ul>
+            </li>
+            <li>We can send query parameters along an HTTP get in the URL</li>
+            <li>It is considered bad if GET request causes the server to change data&mdash;we should use a different HTTP method for that</li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP POST</h3>
+          <ul style="font-size: 85%">
+            <li>URL-encoded parameters (percent-encoded)
+              <ul>
+                <li>POST parameters are usually sent in a POST request body as <var>application/x-www-form-urlencoded</var></li>
+                <li>They could also be sent following RFC 2388's format: <var>multipart/form-data</var>.
+                  <ul>
+                    <li><a href="http://tools.ietf.org/html/rfc2388">http://tools.ietf.org/html/rfc2388</a></li>
+                    <li>Used when uploading files</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP POST Example</h3>
+          <form method="POST">
+            name <input name="name"/><br/>
+            occupation <input name="occupation"/><br/>
+            <input type="submit"/>
+          </form>
+        </section>
+        <section>
+          <h3>HTTP POST Example</h3>
+          Web browser sends:
+          <pre><code>POST /04-HTTP.html HTTP/1.1
+Host: localhost:8000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:8000/04-HTTP.html
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+DNT: 1
+
+name=Hazel&occupation=Slide+maker</code></pre>
+        </section>
+        <section>
+          <h3>HTTP POST and Forms</h3>
+          <ul>
+            <li>Each form element has a <var>name</var></li>
+            <li>The <var>name</var> matches the key.</var></li>
+            <li>E.g. <var>&lt;input name="occupation"/></var> becomes <var>occupation=</var></li>
+            <li>The content of the input element becomes the value</li>
+          </ul>
+        </section>
+        <section id="multipart">
+          <h3 style="text-transform: none">multipart/form-data</h3>
+          <ul style="font-size: 75%">
+            <li><a href="http://tools.ietf.org/html/rfc2388">http://tools.ietf.org/html/rfc2388</a></li>
+            <li>Use mime to send form data
+              <ul>
+                <li>Multipurpose Internet Mail Extensions</li>
+              </ul>
+            </li>
+            <li>Mostly used to puload files as binary, but it can be used for any form</li>
+            <li>Sends the content-size first and then asks the server if that's okay
+              <ul>
+                <li>Server responds <var>HTTP/1.1 100 Continue</var> if it can handle that <em>size</em> of data</li>
+                <li>Then the client sends the body</li>
+              </ul>
+            </li>
+            <li>
+              Because of this interaction you can argue that this is a slower method (adds a round trip latency) since it requires the server to respond to the initial header before it sends the body.</li>
+            <li>This is so the client doesn't try to send files that are too big for the server to handle, or of a type it can't handle, etc.</li>
+          </ul>
+        </section>
+        <section>
+          <h3 style="text-transform: none">multipart/form-data Example</h3>
+          <pre><code>hindle1@st-francis:~$ curl -F 'what=1' -F 'suzie=q' -X POST http://webdocs.cs.ualberta.ca/~hindle1/1.py --trace-ascii /dev/stdout
+POST /~hindle1/1.py HTTP/1.1
+User-Agent: curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 Ope
+nSSL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3
+Host: webdocs.cs.ualberta.ca
+Accept: */*
+Content-Length: 235
+Expect: 100-continue
+Content-Type: multipart/form-data; boundary=----------------------------9edfbc1fb1b0</code></pre>
+          <ul>
+            <li>The boundary lets the server tell when one part of the form ends and another begins.</li>
+            <li>The random number should be chosen so that it won't show up in conentent.</li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-transform: none">multipart/form-data</h4>
+          The server sends back:
+          <pre><code>HTTP/1.1 100 Continue</code></pre>
+          Then the client proceeds:
+          <pre><code>------------------------------9edfbc1fb1b0
+Content-Disposition: form-data; name="what"
+
+1
+------------------------------9edfbc1fb1b0
+Content-Disposition: form-data; name="suzie"
+
+q
+------------------------------9edfbc1fb1b0--</code></pre>
+      </section>
+      <section>
+        The server finally gives its actual response:
+        <pre><code>&lt;= Recv
+HTTP/1.1 200 OK
+Date: Mon, 13 Jan 2014 23:37:30 GMT
+Server: Apache/2.2.3 (Red Hat)
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+&lt;H3>Form Contents:&lt;/H3>
+&lt;DL>
+&lt;DT>suzie: &lt;i>&amp;lt;type 'instance'&amp;gt;&lt;/i>
+&lt;DD>FieldStorage('suzie', None, 'q')
+&lt;DT>what: &lt;i>&amp;lt;type 'instance'&amp;gt;&lt;/i>
+&lt;DD>FieldStorage('what', None, '1')</pre></code>
+        </section>
+        <section>
+          <h3>HTTP 2</h3>
+          <ul style="font-size: 75%">
+            <li>2015&mdash;24 years after HTTP</li>
+            <li>Based on proposed SPDY protocol by Google: designed to reduce latency</li>
+            <li>Only supported over TLS (HTTPS)</li>
+            <li>Same methods, status codes, headers and URIs for compatibility</li>
+            <li>Binary protocol: not viewable/debuggable/writable in plain text
+              <ul>
+                <li>Compress headers for less bandwidth</li>
+              </ul>
+            </li>
+            <li>Pipelining: request requrest request ... response response response</li>
+            <li>Push: psychic servers look into the future and sends clients content before they even request it 🔮</li>
+            <li>Multiplexing</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Multiplexing and Pipelining</h3>
+          <img class="noborder" style="width: 100%; background: white;" src="images/multiplexing01.svg"/>
+        </section>
+        <section>
+          <ul>
+            <li>Avoid using multiple TCP connections to a single server
+              <ul>
+                <li>Reduce high-latency TCP handshakes</li>
+                <li>Reduce high-CPU TLS handshakes</li>
+              </ul>
+            </li>
+            <li>Requests and responses in both directions happening all at the same time, data is interleaved</li>
+            <li>Requests/responses can be prioritized</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Resources: RFCs</h3>
+          <ul>
+            <li>URIs: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></li>
+            <li>HTTP: <a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Resources</h3>
+          <ul>
+            <li>Domain Names
+              <ul>
+                <li><a href="http://tools.ietf.org/html/rfc1035">http://tools.ietf.org/html/rfc1035</a></li>
+                <li><a href="http://tools.ietf.org/html/rfc1123">http://tools.ietf.org/html/rfc1123</a></li>
+                <li><a href="http://tools.ietf.org/html/rfc2181">http://tools.ietf.org/html/rfc2181</a></li>
+                <li>Paul Vixie on DNS: <a href="http://queue.acm.org/detail.cfm?id=1242499">http://queue.acm.org/detail.cfm?id=1242499</a></li>
+                <li>International domain names: <a href=http://www.unicode.org/faq/idn.html">http://www.unicode.org/faq/idn.html</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
         <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
@@ -5016,7 +5204,7 @@ googletag.display('div-gpt-ad-1x1');});&lt;/script>&lt;/div>
         maxScale: 5,
         menu: {
           hideMissingTitles: true,
-          titleSelector: 'h1, h2',
+          titleSelector: 'h1, h2, h3',
         },
       });
     </script>
