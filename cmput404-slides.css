@@ -66,3 +66,13 @@ font-size: 50%;
     position: relative;
     top: 0.25ex;
 }
+.reveal .slides blockquote {
+    text-align: justify;
+}
+.reveal .slides blockquote>cite {
+    display: block;
+    font-size: 75%;
+    text-align: left;
+    margin-top: 1ex;
+    font-style: normal;
+}
