@@ -45,6 +45,43 @@
             </small>
           </p>
         </section>
+        <section>
+          <h3>HTTP PUT</h3>
+          <ul style="font-size: 70%">
+            <li>Like HTTP POST except the URI does not handle the request, it <em>is</em> the request.
+              <blockquote>
+ The URI in a POST request identifies the resource that
+will handle the enclosed entity. That resource might be
+a data-accepting process, a gateway to some other
+protocol, or a separate entity that accepts annotations.
+In contrast, the URI in a PUT request identifies the entity
+enclosed with the request -- the user agent knows what
+URI is intended and the server MUST NOT attempt to
+apply the request to some other resource. <cite>Fielding, et al. ,RFC2616: http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.6
+</cite></blockquote>
+          </ul>
+        </section>
+        <section>
+          <h3>POST vs PUT</h3>
+          <div class="columns">
+            <div class="column">
+              <ul>
+                <li>URI identifies a service/handler/script/process</li>
+                <li>Arguments are stored in HTTP request body</li>
+                <li>The request body is interpreted by some software and processed</li>
+                <li><em>"Send this here for processing"</em></li>
+              </ul>
+            </div>
+            <div class="column">
+              <ul>
+                <li>URI identifies an <em>entity</em> (file, db entry...)</li>
+                <li>Arguments are stored in the URI query string or HTTP headers</li>
+                <li>Request body contains the entire entity</li>
+                <li><em>"Put this here, so I can GET it later"</em></li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
