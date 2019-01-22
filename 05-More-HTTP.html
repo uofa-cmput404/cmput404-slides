@@ -736,6 +736,91 @@ Content-Length: 60
           <img class="scale noborder" src="images/cloudflare-502.png"/>
           <cite><a href="https://support.cloudflare.com/hc/en-us/articles/218378978-What-should-I-do-after-seeing-a-502-or-504-gateway-error-on-my-site-">https://support.cloudflare.com/hc/en-us/articles/218378978-What-should-I-do-after-seeing-a-502-or-504-gateway-error-on-my-site-</a></cite>
         </section>
+        <section>
+          <ul style="font-size: 85%">
+            <li><var>HTTP/1.1 503 Service Unavailable</var>
+              <ul>
+                <li>The service is temporarily down. Something's broken and we'll bring it back up eventually.</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 504 Gateway Timeout</var>
+              <ul>
+                <li>The server talks to another process to fufill this request and that other process isn't responding fast enough. Very common when a webapp is overloaded.</li>
+                <li>Similar to 502, except in this case the packets between the reverse proxy and the origin webserver are just vanishing...</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 505 HTTP Version Not Supported</var>
+              <ul>
+                <li>Your request used the wrong HTTP version. A version the server no longer supports.</li>
+                <li>Example: Twitter doesn't let you do HTTP/1.0 requests anymore</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP Errors: Client, Server or Application?</h3>
+          <ul>
+            <li>If there's a problem in your web application how should you respond?
+              <ul>
+                <li>4xx code?</li>
+                <li>5xx code?</li>
+                <li>HTML page explaining to the user what happened?</li>
+                <li>4xx/5xx + HTML page explaining to the user?</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul style="font-size: 85%">
+            <li>If there's a problem in your web application how should you respond?</li>
+            <li>Some suggest that business logic errors (software error reporting) should be done with the client without codes</li>
+            <li>Some suggest that you should use HTTP status codes.</li>
+            <li>Decide if the application is user facing and how you should handle it for your audience.
+              <ul>
+                <li>Do you need to talk to the User Agent (browser, software) or to the user (human)?</li>
+                <li>Example: many websites let you log in with cookie-based authentication. There's no <em>standards-complient</em> way to use a response code, e.g. <var>401 Unauthorized</var> to tell the user to log in this way. So it may be best to use a 302 or 307 redirect to send the user to the login page.</li>
+              </ul>
+            </li>
+            <li>Warning: Old versions of IE only show a few kb of HTML for 404 pages.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP Proxies</h3>
+          <div class="columns">
+            <div class="column">Forward Proxies
+              <ul>
+                <li>Rare</li>
+                <li>Forward HTTP requests for you</li>
+                <li>You set it up</li>
+                <li>Example: Watch US Netflix from Canada</li>
+              </ul>
+            </div>
+            <div class="column">Reverse Proxies
+              <ul>
+                <li>Common</li>
+                <li>Forward HTTP requests for the server</li>
+                <li>Set up by the people managing the server</li>
+                <li>Example: Cloudflare CDN</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Reverse Proxies</h3>
+          <ul>
+            <li>Caching</li>
+            <li>CDN: Keep content nearer the user</li>
+            <li>Load balancing</li>
+            <li>TLS</li>
+            <li>Fail-over</li>
+          </ul>
+        </section>
+        <section>
+          <img src="images/reverse-proxy-cdn-example.svg" class="full"/>
+        </section>
+        <section>
+          <img src="images/reverse-proxy-lb-example.svg" class="full"/>
+        </section>
         <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
@@ -762,8 +847,8 @@ Content-Length: 60
         // specified using percentage units.
 //         width: 960,
 //         height: 700,
-        width: 940,
-        height: 680,
+        width: 960,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.0,
