@@ -47,7 +47,7 @@
         </section>
         <section>
           <h3>HTTP PUT</h3>
-          <ul style="font-size: 70%">
+          <ul style="font-size: 85%">
             <li>Like HTTP POST except the URI does not handle the request, it <em>is</em> the request.
               <blockquote>
  The URI in a POST request identifies the resource that
@@ -107,10 +107,10 @@ apply the request to some other resource. <cite>Fielding, et al. ,RFC2616: http:
         </section>
         <section>
           <h3>HTTP Delete</h3>
-          <ul style="font-size: 70%">
+          <ul style="font-size: 80%">
             <li>Like HTTP POST except the URI does not handle the request, it <em>is</em> the request, a request to delete the entity at that URI.</li>
           </ul>
-          <blockquote style="font-size: 70%">
+          <blockquote style="font-size: 80%">
             The DELETE method requests that the origin server delete the resource
             identified by the Request-URI. This method MAY be overridden by human
             intervention (or other means) on the origin server. The client cannot be
@@ -683,6 +683,60 @@ Content-Length: 60
             </li>
           </ul>
         </section>
+        <section>
+          <ul style="font-size: 85%">
+            <li><var>HTTP/1.1 418 I'm a teapot</var>
+              <ul>
+                <li>Indicates that the server refuses to brew coffee because it is a teapot.</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 422 Unprocessable Entity</var>
+              <ul>
+                <li>Indicates that the server understood the Content-Type and the syntax of the entity (request body) is correc but that it was unable to process it.</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 426 Upgrade Required</var>
+              <ul>
+                <li>Indicates that the server requires use of HTTP 2 or later.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul style="font-size: 85%">
+            <li><var>HTTP/1.1 428 Precondition Required</var>
+              <ul>
+                <li>Indicates that the client needs to send a request with an If- header.</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 429 Too Many Requests</var>
+              <ul>
+                <li>Indicates that the client has sent too many requests in a short period of time.</li>
+              </ul>
+            </li>
+            <li><var>HTTP/1.1 431 Request Header Fields Too Large</var>
+              <ul>
+                <li>Indicates that the client has sent request headers that are too long.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul style="font-size: 85%">
+            <li><var>HTTP/1.1 451 Unavailable For Legal Reasons</var>
+              <ul>
+                <li>Indicates that the server could service the request... if it wasn't illegal.</li>
+                <li>Example: Server used to host content that was later taken down for copyright reasons.</li>
+              </ul>
+            </li>
+          </ul>
+          <blockquote>This request may not be serviced in the Roman Province
+            of Judea due to the Lex Julia Majestatis, which disallows
+            access to resources hosted on servers deemed to be
+            operated by the People's Front of Judea.
+            <cite>&mdash;&nbsp;<a href="https://tools.ietf.org/html/rfc7725">RFC 7725</a></cite>
+            </blockquote>
+        </section>
         <section style="">
           <h3>Server Error Status Codes: 5XX</h3>
           <p>It's the server's fault!</p>
@@ -758,6 +812,24 @@ Content-Length: 60
           </ul>
         </section>
         <section>
+          <ul style="font-size: 80%">
+            <li><var>HTTP/1.1 511 Network Authentication Required</var>
+              <ul>
+                <li>Not used by webservers, but rather by <em>captive portals</em> to tell the web browser that it should show the user a login page for the network.</li>
+                <li>Example: You connect to a guest WiFi
+                  <ol>
+                    <li>You try to browse to some random webpage</li>
+                    <li>Captive portal intercepts your request and sends a 511 response back (the request never makes it onto the internet)</li>
+                    <li>Your web browser tells you you need to log on to the network</li>
+                    <li>You log on to the network using a webpage on the captive portal</li>
+                    <li>You retry your original request, this time it's not intercepted and proceeds to the server it was meant for</li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
           <h3>HTTP Errors: Client, Server or Application?</h3>
           <ul>
             <li>If there's a problem in your web application how should you respond?
@@ -813,6 +885,426 @@ Content-Length: 60
             <li>Load balancing</li>
             <li>TLS</li>
             <li>Fail-over</li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP Headers</h3>
+          <ul style="font-size: 85%">
+            <li>There are 47+ standard HTTP headers</li>
+            <li>These headers have an effect on:
+              <ul>
+                <li>Authentication</li>
+                <li>Caching</li>
+                <li>Encoding</li>
+                <li>Partial downloading</li>
+                <li>Content type</li>
+                <li>More...</li>
+              </ul>
+            </li>
+            <li>There are so many in the RFC that I won't go over all of them</li>
+            <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP Request Headers</h3>
+          <ul>
+            <li><var>Accept: */*</var>
+              <ul>
+                <li>Example: <var>Accept: video/ogg,video/*</var></li>
+                <li>Specifies the kind of media the client can handle</li>
+              </ul>
+            </li>
+            <li><var>Accept-Charset: UTF-8</var>
+              <ul>
+                <li>Specifies character encodings the client can handle</li>
+              </ul>
+            </li>
+            <li><var>Accept-Encoding: gzip,compress,deflate,br</var>
+              <ul>
+                <li>Specifies compression formats the client can handle</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>Access-Control-Reqiest-Headers: Content-Type</var>
+              <ul>
+                <li>Lets the browser ask the server JS is allowed to make requests with those headers</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Request-Method: POST</var>
+              <ul>
+                <li>Lets the browser ask the server JS is allowed to make e.g. POST requests</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l</var>
+              <ul>
+                <li>The user agent is sending a username and password or other kind of credentials to the server (rare, usually cookies are used instead)</li>
+              </ul>
+            </li>
+            <li><var>Cache-Control: max-age=60</var>
+              <ul>
+                <li>Asks the server/proxy not to send data thats been sitting in its cache too long</li>
+              </ul>
+            </li>
+            <li><var>Content-Disposition: form-data; name="fieldName"; filename="filename.jpg"</var>
+              <ul>
+                <li>Tells the server what the name/filename of the form data being uploaded when POSTing multipart/form-data</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>Cookie: session=1nhbn4b123h4; csrftoken=1n1b4b1j2j3j2</var>
+              <ul>
+                <li>The user agent is sending cookies (stored key-value pairs) relevent to the server</li>
+                <li>The cookies were previously sent to the user agent to store by the server or JS</li>
+              </ul>
+            </li>
+            <li><var>DNT: 1</var> (largely ignored)
+              <ul>
+                <li>The user prefers not to be tracked over recieving personalized content</li>
+              </ul>
+            </li>
+            <li><var>Date: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>The date and time the server sent the content</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>Expect: 100-continue</var>
+              <ul>
+                <li>The user agent is expects the server to respond with <var>100 Continue</var></li>
+              </ul>
+            </li>
+            <li><var>Forwarded: for=192.0.2.60;proto=http;host=example.com</var>
+              <ul>
+                <li>Used by (reverse) proxies to tell the server who made the original request, over what protocol, and what the original <var>Host</var> header was</li>
+              </ul>
+            </li>
+            <li><var>From: hazel.campbell@ualberta.ca</var>
+              <ul>
+                <li>Email address of the person making the requests</li>
+                <li>Example: bot owner, so people can contact them about their bot if it misbehaves</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>Host: ualberta.ca</var>
+              <ul>
+                <li>The hostname (and sometimes port) of the website the user agent is trying to connect to</li>
+                <li>When a single server or proxy is handling requests for many different websites, it needs to know which site the request was made to</li>
+                <li>Otherwise it only can differentiate by IP address, but server/proxy usually has only one public IP address</li>
+                <li>Required in HTTP/1.1 and later for all requests</li>
+                <li>If <var>Host:</var> is missing the server may respond with <var>400 Bad Request</var></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul style="font-size: 80%">
+            <li><var>If-Match: "705a092f59b73758dbb458f6e654a077d81c938e"</var>
+              <ul>
+                <li>Asks the server to send the content only if the ETag matches the specified string</li>
+              </ul>
+            </li>
+            <li><var>If-None-Match: "705a092f59b73758dbb458f6e654a077d81c938e"</var>
+              <ul>
+                <li>Asks the server to send the content only if the ETag <em>doesn't</em> match the specified string</li>
+              </ul>
+            </li>
+            <li><var>If-Modified-Since: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Asks the server to send the content only if it's changed recently</li>
+              </ul>
+            </li>
+            <li><var>If-Unmodified-Since: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Asks the server to accept the request only if it <em>hasn't</em> changed recently</li>
+              </ul>
+            </li>
+            <li><var>If-Range: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Only resume download if I'm still going to download the same version, otherwise start over</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul>
+            <li><var>If-Range: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Only resume download if I'm still going to download the same version, otherwise start over</li>
+              </ul>
+            </li>
+            <li><var>Origin: https://ualberta.ca</var>
+              <ul>
+                <li>Tells the server where the JS code making this request came from</li>
+                <li>Broken until Firefox 65...</li>
+              </ul>
+            </li>
+            <li><var>Proxy-Authorization</var>
+              <ul>
+                <li>Log into forward proxy server</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul style="font-size: 90%">
+            <li><var>Range: bytes=10485760-</var>
+              <ul>
+                <li>Resume download at the 10MiB point</li>
+              </ul>
+            </li>
+            <li><var>Referer: https://mysecretblog.com/</var>
+              <ul>
+                <li>Tells the server what URI you were viewing that caused you to make the current request</li>
+                <li>Shows what page had the link you clicked to get to the current page</li>
+                <li>Destroys privacy</li>
+                <li>Lets server admins know, for example, that people are finding their page on Google, or Twitter, etc.</li>
+                <li>Misspelling of "referrer"</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTTP Server Headers</h3>
+          <ul style="font-size: 90%">
+            <li><var>Accept-Ranges: bytes</var>
+              <ul>
+                <li>Specifies natural languages the user can handle</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Allow-Credentials: true</var>
+              <ul>
+                <li>Whether to allow JS code running in the browser to make requests with cookies</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Allow-Headers: true</var>
+              <ul>
+                <li>Whether to allow JS code running in the browser to make requests with extra headers</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Allow-Methods: GET, POST, OPTIONS</var>
+              <ul>
+                <li>What methods the server willallow JS code running in the browser to make</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul>
+            <li><var>Access-Control-Allow-Origin: https://developer.mozilla.org</var>
+              <ul>
+                <li>Only allow JS that came from a certain host to make requests to this server</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Expose-Headers: Content-Length</var>
+              <ul>
+                <li>Whether to allow JS code running in the browser to see headers</li>
+              </ul>
+            </li>
+            <li><var>Access-Control-Max-Age: 600</var>
+              <ul>
+                <li>How long the browser can remember the other access-control headers</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul>
+            <li><var>Age: 24</var>
+              <ul>
+                <li>Tells the browser the content came from a (reverse) proxy cache that's e.g. 24 seconds old</li>
+              </ul>
+            </li>
+            <li><var>Allow: GET, POST, HEAD</var>
+              <ul>
+                <li>Tells the user agent what HTTP methods the server supports</li>
+              </ul>
+            </li>
+            <li><var>Connection: close</var>
+              <ul>
+                <li>Tells the server to close the connection after it's done sending the content</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul>
+            <li><var>Content-Disposition: attachment; filename="filename.jpg"</var>
+              <ul>
+                <li>Tells the browser to prompt the user to save the content with a default filename, instead of displaying the content</li>
+              </ul>
+            </li>
+            <li><var>Content-Encoding: gzip</var>
+              <ul>
+                <li>Tells the browser to decompress the content before using it and what format its compressed in</li>
+              </ul>
+            </li>
+            <li><var>Content-Language: fr-CA</var>
+              <ul>
+                <li>Tells the browser what natural language (e.g. Canadian French) the content its sending is in</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 85%">
+            <li><var>Content-Length: 500</var>
+              <ul>
+                <li>Tells the client how many bytes of content to expect</li>
+              </ul>
+            </li>
+            <li><var>Content-Location: http://myawesomewebsite.com/fr/</var>
+              <ul>
+                <li>Tells the client where it can find the content that matches the Accept, Accept-* headers it sent</li>
+                <li>Tells the client where it can find the content that it created using, e.g. POST</li>
+              </ul>
+            </li>
+            <li><var>Content-Range: bytes 10485760-11534336/20971520</var>
+              <ul>
+                <li>Tells the client what bytes of the requested content the server is sending, out of the total length in bytes</li>
+                <li>Example: 1MiB starting at the 10MiB of a 20Mib file</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 85%">
+            <li><var>Content-Security-Policy: default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'</var>
+              <ul>
+                <li>Used to combat XSS attacks</li>
+                <li>Example: Restrict the places that the User Agent should fetch and run JS from</li>
+              </ul>
+            </li>
+            <li><var>Content-Security-Policy: default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'</var>
+              <ul>
+                <li>Used to combat XSS attacks</li>
+                <li>Example: Restrict the places that the User Agent should fetch and run JS from</li>
+              </ul>
+            </li>
+            <li><var>Content-Security-Policy-Report-Only: default-src https:; report-uri /csp-violation-report-endpoint/</var>
+              <ul>
+                <li>Used to debug <var>Content-Security-Policy</var></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 85%">
+            <li><var>Content-Type: text/html; charset=utf-8</var>
+              <ul>
+                <li>Tells the user agent what kind of media the server's sending</li>
+              </ul>
+            </li>
+            <li><var>ETag: "705a092f59b73758dbb458f6e654a077d81c938e"</var>
+              <ul>
+                <li>Version number/name of the content. If it changes it means the content has changed</li>
+                <li>Example: a SHA1 hash of the content</li>
+              </ul>
+            </li>
+            <li><var>Expect-CT: max-age=86400, enforce, report-uri="https://foo.example/report"</var>
+              <ul>
+                <li>Tells the web browser to double-check the TLS certificate with a public certificate log service</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 95%">
+            <li><var>Date: Tue, 22 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>The date and time the server sent the content</li>
+              </ul>
+            </li>
+            <li><var>Expires: Tue, 23 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Tells the user agent or caching proxy to cache a response only until the specified date and time</li>
+              </ul>
+            </li>
+            <li><var>Last-Modified: Tue, 23 Jan 2019 23:15:50 GMT</var>
+              <ul>
+                <li>Tells the user agent or caching proxy when the content last actually changed</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 95%">
+            <li><var>Keep-Alive: timeout=5, max=1000</var>
+              <ul>
+                <li>Tells the client not to send more than 1000 requests on this connection or to let it idle for more than 5 seconds</li>
+              </ul>
+            </li>
+            <li><var>Location: http://ualberta.ca/</var>
+              <ul>
+                <li>Tells the client where to redirect to for 3XX redirects</li>
+              </ul>
+            </li>
+            <li><var>Proxy-Authenticate</var>, <var>Proxy-Authorization</var>
+              <ul>
+                <li>Ask client to log into proxy server</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 95%">
+            <li><var>Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-sha256="M8HztCzM3elUxkcjR2S5P4hhyBNf6lHkmjAHKhpGPWE="; max-age=5184000; includeSubDomains; report-uri="https://www.example.org/hpkp-report"</var>
+              <ul>
+                <li>Tells the client not to only accept one of the two specified certificates from the webserver for the next 60 days</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 95%">
+            <li><var>Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-sha256="M8HztCzM3elUxkcjR2S5P4hhyBNf6lHkmjAHKhpGPWE="; max-age=5184000; includeSubDomains; report-uri="https://www.example.org/hpkp-report"</var>
+              <ul>
+                <li>Tells the client not to only accept one of the two specified certificates from the webserver for the next 60 days</li>
+              </ul>
+            </li>
+            <li><var>Referrer-Policy: no-referrer-when-downgrade</var>
+              <ul>
+                <li>Webserver tells the client not to send as much referrer information to the next webserver</li>
+              </ul>
+            </li>
+            <li><var>Retry-After: 60</var>
+              <ul>
+                <li>Webserver tells the client to wait 1 minute before retrying after a <var>503 Service Unavailable</var>, <var>429 Too Many Requests</var> or </li>
+              </ul>
+            </li>
           </ul>
         </section>
         <section>
