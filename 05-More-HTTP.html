@@ -843,7 +843,7 @@ Content-Length: 60
           </ul>
         </section>
         <section>
-          <ul style="font-size: 85%">
+          <ul style="font-size: 80%">
             <li>If there's a problem in your web application how should you respond?</li>
             <li>Some suggest that business logic errors (software error reporting) should be done with the client without codes</li>
             <li>Some suggest that you should use HTTP status codes.</li>
@@ -912,7 +912,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Request Headers</h4>
-          <ul>
+          <ul style="font-size: 90%">
             <li><var>Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l</var>
               <ul>
                 <li>The user agent is sending a username and password or other kind of credentials to the server (rare, usually cookies are used instead)</li>
@@ -953,7 +953,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Request Headers</h4>
-          <ul>
+          <ul style="font-size: 90%">
             <li><var>Expect: 100-continue</var>
               <ul>
                 <li>The user agent is expects the server to respond with <var>100 Continue</var></li>
@@ -974,7 +974,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Request Headers</h4>
-          <ul>
+          <ul style="font-size: 90%">
             <li><var>Host: ualberta.ca</var>
               <ul>
                 <li>The hostname (and sometimes port) of the website the user agent is trying to connect to</li>
@@ -988,7 +988,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Request Headers</h4>
-          <ul style="font-size: 80%">
+          <ul style="font-size: 70%">
             <li><var>If-Match: "705a092f59b73758dbb458f6e654a077d81c938e"</var>
               <ul>
                 <li>Asks the server to send the content only if the ETag matches the specified string</li>
@@ -1052,6 +1052,16 @@ Content-Length: 60
                 <li>Destroys privacy</li>
                 <li>Lets server admins know, for example, that people are finding their page on Google, or Twitter, etc.</li>
                 <li>Misspelling of "referrer"</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Request Headers</h4>
+          <ul style="font-size: 90%">
+            <li><var>TE: gzip</var>
+              <ul>
+                <li>Like <var>Accept-Encoding</var> but used with a proxy</li>
               </ul>
             </li>
           </ul>
@@ -1165,13 +1175,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Server Headers</h4>
-          <ul style="font-size: 85%">
-            <li><var>Content-Security-Policy: default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'</var>
-              <ul>
-                <li>Used to combat XSS attacks</li>
-                <li>Example: Restrict the places that the User Agent should fetch and run JS from</li>
-              </ul>
-            </li>
+          <ul style="font-size: 75%">
             <li><var>Content-Security-Policy: default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'</var>
               <ul>
                 <li>Used to combat XSS attacks</li>
@@ -1248,7 +1252,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Server Headers</h4>
-          <ul style="font-size: 95%">
+          <ul style="font-size: 85%">
             <li><var>Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-sha256="M8HztCzM3elUxkcjR2S5P4hhyBNf6lHkmjAHKhpGPWE="; max-age=5184000; includeSubDomains; report-uri="https://www.example.org/hpkp-report"</var>
               <ul>
                 <li>Tells the client not to only accept one of the two specified certificates from the webserver for the next 60 days</li>
@@ -1259,11 +1263,6 @@ Content-Length: 60
         <section>
           <h4>HTTP Server Headers</h4>
           <ul style="font-size: 95%">
-            <li><var>Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-sha256="M8HztCzM3elUxkcjR2S5P4hhyBNf6lHkmjAHKhpGPWE="; max-age=5184000; includeSubDomains; report-uri="https://www.example.org/hpkp-report"</var>
-              <ul>
-                <li>Tells the client not to only accept one of the two specified certificates from the webserver for the next 60 days</li>
-              </ul>
-            </li>
             <li><var>Referrer-Policy: no-referrer-when-downgrade</var>
               <ul>
                 <li>Webserver tells the client not to send as much referrer information to the next webserver</li>
@@ -1271,7 +1270,54 @@ Content-Length: 60
             </li>
             <li><var>Retry-After: 60</var>
               <ul>
-                <li>Webserver tells the client to wait 1 minute before retrying after a <var>503 Service Unavailable</var>, <var>429 Too Many Requests</var> or </li>
+                <li>Webserver tells the client to wait 1 minute before retrying after a <var>503 Service Unavailable</var>, <var>429 Too Many Requests</var> or how long to delay before following a 3xx redirect</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 80%">
+            <li><var>Server: mycoolwebserveriwroteincmput404/0.1 (Unix)</var>
+              <ul>
+                <li>Tells the client the server software and version, like User Agent but for servers</li>
+              </ul>
+            </li>
+            <li><var>Set-Cookie: session=1nhbn4b123h4; Secure; HttpOnly; SameSite=Strict; MaxAge=86400</var>
+              <ul>
+                <li>Webserver tells the client to store a cookie (key-value pair) in its cookie jar</li>
+                <li>The cookie will be stored and sent back to the webserver every time the client makes a request, using the <var>Cookie:</var> header</li>
+                <li>But only if the security restrictions are met: only over HTTPS, not with requests made by JS, not with requests initiated by code that came from a different website, delete the cookie after a day...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 80%">
+            <li><var>Strict-Transport-Security: max-age=31536000; includeSubDomains</var>
+              <ul>
+                <li>Don't contact this server or any subdomains without TLS for the next year</li>
+              </ul>
+            </li>
+            <li><var>Transfer-Encoding: gzip</var>
+              <ul>
+                <li>Like <var>Content-Encoding</var> but used by a proxy</li>
+              </ul>
+            </li>
+            <li><var>Transfer-Encoding: chunked</var>
+              <ul>
+                <li>Data will be sent in chunks. Replaced by HTTP/2.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>HTTP Server Headers</h4>
+          <ul style="font-size: 80%">
+            <li><var>Strict-Transport-Security: max-age=31536000; includeSubDomains</var>
+              <ul>
+                <li>Don't contact this server or any subdomains without TLS for the next year</li>
               </ul>
             </li>
           </ul>
