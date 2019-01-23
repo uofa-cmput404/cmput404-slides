@@ -196,10 +196,9 @@ Content-Length: 14
           <p>Server response:</p>
           <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-Content-Length: 100
+Content-Length: 68
 
-{"_index":"testing","_type":"junk","_id":"1","_version":5,"exists":true, "_source" :
-{"name":"one"}}</code></pre>
+{"ok":true,"_index":"testing","_type":"junk","_id":"1","_version":5}</code></pre>
         </section>
         <section>
           <p>Step 2: GET the entry from ElasticSearch</p>
@@ -213,10 +212,9 @@ Accept: application/json
           <p>Server response:</p>
           <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-Content-Length: 68
+Content-Length: 100
 
-{"ok":true,"_index":"testing","_type":"junk","_id":"1","_version
-0040: ":5}</code></pre>
+{"_index":"testing","_type":"junk","_id":"1","_version":5,"exists":true, "_source" :{"name":"one"}}</code></pre>
         </section>
         <section>
           <p>Step 3: DELETE the entry from ElasticSearch</p>
@@ -1315,7 +1313,7 @@ Content-Length: 60
         <section>
           <h4>HTTP Server Headers</h4>
           <ul style="font-size: 80%">
-            <li><var>Strict-Transport-Security: max-age=31536000; includeSubDomains</var>
+            <li><var>Strict-Transport-Security: max-age=31536000; includeSubDomains</var> aka HSTS
               <ul>
                 <li>Don't contact this server or any subdomains without TLS for the next year</li>
               </ul>
