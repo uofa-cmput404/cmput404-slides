@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>CMPUT 404</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+    
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="cmput404-slides.css">
+    <script src="node_modules/fitty/dist/fitty.min.js"></script>
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+      <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      HEADER --------------------------
+      -->
+        <section>
+          <h1>CMPUT 404</h1>
+          <h3>Web Applications and Architecture</h3>
+          <h2>Part 06: Even More HTTP</h2>
+          <p>
+            <small>Created by <br/>
+            <a href="http://softwareprocess.es">Abram Hindle</a> 
+            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br/>
+            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br/>
+            Copyright 2014-2019.
+            </small>
+          </p>
+        </section>
+        <section>
+          <h3>Authentication</h3>
+          Multiple strategies for authentication using HTTP exist:
+          <ul>
+            <li>Cookies
+              <ul>
+                <li>Session-based (stateful)</li>
+                <li>Token-based (stateless)</li>
+                <li>Easy to mess up and create a security problem</li>
+              </ul>
+            </li>
+            <li><var>Authorization:</var>
+              <ul>
+                <li>Basic (old, insecure)</li>
+                <li>JWTs (JSON Web Token), RFC 7519</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Session Cookie</h3>
+          <ol style="font-size: 85%">
+            <li>User browses to site
+              <ul>
+                <li>Doesn't have cookie yet so browser doesn't send any <var>Cookie:</var> headers</li>
+              </ul>
+            </li>
+            <li>Server responds with cookie
+              <ol>
+                <li>Generates a large random number, ex: <var>86e7eca9-d484-48ad-98ed-e060541b7870</var></li>
+                <li>Records session number in server's database</li>
+                <li>Responds with Set-Cookie header, ex: <var>Set-Cookie: s=86e7eca9-d484-48ad-98ed-e060541b7870; Secure; HttpOnly; SameSite=strict</var>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3>HTTP Proxies</h3>
+          <div class="columns">
+            <div class="column">Forward Proxies
+              <ul>
+                <li>Rare</li>
+                <li>Forward HTTP requests for you</li>
+                <li>You set it up</li>
+                <li>Example: Watch US Netflix from Canada</li>
+              </ul>
+            </div>
+            <div class="column">Reverse Proxies
+              <ul>
+                <li>Common</li>
+                <li>Forward HTTP requests for the server</li>
+                <li>Set up by the people managing the server</li>
+                <li>Example: Cloudflare CDN</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Reverse Proxies</h3>
+          <ul>
+            <li>Caching</li>
+            <li>CDN: Keep content nearer the user</li>
+            <li>Load balancing</li>
+            <li>TLS</li>
+            <li>Fail-over</li>
+          </ul>
+        </section>
+        <section>
+          <img src="images/reverse-proxy-cdn-example.svg" class="full"/>
+        </section>
+        <section>
+          <img src="images/reverse-proxy-lb-example.svg" class="full"/>
+        </section>
+        
+        <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      FOOTER --------------------------
+      -->
+      </div>
+    </div>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
+          { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
+          { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+          { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'node_modules/reveal.js-menu/menu.js' }
+        ],
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+//         width: 960,
+//         height: 700,
+        width: 960,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.0,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.01,
+        maxScale: 5,
+        menu: {
+          hideMissingTitles: true,
+          titleSelector: 'h1, h2, h3',
+        },
+      });
+    </script>
+    <script>
+    // Custom scripting
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        fitty.fitAll();
+    } );    
+    twemoji.parse(document.body);
+    fitty('.fit');
+    </script>
+  </body>
+</html>
