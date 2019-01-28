@@ -52,7 +52,7 @@
               <ul>
                 <li>1971</li>
                 <li>Just files and lists of files (aka directories)</li>
-                <li>Out of band communcation (files xferred via 2nd connection)</li>
+                <li>Out of band communication (files xferred via 2nd connection)</li>
                 <li>Firewalls prevent server connecting back to client (fixed with passive mode)</li>
                 <li>200 OK</li>
                 <li>Must log in everytime, but by convention anonymous logins</li>
@@ -66,7 +66,7 @@
                 <li>Allows extra information (headers) and arguments (queries) with commands</li>
                 <li>200 OK</li>
                 <li>Default: anonymous, no log-in</li>
-                <li>Dynamic content (generated at the time the request is recieved)</li>
+                <li>Dynamic content (generated at the time the request is received)</li>
               </ul>
             </div>
           </div>
@@ -297,9 +297,9 @@
           <h3>Queries</h3>
           <p>URLs can have a query portion. Consider <a href="https://www.google.com/search?q=cat+pictures&ie=utf8">https://www.google.com/search?q=cat+pictures&amp;ie=utf8</a></p>
           <ul>
-            <li>Query portsions can have one or more arguments</li>
+            <li>Query portions can have one or more arguments</li>
             <li>Usually: <var>key=value&amp;key2=value2</var></li>
-            <li>But some other formats exist, such as using other seperators <var>;</var> isntead of <var>&amp;</var>, or just having a string and no keys/values.</li>
+            <li>But some other formats exist, such as using other separators <var>;</var> instead of <var>&amp;</var>, or just having a string and no keys/values.</li>
           </ul>
         </section>
         <section>
@@ -319,7 +319,7 @@
           <ul style="font-size: 80%;">
             <li>True names...
               <ul>
-                <li>Rumplestiltskin</li>
+                <li>Rumpelstiltskin</li>
               </ul>
             </li>
             <li>The Laws of Magic!
@@ -390,7 +390,7 @@ DNT: 1\r\n
         </section>
         <section>
           <ul>
-            <li>Recieve headers...</li>
+            <li>Receive headers...</li>
           </ul>
           <pre><code class="http">HTTP/1.1 301 Moved Permanently\r\n
 Server: nginx/1.13.12\r\n
@@ -406,7 +406,7 @@ Location: https://slashdot.org/\r\n
           </section>
           <section>
             <ul>
-              <li>Recieve content...</li>
+              <li>Receive content...</li>
             </ul>
             <pre><code class="html">&lt;html>
 &lt;head>&lt;title>301 Moved Permanently&lt;/title>&lt;/head>
@@ -421,7 +421,7 @@ Location: https://slashdot.org/\r\n
           </section>
           <section>
             <ul>
-              <li>So the browswer doesn't show you this page, instead it goes to the location specifiec in the <var>Location</var> header.</li>
+              <li>So the browser doesn't show you this page, instead it goes to the location specific in the <var>Location</var> header.</li>
             </ul>
             <pre><code class="http">Location: https://slashdot.org/\r\n</code></pre>
             <ul>
@@ -477,7 +477,7 @@ DNT: 1\r\n
           </section>
           <section>
             <ul>
-              <li>Recieve headers...</li>
+              <li>Receive headers...</li>
             </ul>
             <pre><code class="http">HTTP/1.1 200 OK\r\n
 Server: nginx/1.13.12\r\n
@@ -498,7 +498,7 @@ Content-Encoding: gzip\r\n
           </section>
         <section>
           <ul>
-            <li>Recieve content...</li>
+            <li>Receive content...</li>
             <li>Just get garbled binary junk... no HTML</li>
             <li><var>Content-Encoding: gzip</var></li>
             <li>Web browser has to uncompress it first</li>
