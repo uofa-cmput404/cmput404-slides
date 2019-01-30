@@ -14,3 +14,8 @@ Note: master branch does not track upstream master, instead it tracks releases.
 npm install
 npm start
 ```
+These slides contain contributions from:
+
+* Abram Hindle
+* Hazel Victoria Campbell
+* Gary  Dhillon
