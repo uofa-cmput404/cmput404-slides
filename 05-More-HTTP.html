@@ -175,7 +175,7 @@ apply the request to some other resource. <cite>Fielding, et al. ,RFC2616: http:
         <section>
           <h3>HTTP PUT/GET/DELETE/GET</h3>
           <p>In the following example we use ElasticSearch and we PUT, GET, DELETE and GET a single URI.</p>
-          <p>The URI represents an entry in the ElasticSeach index, a NoSQL database, not a file. The entries for ElasticSearch are formatted in JSON.</p>
+          <p>The URI represents an entry in the ElasticSearch index, a NoSQL database, not a file. The entries for ElasticSearch are formatted in JSON.</p>
           <ul>
             <li>PUT stores the entity</li>
             <li>GET retrieves it</li>
@@ -258,7 +258,7 @@ Content-Length: 60
                 <li>Let's you create and upload to a URI using HTTP <var>PUT</var></li>
                 <li>Download from a URI using HTTP <var>GET</var></li>
                 <li>Delete an entity at a URI (and the URI) using HTTP <var>DELETE</var></li>
-                <li>Make direcotories/folders using a new HTTP command: HTTP <var>MKCOL</var>
+                <li>Make directories/folders using a new HTTP command: HTTP <var>MKCOL</var>
                   <ul>
                     <li>MaKe COLlection</li>
                   </ul>
@@ -381,7 +381,7 @@ Content-Length: 60
           <cite><a href="https://http2.github.io/http2-spec/">https://http2.github.io/http2-spec/</a></cite>
         </section>
         <section>
-          <h3>Succesful Status Codes: 2XX</h3>
+          <h3>Successful Status Codes: 2XX</h3>
           <ul>
             <li><var>HTTP/1.1 200 OK</var>
               <ul>
@@ -389,7 +389,7 @@ Content-Length: 60
                 <li>GET: sends an entity for to the requested URI</li>
                 <li>HEAD: sends headers for the entity for the requested URI</li>
                 <li>POST: sends an entity describing the result of the POST</li>
-                <li>TRACE: sends back the entity it recieved</li>
+                <li>TRACE: sends back the entity it received</li>
               </ul>
             </li>
           </ul>
@@ -425,7 +425,7 @@ Content-Length: 60
                 <li>Like <var>204 No Content</var> but the browser should clear the form/page</li>
               </ul>
             </li>
-            <li><var>HTTP/1.1 206 Partial Conentent</var>
+            <li><var>HTTP/1.1 206 Partial Content</var>
               <ul style="font-size: 85%">
                 <li>Used to resume downloads:
                   <ol>
@@ -447,7 +447,7 @@ Content-Length: 60
             <li>Redirect HTTP requests to HTTPS</li>
             <li>Redirect requests to old URIs to their new URIs</li>
             <li>Load balancing</li>
-            <li>Seperate dynamic and static content onto two different servers</li>
+            <li>Separate dynamic and static content onto two different servers</li>
             <li>One host in URIs but use more than one server behind the scenes</li>
             <li>URL shorteners</li>
             <li>Reorganized website but want to keep old URIs working (fighting link-rot)</li>
@@ -797,7 +797,7 @@ Content-Length: 60
             </li>
             <li><var>HTTP/1.1 504 Gateway Timeout</var>
               <ul>
-                <li>The server talks to another process to fufill this request and that other process isn't responding fast enough. Very common when a webapp is overloaded.</li>
+                <li>The server talks to another process to fulfill this request and that other process isn't responding fast enough. Very common when a webapp is overloaded.</li>
                 <li>Similar to 502, except in this case the packets between the reverse proxy and the origin webserver are just vanishing...</li>
               </ul>
             </li>
@@ -848,7 +848,7 @@ Content-Length: 60
             <li>Decide if the application is user facing and how you should handle it for your audience.
               <ul>
                 <li>Do you need to talk to the User Agent (browser, software) or to the user (human)?</li>
-                <li>Example: many websites let you log in with cookie-based authentication. There's no <em>standards-complient</em> way to use a response code, e.g. <var>401 Unauthorized</var> to tell the user to log in this way. So it may be best to use a 302 or 307 redirect to send the user to the login page.</li>
+                <li>Example: many websites let you log in with cookie-based authentication. There's no <em>standards-compliant</em> way to use a response code, e.g. <var>401 Unauthorized</var> to tell the user to log in this way. So it may be best to use a 302 or 307 redirect to send the user to the login page.</li>
               </ul>
             </li>
             <li>Warning: Old versions of IE only show a few kb of HTML for 404 pages.</li>
@@ -896,14 +896,14 @@ Content-Length: 60
         <section>
           <h4>HTTP Request Headers</h4>
           <ul>
-            <li><var>Access-Control-Reqiest-Headers: Content-Type</var>
+            <li><var>Access-Control-Request-Headers: Content-Type</var>
               <ul>
-                <li>Lets the browser ask the server JS is allowed to make requests with those headers</li>
+                <li>Lets the browser ask the server if JS is allowed to make requests with those headers</li>
               </ul>
             </li>
             <li><var>Access-Control-Request-Method: POST</var>
               <ul>
-                <li>Lets the browser ask the server JS is allowed to make e.g. POST requests</li>
+                <li>Lets the browser ask the server if JS is allowed to make e.g. POST requests</li>
               </ul>
             </li>
           </ul>
@@ -933,13 +933,13 @@ Content-Length: 60
           <ul>
             <li><var>Cookie: session=1nhbn4b123h4; csrftoken=1n1b4b1j2j3j2</var>
               <ul>
-                <li>The user agent is sending cookies (stored key-value pairs) relevent to the server</li>
+                <li>The user agent is sending cookies (stored key-value pairs) relevant to the server</li>
                 <li>The cookies were previously sent to the user agent to store by the server or JS</li>
               </ul>
             </li>
             <li><var>DNT: 1</var> (largely ignored)
               <ul>
-                <li>The user prefers not to be tracked over recieving personalized content</li>
+                <li>The user prefers not to be tracked over receiving personalized content</li>
               </ul>
             </li>
             <li><var>Date: Tue, 22 Jan 2019 23:15:50 GMT</var>
@@ -1094,7 +1094,7 @@ Content-Length: 60
             </li>
             <li><var>Access-Control-Allow-Methods: GET, POST, OPTIONS</var>
               <ul>
-                <li>What methods the server willallow JS code running in the browser to make</li>
+                <li>What methods the server will allow JS code running in the browser to make</li>
               </ul>
             </li>
           </ul>
