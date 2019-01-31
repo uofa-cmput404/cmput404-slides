@@ -1,0 +1,666 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>CMPUT 404</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+    
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="cmput404-slides.css">
+    <script src="node_modules/fitty/dist/fitty.min.js"></script>
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+      <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      HEADER --------------------------
+      -->
+      <section>
+        <h1>CMPUT 404</h1>
+        <h3>Web Applications and Architecture</h3>
+        <h2>Part 06: HTML</h2>
+        <p>
+          <small>Created by <br>
+          <a href="http://softwareprocess.es">Abram Hindle</a> 
+          (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br>
+          and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br>
+          Copyright 2014-2019.
+          </small>
+        </p>
+      </section>
+      <section>
+        <h3>HTML standards</h3>
+        <ul style="font-size: 80%">
+          <li>The current version of HTML has two standards</li>
+          <li>WHATWG's HTML "living standard"
+            <ul>
+              <li><a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></li>
+              <li>Continually updated, constantly evolving</li>
+              <li>No version numbers</li>
+            </ul>
+          </li>
+          <li>W3C's HTML 5 Standards
+            <ul>
+              <li><a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></li>
+              <li>Occaisionally releases versions</li>
+              <li>Versions: 5.0, 5.1, 5.2</li>
+            </ul>
+          </li>
+          <li>Best?
+            <ul>
+              <li>Generally people prefer WHATWG's "living standard"</li>
+              <li>Your best option when writing HTML is to use a reference with a compatibility table</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>Example compatibility talbe from MDN:</li>
+        </ul>
+        <img class="stretch noborder" src="images/mdn-compatibility-table.png">
+        <ul style="font-size: 80%">
+          <li>Hazel's favorite resource is MDN because its up to date, and its provided by Mozilla, who actually make a browser, and aren't just trying to show you ads: <a href="https://developer.mozilla.org/en-US/docs/Web">https://developer.mozilla.org/en-US/docs/Web</a></li>
+        </ul>
+      </section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Let's start HTMLing!
+
+          It's best to start
+          from the bare
+          essentials. You can
+          validate this HTML
+          using [http://validator.w3.org/check](http://validator.w3.org/check).
+
+          ```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+</head>
+<body>
+  Here's your minimal and validating HTML page.
+</body>
+</html>
+          ```
+        </script>
+      </section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Don't forget!
+
+          You need to tell the
+          world that this is a
+          modern HTML file!
+
+          Put your DOCTYPE at
+          the top!
+
+          Also enclose your content in the HTML tag!
+          ```
+<!DOCTYPE html>
+<html>
+...
+</html>
+          ```
+        </script>
+      </section>
+
+      <section style="font-size: 80%">
+        <h3>Head/Header</h3>
+        <p>The head tag is where
+        we put information
+        about the webpage. You
+        will usually include a title here.</p>
+        <p>Meta tags contain meta
+        information for
+        browsers and other
+        tools to help
+        interpret.</p>
+        <pre><code class="html">&lt;head>
+  &lt;title>Page Title&lt;/title>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="description" content="Example Page">
+  &lt;meta name="author" content="Abram Hindle">
+
+  &lt;!-- proprietary extensions -->
+  &lt;meta name="apple-mobile-web-app-capable" content="yes" >
+  &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" >
+  &lt;!-- mobile viewport information -->
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  &lt;!-- stylesheets / css -->
+  &lt;link rel="stylesheet" href="css/reveal.min.css">
+  &lt;link rel="stylesheet" href="css/theme/default.css" id="theme">
+  &lt;link rel="stylesheet" href="lib/css/zenburn.css">
+
+&lt;/head></code></pre>
+      </section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## Body
+
+````
+<body>
+<p>Visible content goes here.</p>
+<p>Consider that you should not directly specify layout information
+  here but that you should mark up blocks with a class allowing you to
+  apply layouts later. You can abstract layout</p>
+</body>
+````
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+
+      <section>
+        <h3>Tags</h3>
+        <p>All tags should be closed to allow for ease of reading and parsing, except void tags.</p>
+        <p>Start Tags are enclosed in &lt; and ></p>
+        <p>End Tags are enclosed in &lt;/ and ></p>
+        <pre><code class="html">&lt;tag>
+  &lt;enclosedtag>
+  &lt;/enclosedtag>
+&lt;/tag></code></pre>
+      </section>
+      <section>
+        <p>Void tags are enclosed in &lt; and > like start tags, but don't have a matching end tag</p>
+        <pre><code class="html">&lt;tag>
+  &lt;voidtag>
+  &lt;br>
+&lt;/tag></code></pre>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+        ### Tags
+
+        Unless you are writing XHTML, in which case you must follow XML syntax, 
+        void tags typically look like &lt;voidtag>. but sometimes are written like &lt;voidtag/>.
+
+        This is against the HTML spec.
+
+        Tags can be any capitalization in HTML, but typically they are
+        written in lower case. Stick to lower-case when writing HTML.
+        </script>
+      </section>
+
+      <section>
+        <h3>XHTML</h3>
+        <ul style="font-size: 75%">
+          <li>You can write HTML in XML format if you follow XML syntax: XHTML</li>
+          <li>Valid HTML is not valid XML, and valid XML is not valid HTML
+            <ul>
+              <li>For a while there was a drive to combine XML and HTML into "polyglot HTML"  where you could write both at the same time, but this was abandoned in 2015.</li>
+              <li>Browsers still support <var>&lt;voidtag/></var> syntax in HTML but it breaks other HTML parsers</li>
+            </ul>
+          </li>
+          <li>XML is very unforgiving, a simple mistake could cause a parser to refuse to parse the XML</li>
+          <li>Breaks <var>Document.write()</var>, the <var>&lt;template></var> tag, most entities...</li>
+          <li>Adds support for namespaces</li>
+          <li>HTML 5 XML has no DTD URL</li>
+          <li>Uses <var>Content-Type: application/xhtml+xml</var></li>
+        </ul>
+        </script>
+      </section>
+
+<section data-markdown>
+<script type="text/template">
+## Paragraph tag:  &lt;p&gt;
+
+You might have been taught that you can use these  &lt;p&gt; tags to
+start and end paragraphs. 
+
+The new style is to enclose paragraphs.
+
+````
+<p>
+Now bears us onward one of the hard margins,
+  And so the brooklet's mist o'ershadows it,
+  From fire it saves the water and the dikes.
+</p>
+<p>
+Even as the Flemings, 'twixt Cadsand and Bruges,
+  Fearing the flood that tow'rds them hurls itself,
+  Their bulwarks build to put the sea to flight;
+</p>
+````
+
+We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
+block doesn't matter.
+
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<!-- ######################## START HTML SLIDE ########################## -->
+<section>
+  <h2>Paragraph Tag</h2>
+  <p>That code now looks like:</p>
+  <blockquote>
+<p>
+Now bears us onward one of the hard margins,
+  And so the brooklet's mist o'ershadows it,
+  From fire it saves the water and the dikes.
+</p>
+<p>
+Even as the Flemings, 'twixt Cadsand and Bruges,
+  Fearing the flood that tow'rds them hurls itself,
+  Their bulwarks build to put the sea to flight;
+</p>
+</blockquote>
+</section>
+<!-- ######################## END HTML SLIDE ########################## -->
+
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## Paragraph tag:  &lt;p&gt; and &lt;br&gt;
+
+The previous example broke up the explicit lines from that canto.
+
+We can make line-breaks explicit with &lt;br&gt;.
+
+````
+<p>
+Now bears us onward one of the hard margins,<br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</p>
+<p>
+Even as the Flemings, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</p>
+````
+
+We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
+block doesn't matter.
+
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<!-- ######################## START HTML SLIDE ########################## -->
+<section>
+  <h2>Paragraph Tag and &lt;br&gt;</h2>
+  <p>That code now looks like:</p>
+  <blockquote>
+<p>
+Now bears us onward one of the hard margins,<br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</p>
+<p>
+Even as the Flemings, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</p>
+</blockquote>
+</section>
+<!-- ######################## END HTML SLIDE ########################## -->
+
+      <section style="font-size: 90%">
+      <div data-markdown >
+      <script type="text/template">
+      ## &lt;img&gt; : The Image Tag
+
+      We want to show images, we cannot embed them in HTML easily so we use
+      hyperlinks (URIs) to reference them and include them.
+
+      Remember to include alt tags so they are machine and human-readable.
+
+      ````
+      <img src="images/plasma.png" alt="Plasma Pattern">
+      <!-- scaling -->
+      <img src="images/plasma.png" alt="Plasma Pattern" width="30">
+      <!-- scaling without respecting aspect -->
+      <img src="images/plasma.png" alt="Plasma Pattern" width="30" height="60">
+      ````
+      </script>
+      </div>
+      <img src="images/plasma.png" alt="Plasma Pattern">
+      <img src="images/plasma.png" alt="Plasma Pattern" width="30">
+      <img src="images/plasma.png" alt="Plasma Pattern" width="30" height="60">
+
+      </section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
+<section>
+<div data-markdown>
+<script type="text/template">
+## &lt;a&gt; : The Anchor Tag
+
+We wouldn't have hypertext without hyperlinks!
+
+Anchor tags let us link to other documents or locations. The href
+attribute links to a URL. The URL can be relative to the location of
+the current page. Anchor tags used to place anchors on pages, but in
+HTML 5 they just navigate to ID'd sections now.
+
+````
+<a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
+  Matters</a><br>
+<a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
+<a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
+don't have to be very long.<br>
+<a href="../">The a directory down!</a> Relative Link
+````
+</script>
+</div>
+<a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
+  Matters</a><br>
+<a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
+<a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
+don't have to be very long.<br>
+<a href="../">The a directory down!</a> Relative Link
+
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+
+
+
+
+<!-- ######################## START HTML SLIDE ########################## -->
+<section>
+  <h2>Text Layout Philosophy</h2>
+  <p> Let the user agent decide how to display the text. You don't
+  need to control everything. But provide the appropriate semantics
+  first. Then apply layout information to those semantics.</p>
+  <p>If you want something to show up in a certain make a CSS class
+  and style a span or a div or a paragraph that way.</p>
+  <p>Don't force the
+  situation with a table.</p>
+</section>
+<!-- ######################## END HTML SLIDE ########################## -->
+
+
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## &lt;div&gt; and &lt;span&gt; tags
+
+&lt;div&gt; and &lt;span&gt; tags have no particular meaning. 
+
+&lt;div&gt; will cause a line break before it is displayed.
+
+&lt;span&gt; will be inlined.
+
+
+````
+<div>
+<span>Now bears us onward one of the hard margins,</span><br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</div>
+<div>
+Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</div>
+````
+
+</script>
+
+
+
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<section>
+<h2>&lt;div&gt; and &lt;span&gt; tags</h2>
+
+<p>Looks like this:</p>
+
+<blockquote>
+<div>
+<span>Now bears us onward one of the hard margins,</span><br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</div>
+<div>
+Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</div>
+</blockquote>
+
+<p>It did not change.</p>
+
+</section>
+
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## &lt;div&gt; and &lt;span&gt; tags: With Style
+
+We can add a style attribute to these tags
+
+````
+<div>
+<span style="background-color:#AAAAAA;font-weight:bold">
+  Now bears us onward one of the hard margins,</span><br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</div>
+<div style="font-size:150%">
+Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</div>
+````
+
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+
+<section>
+<h2>&lt;div&gt; and &lt;span&gt; tags: With Style</h2>
+
+<p>Looks like this:</p>
+
+<blockquote>
+<div>
+<span style="background-color:#AAAAAA;font-weight:bold">
+  Now bears us onward one of the hard margins,</span><br>
+  And so the brooklet's mist o'ershadows it,<br>
+  From fire it saves the water and the dikes.<br>
+</div>
+<div style="font-size:150%">
+Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+  Fearing the flood that tow'rds them hurls itself,<br>
+  Their bulwarks build to put the sea to flight;<br>
+</div>
+</blockquote>
+
+</section>
+
+
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## Style
+
+I showed how to modify the style properties of tags. Tags can have
+attributes defined liked so:
+````
+<tag attribute1="value1" attribute2="val2">
+````
+
+We added style attributes. The style attributes are Cascading Style
+Sheet properties.
+
+Cascading refers to accumulation of CSS properties (like color,
+font-weight, etc.).
+
+````
+  <span style="zoom:2;color:blue;">Hello! 
+    <span style="zoom:2;font-weight: bold;">Hello!
+      <span style="zoom:2;color:red;box-shadow: 10px 10px 5px #888888;">Hello!</span>
+    </span>
+  </span>
+````
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<section>
+<h2>Style</h2>
+
+<p>Looks like this:</p>
+
+<blockquote>
+<p>
+  <span style="zoom:2;color:blue;">Hello! 
+    <span style="zoom:2;font-weight: bold;">Hello!
+      <span style="zoom:2;color:red;box-shadow: 10px 10px 5px #888888;">Hello!</span>
+    </span>
+  </span>
+</p>
+</blockquote>
+</section>
+
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+<section data-markdown>
+<script type="text/template">
+## Cascading Style Sheets
+
+* Cascades
+ * Children Inherit Properties
+* Style 
+ * Properties refer to style properties such as layout, position,
+ color, font, background, padding, borders
+* Sheets
+ * Apply to a page, change a page.
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+<!-- ######################## START MARKDOWN SLIDE ########################## -->
+
+<section data-markdown>
+<script type="text/template">
+## Cascading Style Sheets
+
+CSS can applied on a per tag level, but can also be applied globally.
+
+
+````
+<!-- Include a file of CSS  -->
+<link href="path/to/cssfile.css" rel="stylesheet">
+````
+
+````
+<!-- Inline CSS -->
+<style type="text/css">
+.angry {
+font-weight:900;
+zoom: 3;
+}
+.angry:nth-child(odd)
+{
+color:green;
+transform:rotate(7deg);
+-webkit-transform:rotate(7deg); /* Safari and Chrome */
+float: left;
+}
+.angry:nth-child(even)
+{
+color:red;
+transform:rotate(-12deg);
+-webkit-transform:rotate(-12deg); /* Safari and Chrome */
+float: right;
+} 
+</style>
+<p style="color:orange">Apply style directly</p>
+<div>
+<div class="angry">HULK</div> <div class="angry">SMASH!</div>
+</div>
+
+
+````
+</script>
+</section>
+<!-- ######################## END MARKDOWN SLIDE ########################## -->
+        
+        <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      FOOTER --------------------------
+      -->
+      </div>
+    </div>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
+          { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
+          { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+          { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'node_modules/reveal.js-menu/menu.js' }
+        ],
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+//         width: 960,
+//         height: 700,
+        width: 960,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.0,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.01,
+        maxScale: 5,
+        menu: {
+          hideMissingTitles: true,
+          titleSelector: 'h1, h2, h3',
+        },
+      });
+    </script>
+    <script>
+    // Custom scripting
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        fitty.fitAll();
+    } );    
+    twemoji.parse(document.body);
+    fitty('.fit');
+    </script>
+  </body>
+</html>

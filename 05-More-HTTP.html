@@ -942,11 +942,6 @@ Content-Length: 60
                 <li>The user prefers not to be tracked over receiving personalized content</li>
               </ul>
             </li>
-            <li><var>Date: Tue, 22 Jan 2019 23:15:50 GMT</var>
-              <ul>
-                <li>The date and time the server sent the content</li>
-              </ul>
-            </li>
           </ul>
         </section>
         <section>
@@ -1077,11 +1072,6 @@ Content-Length: 60
         <section>
           <h3>HTTP Server Headers</h3>
           <ul style="font-size: 90%">
-            <li><var>Accept-Ranges: bytes</var>
-              <ul>
-                <li>Specifies natural languages the user can handle</li>
-              </ul>
-            </li>
             <li><var>Access-Control-Allow-Credentials: true</var>
               <ul>
                 <li>Whether to allow JS code running in the browser to make requests with cookies</li>
@@ -1264,6 +1254,8 @@ Content-Length: 60
             <li><var>Public-Key-Pins: pin-sha256="cUPcTAZWKaASuYWhhneDttWpY3oBAkE3h2+soZS7sWs="; pin-sha256="M8HztCzM3elUxkcjR2S5P4hhyBNf6lHkmjAHKhpGPWE="; max-age=5184000; includeSubDomains; report-uri="https://www.example.org/hpkp-report"</var>
               <ul>
                 <li>Tells the client not to only accept one of the two specified certificates from the webserver for the next 60 days</li>
+                <li>Dangerous: can lock people out of being able to view your site for a long time</li>
+                <li>Disabled in Chrome</li>
               </ul>
             </li>
           </ul>
@@ -1302,12 +1294,7 @@ Content-Length: 60
         </section>
         <section>
           <h4>HTTP Server Headers</h4>
-          <ul style="font-size: 80%">
-            <li><var>Strict-Transport-Security: max-age=31536000; includeSubDomains</var>
-              <ul>
-                <li>Don't contact this server or any subdomains without TLS for the next year</li>
-              </ul>
-            </li>
+          <ul style="font-size: 90%">
             <li><var>Transfer-Encoding: gzip</var>
               <ul>
                 <li>Like <var>Content-Encoding</var> but used by a proxy</li>
