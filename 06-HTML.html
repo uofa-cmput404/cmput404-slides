@@ -7,10 +7,11 @@
     <title>CMPUT 404</title>
 
     <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+      <!-- good for white on black -->
+    <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
     
     <!-- Printing and PDF exports -->
     <script>
@@ -349,7 +350,7 @@ Even as the Flemings, 'twixt Cadsand and Bruges,<br>
 <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 <!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
-<section>
+<section style="font-size: 80%">
 <div data-markdown>
 <script type="text/template">
 ## &lt;a&gt; : The Anchor Tag
@@ -376,7 +377,7 @@ don't have to be very long.<br>
 <a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
 <a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
 don't have to be very long.<br>
-<a href="../">The a directory down!</a> Relative Link
+<a href="../">The parent directory!</a> Relative Link
 
 </section>
 <!-- ######################## END MARKDOWN SLIDE ########################## -->
@@ -516,37 +517,49 @@ attributes defined liked so:
 
 We added style attributes. The style attributes are Cascading Style
 Sheet properties.
-
-Cascading refers to accumulation of CSS properties (like color,
-font-weight, etc.).
-
-````
-  <span style="zoom:2;color:blue;">Hello! 
-    <span style="zoom:2;font-weight: bold;">Hello!
-      <span style="zoom:2;color:red;box-shadow: 10px 10px 5px #888888;">Hello!</span>
-    </span>
-  </span>
-````
 </script>
 </section>
 <!-- ######################## END MARKDOWN SLIDE ########################## -->
-
-<section>
-<h2>Style</h2>
-
-<p>Looks like this:</p>
-
-<blockquote>
-<p>
-  <span style="zoom:2;color:blue;">Hello! 
-    <span style="zoom:2;font-weight: bold;">Hello!
-      <span style="zoom:2;color:red;box-shadow: 10px 10px 5px #888888;">Hello!</span>
+      <section>
+        <h3>Cascading</h3>
+        <ul><li>Cascading refers to accumulation of CSS properties (like color,
+            font-weight, etc.).</ul></li>
+        <pre><code class="html"><span style="color:blue;">Hello! 
+  <span style="color:blue;font-weight: bold;">Hello!
+    <span style="color:blue;font-weight: bold;box-shadow: 10px 10px 5px #888888;">Hello!</span>
+  </span>
+</span></code></pre>
+        Looks like:
+        <blockquote style="font-size: 200%">
+          <span style="color:blue;">Hello! 
+            <span style="color:blue;font-weight: bold;">Hello!
+              <span style="color:blue;font-weight: bold;box-shadow: 10px 10px 5px #888888;">Hello!</span>
+            </span>
+          </span>
+        </blockquote>
+      </section>
+      <section>
+        <h4>Cascading</h4>
+        <ul><li>Cascading refers to accumulation of CSS properties (like color,
+            font-weight, etc.).</ul></li>
+        <pre><code class="html"><span style="color:blue;">Hello! 
+  <span style="font-weight: bold;">Hello!
+    <span style="box-shadow: 10px 10px 5px #888888;">Hello!
+      <span style="color:red;">Hello!</span>
     </span>
   </span>
-</p>
-</blockquote>
-</section>
-
+</span></code></pre>
+        Looks like:
+        <blockquote style="font-size: 200%">
+          <span style="color:blue;">Hello! 
+            <span style="font-weight: bold;">Hello!
+              <span style="box-shadow: 10px 10px 5px #888888;">Hello!
+                <span style="color:red;">Hello!</span>
+              </span>
+            </span>
+          </span>
+        </blockquote>
+      </section>
 
 <!-- ######################## START MARKDOWN SLIDE ########################## -->
 <section data-markdown>
