@@ -1,110 +1,130 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>CMPUT 404</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+  <title>CMPUT 404</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-      <!-- good for white on black -->
-    <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
-    
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-    
-    <!-- Custom Styling -->
-    <link rel="stylesheet" href="cmput404-slides.css">
-    <script src="node_modules/fitty/dist/fitty.min.js"></script>
-    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- good for white on black -->
+  <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+  </script>
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="cmput404-slides.css">
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
       <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       HEADER --------------------------
       -->
-        <section>
-          <h1>CMPUT 404</h1>
-          <h2>Web Applications and Architecture</h2>
-          <p>
-            <small>Created by <br/>
-            <a href="http://softwareprocess.es">Abram Hindle</a> 
-            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br/>
-            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br/>
+      <section>
+        <h1>CMPUT 404</h1>
+        <h2>Web Applications and Architecture</h2>
+        <p>
+          <small>Created by <br />
+            <a href="http://softwareprocess.es">Abram Hindle</a>
+            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br />
+            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br />
             Copyright 2014-2019.
-            </small>
-          </p>
-        </section>
-        <section>
-            <ul>
-             <li><a href="01-Introduction.html">Part 01: Introduction</a></li>
-             <li><a href="02-Overview.html">Part 02: Overview</a></li>
-             <li><a href="03-Internet.html">Part 03: Internet</a></li>
-             <li><a href="04-HTTP.html">Part 04: HTTP</a></li>
-             <li><a href="05-More-HTTP.html">Part 05: More HTTP</a></li>
-             <li><a href="06-HTML.html">Part 06: HTML</a></li>
-             <li value="12"><a href="12-Even-More-HTTP.html">Part 12: Even More HTTP</a></li>
-            </ul>
-        </section>
+          </small>
+        </p>
+      </section>
+      <section>
+        <ul>
+          <li><a href="01-Introduction.html">Part 01: Introduction</a></li>
+          <li><a href="02-Overview.html">Part 02: Overview</a></li>
+          <li><a href="03-Internet.html">Part 03: Internet</a></li>
+          <li><a href="04-HTTP.html">Part 04: HTTP</a></li>
+          <li><a href="05-More-HTTP.html">Part 05: More HTTP</a></li>
+          <li><a href="06-HTML.html">Part 06: HTML</a></li>
+          <li value="12"><a href="12-Even-More-HTTP.html">Part 12: Even More HTTP</a></li>
+        </ul>
+      </section>
       <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
-      </div>
     </div>
+  </div>
 
-    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
-    <script src="node_modules/reveal.js/js/reveal.js"></script>
+  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+  <script src="node_modules/reveal.js/js/reveal.js"></script>
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        dependencies: [
-          { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
-          { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
-          { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
-          { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'node_modules/reveal.js-menu/menu.js' }
-        ],
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-//         width: 960,
-//         height: 700,
-        width: 960,
-        height: 720,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.0,
-
-        // Bounds for smallest/largest possible scale to apply to content
-        minScale: 0.01,
-        maxScale: 5,
-        menu: {
-          hideMissingTitles: true,
-          titleSelector: 'h1, h2, h3',
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
         },
-      });
-    </script>
-    <script>
+        {
+          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: 'node_modules/reveal.js-menu/menu.js'
+        }
+      ],
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      //         width: 960,
+      //         height: 700,
+      width: 960,
+      height: 720,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.0,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.01,
+      maxScale: 5,
+      menu: {
+        hideMissingTitles: true,
+        titleSelector: 'h1, h2, h3',
+      },
+    });
+
+  </script>
+  <script>
     // Custom scripting
-    Reveal.addEventListener( 'slidechanged', function( event ) {
-        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-        fitty.fitAll();
-    } );    
+    Reveal.addEventListener('slidechanged', function(event) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      fitty.fitAll();
+    });
     twemoji.parse(document.body);
     fitty('.fit');
-    </script>
-  </body>
+
+  </script>
+</body>
+
 </html>
