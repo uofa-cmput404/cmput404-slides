@@ -1,35 +1,37 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>CMPUT 404</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+  <title>CMPUT 404</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-      <!-- good for white on black -->
-    <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
-    
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
+  <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- good for white on black -->
+  <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
-    
-    <!-- Custom Styling -->
-    <link rel="stylesheet" href="cmput404-slides.css">
-    <script src="node_modules/fitty/dist/fitty.min.js"></script>
-    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="cmput404-slides.css">
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
       <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       HEADER --------------------------
       -->
@@ -39,10 +41,10 @@
         <h2>Part 06: HTML</h2>
         <p>
           <small>Created by <br>
-          <a href="http://softwareprocess.es">Abram Hindle</a> 
-          (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br>
-          and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br>
-          Copyright 2014-2019.
+            <a href="http://softwareprocess.es">Abram Hindle</a>
+            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br>
+            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br>
+            Copyright 2014-2019.
           </small>
         </p>
       </section>
@@ -129,14 +131,14 @@
       <section style="font-size: 80%">
         <h3>Head/Header</h3>
         <p>The head tag is where
-        we put information
-        about the webpage. You
-        will usually include a title here.</p>
+          we put information
+          about the webpage. You
+          will usually include a title here.</p>
         <p>Meta tags contain meta
-        information for
-        browsers and other
-        tools to help
-        interpret.</p>
+          information for
+          browsers and other
+          tools to help
+          interpret.</p>
         <pre><code class="html">&lt;head>
   &lt;title>Page Title&lt;/title>
   &lt;meta charset="UTF-8">
@@ -155,12 +157,12 @@
 
 &lt;/head></code></pre>
       </section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## Body
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## Body
 
 `````
 <body>
@@ -171,8 +173,8 @@
 </body>
 `````
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 
       <section>
@@ -195,7 +197,7 @@
 
       <section data-markdown>
         <script type="text/template">
-        ### Tags
+          ### Tags
 
         Unless you are writing XHTML, in which case you must follow XML syntax, 
         void tags typically look like &lt;voidtag>. but sometimes are written like &lt;voidtag/>.
@@ -213,7 +215,7 @@
           <li>You can write HTML in XML format if you follow XML syntax: XHTML</li>
           <li>Valid HTML is not valid XML, and valid XML is not valid HTML
             <ul>
-              <li>For a while there was a drive to combine XML and HTML into "polyglot HTML"  where you could write both at the same time, but this was abandoned in 2015.</li>
+              <li>For a while there was a drive to combine XML and HTML into "polyglot HTML" where you could write both at the same time, but this was abandoned in 2015.</li>
               <li>Browsers still support <var>&lt;voidtag/></var> syntax in HTML but it breaks other HTML parsers</li>
             </ul>
           </li>
@@ -226,9 +228,9 @@
         </script>
       </section>
 
-<section data-markdown>
-<script type="text/template">
-## Paragraph tag:  &lt;p&gt;
+      <section data-markdown>
+        <script type="text/template">
+          ## Paragraph tag:  &lt;p&gt;
 
 You might have been taught that you can use these  &lt;p&gt; tags to
 start and end paragraphs. 
@@ -252,33 +254,33 @@ We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
 block doesn't matter.
 
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<!-- ######################## START HTML SLIDE ########################## -->
-<section>
-  <h2>Paragraph Tag</h2>
-  <p>That code now looks like:</p>
-  <blockquote>
-<p>
-Now bears us onward one of the hard margins,
-  And so the brooklet's mist o'ershadows it,
-  From fire it saves the water and the dikes.
-</p>
-<p>
-Even as the Flemings, 'twixt Cadsand and Bruges,
-  Fearing the flood that tow'rds them hurls itself,
-  Their bulwarks build to put the sea to flight;
-</p>
-</blockquote>
-</section>
-<!-- ######################## END HTML SLIDE ########################## -->
+      <!-- ######################## START HTML SLIDE ########################## -->
+      <section>
+        <h2>Paragraph Tag</h2>
+        <p>That code now looks like:</p>
+        <blockquote>
+          <p>
+            Now bears us onward one of the hard margins,
+            And so the brooklet's mist o'ershadows it,
+            From fire it saves the water and the dikes.
+          </p>
+          <p>
+            Even as the Flemings, 'twixt Cadsand and Bruges,
+            Fearing the flood that tow'rds them hurls itself,
+            Their bulwarks build to put the sea to flight;
+          </p>
+        </blockquote>
+      </section>
+      <!-- ######################## END HTML SLIDE ########################## -->
 
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## Paragraph tag:  &lt;p&gt; and &lt;br&gt;
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## Paragraph tag:  &lt;p&gt; and &lt;br&gt;
 
 The previous example broke up the explicit lines from that canto.
 
@@ -301,32 +303,32 @@ We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
 block doesn't matter.
 
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<!-- ######################## START HTML SLIDE ########################## -->
-<section>
-  <h2>Paragraph Tag and &lt;br&gt;</h2>
-  <p>That code now looks like:</p>
-  <blockquote>
-<p>
-Now bears us onward one of the hard margins,<br>
-  And so the brooklet's mist o'ershadows it,<br>
-  From fire it saves the water and the dikes.<br>
-</p>
-<p>
-Even as the Flemings, 'twixt Cadsand and Bruges,<br>
-  Fearing the flood that tow'rds them hurls itself,<br>
-  Their bulwarks build to put the sea to flight;<br>
-</p>
-</blockquote>
-</section>
-<!-- ######################## END HTML SLIDE ########################## -->
+      <!-- ######################## START HTML SLIDE ########################## -->
+      <section>
+        <h2>Paragraph Tag and &lt;br&gt;</h2>
+        <p>That code now looks like:</p>
+        <blockquote>
+          <p>
+            Now bears us onward one of the hard margins,<br>
+            And so the brooklet's mist o'ershadows it,<br>
+            From fire it saves the water and the dikes.<br>
+          </p>
+          <p>
+            Even as the Flemings, 'twixt Cadsand and Bruges,<br>
+            Fearing the flood that tow'rds them hurls itself,<br>
+            Their bulwarks build to put the sea to flight;<br>
+          </p>
+        </blockquote>
+      </section>
+      <!-- ######################## END HTML SLIDE ########################## -->
 
       <section style="font-size: 90%">
-      <div data-markdown >
-      <script type="text/template">
-      ## &lt;img&gt; : The Image Tag
+        <div data-markdown>
+          <script type="text/template">
+            ## &lt;img&gt; : The Image Tag
 
       We want to show images, we cannot embed them in HTML easily so we use
       hyperlinks (URIs) to reference them and include them.
@@ -341,19 +343,19 @@ Even as the Flemings, 'twixt Cadsand and Bruges,<br>
       <img src="images/plasma.png" alt="Plasma Pattern" width="30" height="60">
       ````
       </script>
-      </div>
-      <img src="images/plasma.png" alt="Plasma Pattern">
-      <img src="images/plasma.png" alt="Plasma Pattern" width="30">
-      <img src="images/plasma.png" alt="Plasma Pattern" width="30" height="60">
+        </div>
+        <img src="images/plasma.png" alt="Plasma Pattern">
+        <img src="images/plasma.png" alt="Plasma Pattern" width="30">
+        <img src="images/plasma.png" alt="Plasma Pattern" width="30" height="60">
 
       </section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
-<section style="font-size: 80%">
-<div data-markdown>
-<script type="text/template">
-## &lt;a&gt; : The Anchor Tag
+      <!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
+      <section style="font-size: 80%">
+        <div data-markdown>
+          <script type="text/template">
+            ## &lt;a&gt; : The Anchor Tag
 
 We wouldn't have hypertext without hyperlinks!
 
@@ -371,39 +373,39 @@ don't have to be very long.<br>
 <a href="../">The a directory down!</a> Relative Link
 ````
 </script>
-</div>
-<a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
-  Matters</a><br>
-<a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
-<a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
-don't have to be very long.<br>
-<a href="../">The parent directory!</a> Relative Link
+        </div>
+        <a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
+          Matters</a><br>
+        <a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
+        <a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
+        don't have to be very long.<br>
+        <a href="../">The parent directory!</a> Relative Link
 
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
-
-
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 
 
-<!-- ######################## START HTML SLIDE ########################## -->
-<section>
-  <h2>Text Layout Philosophy</h2>
-  <p> Let the user agent decide how to display the text. You don't
-  need to control everything. But provide the appropriate semantics
-  first. Then apply layout information to those semantics.</p>
-  <p>If you want something to show up in a certain make a CSS class
-  and style a span or a div or a paragraph that way.</p>
-  <p>If you want a fancy layout use flexbox or grid layouts.</p>
-</section>
-<!-- ######################## END HTML SLIDE ########################## -->
+
+
+      <!-- ######################## START HTML SLIDE ########################## -->
+      <section>
+        <h2>Text Layout Philosophy</h2>
+        <p> Let the user agent decide how to display the text. You don't
+          need to control everything. But provide the appropriate semantics
+          first. Then apply layout information to those semantics.</p>
+        <p>If you want something to show up in a certain make a CSS class
+          and style a span or a div or a paragraph that way.</p>
+        <p>If you want a fancy layout use flexbox or grid layouts.</p>
+      </section>
+      <!-- ######################## END HTML SLIDE ########################## -->
 
 
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## &lt;div&gt; and &lt;span&gt; tags
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## &lt;div&gt; and &lt;span&gt; tags
 
 &lt;div&gt; and &lt;span&gt; tags have no particular meaning. 
 
@@ -429,36 +431,36 @@ Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
 
 
 
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<section>
-<h2>&lt;div&gt; and &lt;span&gt; tags</h2>
+      <section>
+        <h2>&lt;div&gt; and &lt;span&gt; tags</h2>
 
-<p>Looks like this:</p>
+        <p>Looks like this:</p>
 
-<blockquote>
-<div>
-<span>Now bears us onward one of the hard margins,</span><br>
-  And so the brooklet's mist o'ershadows it,<br>
-  From fire it saves the water and the dikes.<br>
-</div>
-<div>
-Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
-  Fearing the flood that tow'rds them hurls itself,<br>
-  Their bulwarks build to put the sea to flight;<br>
-</div>
-</blockquote>
+        <blockquote>
+          <div>
+            <span>Now bears us onward one of the hard margins,</span><br>
+            And so the brooklet's mist o'ershadows it,<br>
+            From fire it saves the water and the dikes.<br>
+          </div>
+          <div>
+            Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+            Fearing the flood that tow'rds them hurls itself,<br>
+            Their bulwarks build to put the sea to flight;<br>
+          </div>
+        </blockquote>
 
-<p>It did not change.</p>
+        <p>It did not change.</p>
 
-</section>
+      </section>
 
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## &lt;div&gt; and &lt;span&gt; tags: With Style
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## &lt;div&gt; and &lt;span&gt; tags: With Style
 
 We can add a style attribute to these tags
 
@@ -477,37 +479,37 @@ Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<
 ````
 
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 
-<section>
-<h2>&lt;div&gt; and &lt;span&gt; tags: With Style</h2>
+      <section>
+        <h2>&lt;div&gt; and &lt;span&gt; tags: With Style</h2>
 
-<p>Looks like this:</p>
+        <p>Looks like this:</p>
 
-<blockquote>
-<div>
-<span style="background-color:#AAAAAA;font-weight:bold">
-  Now bears us onward one of the hard margins,</span><br>
-  And so the brooklet's mist o'ershadows it,<br>
-  From fire it saves the water and the dikes.<br>
-</div>
-<div style="font-size:150%">
-Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
-  Fearing the flood that tow'rds them hurls itself,<br>
-  Their bulwarks build to put the sea to flight;<br>
-</div>
-</blockquote>
+        <blockquote>
+          <div>
+            <span style="background-color:#AAAAAA;font-weight:bold">
+              Now bears us onward one of the hard margins,</span><br>
+            And so the brooklet's mist o'ershadows it,<br>
+            From fire it saves the water and the dikes.<br>
+          </div>
+          <div style="font-size:150%">
+            Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
+            Fearing the flood that tow'rds them hurls itself,<br>
+            Their bulwarks build to put the sea to flight;<br>
+          </div>
+        </blockquote>
 
-</section>
+      </section>
 
 
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## Style
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## Style
 
 I showed how to modify the style properties of tags. Tags can have
 attributes defined liked so:
@@ -518,12 +520,15 @@ attributes defined liked so:
 We added style attributes. The style attributes are Cascading Style
 Sheet properties.
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
       <section>
         <h3>Cascading</h3>
-        <ul><li>Cascading refers to accumulation of CSS properties (like color,
-            font-weight, etc.).</ul></li>
+        <ul>
+          <li>Cascading refers to accumulation of CSS properties (like color,
+            font-weight, etc.).
+        </ul>
+        </li>
         <pre><code class="html"><span style="color:blue;">Hello! 
   <span style="color:blue;font-weight: bold;">Hello!
     <span style="color:blue;font-weight: bold;box-shadow: 10px 10px 5px #888888;">Hello!</span>
@@ -531,7 +536,7 @@ Sheet properties.
 </span></code></pre>
         Looks like:
         <blockquote style="font-size: 200%">
-          <span style="color:blue;">Hello! 
+          <span style="color:blue;">Hello!
             <span style="color:blue;font-weight: bold;">Hello!
               <span style="color:blue;font-weight: bold;box-shadow: 10px 10px 5px #888888;">Hello!</span>
             </span>
@@ -540,8 +545,11 @@ Sheet properties.
       </section>
       <section>
         <h4>Cascading</h4>
-        <ul><li>Cascading refers to accumulation of CSS properties (like color,
-            font-weight, etc.).</ul></li>
+        <ul>
+          <li>Cascading refers to accumulation of CSS properties (like color,
+            font-weight, etc.).
+        </ul>
+        </li>
         <pre><code class="html"><span style="color:blue;">Hello! 
   <span style="font-weight: bold;">Hello!
     <span style="box-shadow: 10px 10px 5px #888888;">Hello!
@@ -551,7 +559,7 @@ Sheet properties.
 </span></code></pre>
         Looks like:
         <blockquote style="font-size: 200%">
-          <span style="color:blue;">Hello! 
+          <span style="color:blue;">Hello!
             <span style="font-weight: bold;">Hello!
               <span style="box-shadow: 10px 10px 5px #888888;">Hello!
                 <span style="color:red;">Hello!</span>
@@ -561,10 +569,10 @@ Sheet properties.
         </blockquote>
       </section>
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
-<section data-markdown>
-<script type="text/template">
-## Cascading Style Sheets
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <section data-markdown>
+        <script type="text/template">
+          ## Cascading Style Sheets
 
 * Cascades
  * Children Inherit Properties
@@ -574,14 +582,14 @@ Sheet properties.
 * Sheets
  * Apply to a page, change a page.
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
-<!-- ######################## START MARKDOWN SLIDE ########################## -->
+      <!-- ######################## START MARKDOWN SLIDE ########################## -->
 
-<section data-markdown>
-<script type="text/template">
-## Cascading Style Sheets
+      <section data-markdown>
+        <script type="text/template">
+          ## Cascading Style Sheets
 
 CSS can applied on a per tag level, but can also be applied globally.
 
@@ -621,58 +629,75 @@ float: right;
 
 ````
 </script>
-</section>
-<!-- ######################## END MARKDOWN SLIDE ########################## -->
-        
-        <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      </section>
+      <!-- ######################## END MARKDOWN SLIDE ########################## -->
+
+      <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
-      </div>
     </div>
+  </div>
 
-    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
-    <script src="node_modules/reveal.js/js/reveal.js"></script>
+  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+  <script src="node_modules/reveal.js/js/reveal.js"></script>
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        dependencies: [
-          { src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
-          { src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
-          { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
-          { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'node_modules/reveal.js-menu/menu.js' }
-        ],
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-//         width: 960,
-//         height: 700,
-        width: 960,
-        height: 720,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.0,
-
-        // Bounds for smallest/largest possible scale to apply to content
-        minScale: 0.01,
-        maxScale: 5,
-        menu: {
-          hideMissingTitles: true,
-          titleSelector: 'h1, h2, h3',
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
         },
-      });
-    </script>
-    <script>
+        {
+          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: 'node_modules/reveal.js-menu/menu.js'
+        }
+      ],
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      //         width: 960,
+      //         height: 700,
+      width: 960,
+      height: 720,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.0,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.01,
+      maxScale: 5,
+      menu: {
+        hideMissingTitles: true,
+        titleSelector: 'h1, h2, h3',
+      },
+    });
+
+  </script>
+  <script>
     // Custom scripting
-    Reveal.addEventListener( 'slidechanged', function( event ) {
-        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-        fitty.fitAll();
-    } );    
+    Reveal.addEventListener('slidechanged', function(event) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      fitty.fitAll();
+    });
     twemoji.parse(document.body);
     fitty('.fit');
-    </script>
-  </body>
+
+  </script>
+</body>
+
 </html>
