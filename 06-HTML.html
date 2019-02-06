@@ -673,7 +673,8 @@ float: right;
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
 
-      <section data-markdown>
+      <section style="font-size: 80%">
+        <div data-markdown>
         <script type="text/template">
           ## CSS: Properties To Know!
 
@@ -691,13 +692,13 @@ float: right;
 * font-style -- normal, italic, oblique
   * font-style:normal;
 </script>
-      </section>
+      </div></section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
 
-      <section data-markdown>
+  <section style="font-size:90%"><div data-markdown>
         <script type="text/template">
           ## CSS Backgrounds
 
@@ -722,7 +723,7 @@ float: right;
   </p>
 ````
 </script>
-      </section>
+</div></section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START HTML SLIDE ########################## -->
@@ -757,7 +758,7 @@ float: right;
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
 
-      <section data-markdown>
+      <section style="font-size: 80%"><div data-markdown>
         <script type="text/template">
           ## CSS Selectors
 
@@ -773,11 +774,11 @@ CSS style information.
 .bg3 {background-image:url('images/plasma.png');} 
 ````
 </script>
-      </section>
+</div></section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 65%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Selectors
@@ -834,11 +835,11 @@ p.highlight { background-color:orange; }
 <p id="yellowtag">Yellow Tag Sale!</p>
 ````
 </script>
-      </section>
+</section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
-      <section>
+      <section style="font-size: 80%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Selectors
@@ -866,7 +867,7 @@ p { background-color:yellow; }
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE --  -- ########################## -->
-      <section>
+      <section style="font-size: 70%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Selectors
@@ -917,7 +918,7 @@ span.x:hover { background-color:yellow; }
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 80%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Positioning
@@ -966,7 +967,7 @@ p.bigrelative { position: relative; left:-100px; }
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 80%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Positioning
@@ -1026,7 +1027,7 @@ p.bluebox { position: absolute; right: 15%; top: 15%;
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 80%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Text Alignment
@@ -1061,7 +1062,7 @@ p.centered { margin-left: auto; margin-right: auto; }
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 90%;">
         <div data-markdown>
           <script type="text/template">
             ## CSS Text Alignment
@@ -1069,40 +1070,57 @@ p.centered { margin-left: auto; margin-right: auto; }
 One big problem with CSS is how to center something! Flex box model
 helps for big centering jobs
 
-* display:flex https://www.w3.org/TR/2012/CR-css3-flexbox-20120918/
+* display:flex https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
 * align-content: center
 * [justify-content: center](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
-````
-.flex { display: flex; align-items: center; border-style: solid; border-width: 1px;}
-````
-````
-<p class="flex" style="width: 100%;">Check me out! I'm not centered!</p>
-<p class="flex" style="text-align: center; width: 100%;">Check me out! I'm centered!</p>
-<p class="flex" style="width: 5em; height: 6em;">Check me out! I'm centered!</p>
-````
-</script>
+</script></div></section>
+      <section style="font-size: 60%; text-align: left;">
+        <div data-markdown>
+          <script type="text/template">
+            ````
+            .flex { border: 1px solid blue;}
+            .flex-conainer { display: flex; align-items: center;  justify-content: center;  border: 1px solid red; width: 100%; }
+            ````
+            ````
+            <p class="flex" style="">Check me out! I'm not centered!</p>
+            <div class="flex-container">
+              <p class="flex" style="">Check me out! I'm centered!</p>
+            </div>
+            <div class="flex-container">
+            <p class="flex" style="width: 5em; height: 6em; text-align: center;">Check me out! I'm
+              centered!</p>
+            </div>
+            ````
+          </script>
         </div>
 
         <style type="text/css">
           p.flex {
+            border: 1px solid blue;
+          }
+          div.flex-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            border-style: solid;
-            border-width: 1px;
+            border: 1px solid red;
+            width: 100%;
           }
 
         </style>
-        <p class="flex" style="width: 100%;">Check me out! I'm not centered!</p>
-        <p class="flex" style="width: 100%;">Check me out! I'm centered!</p>
-        <p class="flex" style="width: 5em; height: 6em;">Check me out! I'm
+        <p class="flex" style="">Check me out! I'm not centered!</p>
+        <div class="flex-container">
+          <p class="flex" style="">Check me out! I'm centered!</p>
+        </div>
+        <div class="flex-container">
+        <p class="flex" style="width: 5em; height: 6em; text-align: center;">Check me out! I'm
           centered!</p>
+        </div>
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 80%">
         <div data-markdown>
           <script type="text/template">
             ## CSS Text Alignment
@@ -1110,10 +1128,10 @@ helps for big centering jobs
 Display flex also lays out other objects too.
 
 ````
-.flex { display: flex; align-items: center; border-style: solid; border-width: 1px;}
+.flexx { display: flex; align-items: center; justify-content: center; align-content: center; border: 1px solid green; }
 ````
 ````
-<p class="flex" style="width: 100%; height: 10em;">
+<p class="flexx" style="width: 100%; height: 10em;">
    <img src="images/plasma.png" alt="Plasma Pattern"/>
    <img src="images/plasma.png" alt="Plasma Pattern"/>
    <img src="images/plasma.png" alt="Plasma Pattern"/>
@@ -1123,7 +1141,18 @@ Display flex also lays out other objects too.
 </script>
         </div>
 
-        <p class="flex" style="width: 100%; height: 10em;">
+        <style type="text/css">
+          p.flexx {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+            width: 100%;
+          }
+
+        </style>
+        <p class="flexx" style="width: 100%; height: 10em;">
           <img src="images/plasma.png" alt="Plasma Pattern" />
           <img src="images/plasma.png" alt="Plasma Pattern" />
           <img src="images/plasma.png" alt="Plasma Pattern" />
@@ -1176,7 +1205,7 @@ Display flex also lays out other objects too.
       <!-- ######################## END HTML SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section>
+      <section style="font-size: 70%">
         <div data-markdown>
           <script type="text/template">
             ## &lt;form&gt; tag
