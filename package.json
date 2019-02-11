@@ -32,12 +32,14 @@
     "grunt-retire": "^1.0.7",
     "grunt-sass": "^2.0.0",
     "grunt-zip": "~0.17.1",
+    "js-beautify": "^1.8.9",
     "mustache": "^2.3.0",
     "socket.io": "^1.7.3"
   },
   "license": "MIT",
   "dependencies": {
     "fitty": "^2.2.6",
+    "highlightjs": "^9.12.0",
     "reveal.js": "^3.7.0",
     "reveal.js-menu": "^1.2.0"
   }

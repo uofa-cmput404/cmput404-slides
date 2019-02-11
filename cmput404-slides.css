@@ -40,12 +40,12 @@ table.wikitable {
     margin: 0 0;
     text-align: center;
     font-size: 40%;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 table.wikitable td, table.wikitable th {
     text-align: center;
     vertical-align: middle;
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 0.2em 0.2em 0.2em 0.2em;
 }
 .reveal .slides section>cite {
@@ -58,9 +58,9 @@ table.wikitable td, table.wikitable th {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 90%;
     font-weight: normal;
-    color: #ddd;
-    background-color: #000;
-    box-shadow: 0 0.24ex 0 0 #000, 0 -0.24ex 0 0 #000;
+    color: #000;
+    background-color: #ffb;
+    box-shadow: 0 0.24ex 0 0 #ffb, 0 -0.24ex 0 0 #ffb;
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
@@ -68,12 +68,12 @@ table.wikitable td, table.wikitable th {
     font-family: "Lucida Console", Monaco, monospace;
     width: 90%;
     line-height: 1;
-    background-color: #000;
+    background-color: #ffb;
 }
 .reveal .slides pre code {
     overflow-x: scroll;
     width: max-content;
-    background-color: #000;
+    background-color: #ffb;
 }
 .reveal .slides samp>pre {
     font-size: 50%;
