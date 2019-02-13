@@ -8,11 +8,11 @@
   <title>CMPUT 404</title>
 
   <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+  <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
 
   <!-- Theme used for syntax highlighting of code -->
   <!-- good for white on black -->
-  <link rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+  <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
 
   <!-- Printing and PDF exports -->
   <script>
@@ -25,8 +25,22 @@
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="cmput404-slides.css">
+  <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
   <script src="node_modules/fitty/dist/fitty.min.js"></script>
   <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+  <script>
+    function blackStyleSheet(sheet) {
+      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
+      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/rainbow.css");
+      document.getElementById("404theme").setAttribute("href", "cmput404-slides-black.css");
+    }
+    function whiteStyleSheet(sheet) {
+      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/white.css");
+      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/googlecode.css");
+      document.getElementById("404theme").setAttribute("href", "cmput404-slides-white.css");
+    }
+    whiteStyleSheet();
+  </script>
 </head>
 
 <body>
@@ -1718,15 +1732,17 @@ that HTML, HTML Forms and CSS leave.
     });
 
   </script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="fiddler.js"></script>
   <script>
     // Custom scripting
     Reveal.addEventListener('slidechanged', function(event) {
       // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       fitty.fitAll();
+      fiddler();
     });
     twemoji.parse(document.body);
     fitty('.fit');
-
   </script>
 </body>
 
