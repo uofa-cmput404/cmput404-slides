@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>CMPUT 404</title>
+
+  <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+  <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- good for white on black -->
+  <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="cmput404-slides.css">
+  <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+  <script>
+    function blackStyleSheet(sheet) {
+      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
+      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/rainbow.css");
+      document.getElementById("404theme").setAttribute("href", "cmput404-slides-black.css");
+    }
+    function whiteStyleSheet(sheet) {
+      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/white.css");
+      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/googlecode.css");
+      document.getElementById("404theme").setAttribute("href", "cmput404-slides-white.css");
+    }
+    whiteStyleSheet();
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      HEADER --------------------------
+      -->
+      <section>
+        <h1>CMPUT 404</h1>
+        <h3>Web Applications and Architecture</h3>
+        <h2>Part 07: JavaScript</h2>
+        <p>
+          <small>Created by <br>
+            <a href="http://softwareprocess.es">Abram Hindle</a>
+            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br>
+            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br>
+            Copyright 2014-2019.
+          </small>
+        </p>
+        <p>
+          <button type="button" onClick="whiteStyleSheet()">White Theme</button>
+          <button type="button" onClick="blackStyleSheet()">Black Theme</button>
+        </p>
+      </section>
+      <section style="font-size: 80%">
+        <h3>Resources</h3>
+        <p>Good resources for JavaScript:</p>
+        <ul>
+          <li>W3Schools JavaScript Tutorials: <a href="http://www.w3schools.com/js/">http://www.w3schools.com/js/</a></li>
+          <li>JSFiddle: <a href="http://jsfiddle.net/">http://jsfiddle.net/</a></li>
+          <li>Video: Firefox Debugger: <a href="http://www.youtube.com/watch?v=sK8KU8oiF8s"></a></li>
+          <li>ECMAScript 2018 Specification: <a href="https://ecma-international.org/ecma-262/9.0/index.html">https://ecma-international.org/ecma-262/9.0/index.html</a></li>
+          <li>ECMAScript Future Specification: <a href="https://tc39.github.io/ecma262/">https://tc39.github.io/ecma262/</a></li>
+          <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>History</h3>
+        <p>Where did it come from?</p>
+        <ul>
+          <li>Created in one day by Brendan Eich for Netscape in 1995</li>
+          <li>Inspired by Java, C, Self, Perl...</li>
+          <li>Multi-paradigm
+            <ul style="columns: 2;">
+              <li>Imperative</li>
+              <li>Functional</li>
+              <li>Object-oriented</li>
+              <li>Prototype-driven</li>
+              <li>Event-driven</li>
+              <li>Embeddable</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Problems</h3>
+        <p>JavaScript has problems...</p>
+        <ul>
+          <li><a href="https://www.destroyallsoftware.com/talks/wat">https://www.destroyallsoftware.com/talks/wat</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Why?</h3>
+        <p>If JavaScript has problems then why learn it? Why use it></p>
+        <ul>
+          <li>It runs <em>everywhere</em>
+            <ul>
+              <li>Browsers (Firefox, Chrome, Edge, Safari...)</li>
+              <li>Servers (nodejs)</li>
+              <li>PDFs</li>
+            </ul>
+          </li>
+          <li>Fast: modern browsers compile JavaScript to machine code</li>
+        </ul>
+      </section>
+      <section>
+        <h3>JS on Webpages</h3>
+        <p>Put the JavaScript within <var>&lt;script></var> tags.</p>
+        <pre><code class="html">&lt;script>
+var someJS = "JS in a &lt;script> tag!";
+&lt;/ｓcript>
+&lt;!-- you can embed oneliners within HTML! -->
+&lt;button onClick="alert('Stuck in JS factory, send help!');">
+  Test me!&lt;/button></code></pre>
+       <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
+      </section>
+      <section>
+        <h3>JS on Webpages</h3>
+        <p>Or put the JavaScript at a seperate URL with <var>&lt;script></var> tags.</p>
+        <pre><code class="javascript">&lt;script src="myscript.js">&lt;/script>
+&lt;!--You have to put the closing &lt;/script> tag 
+because script isn't a void tag!--></code></pre>
+        <p>Then in the content (file) at the URL specified:</p>
+        <pre><code class="javascript">'use strict';
+var someJS = "JS in a &lt;script> tag!"; // -------------------------------------------------</pre></code>
+       <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
+      </section>
+      <section>
+        <h3>Functions</h3>
+        <ul>
+          <li>Functions can return values</li>
+          <li>Functions can have parameters</li>
+          <li>Functions can access all available scope</li>
+        </ul>
+        <pre><code class="javascript">// Function one with no parameters
+function one() {
+    return 1;
+}
+// A function with 1 param
+function f(x) { 
+    return 2*x; 
+}
+// How to call the function
+f(2) == 4.0;
+// Show on the console each click event
+// Unnamed function
+button.onclick = function(e) {
+    console.log(e);
+};</pre></code>
+      </section>
+      <section>
+        <h3>Closure</h3>
+        <ul>
+          <li>Functions in functions can see the outer function's variables from when the function was defined</li>
+        </ul>
+        <pre><code class="javascript">// I'm some javascript
+/* also a comment */
+function outer(text) {
+    function inner(x) {
+        alert(text);
+    }
+    return inner;
+}
+f = outer("Hi mom I'm on the projector");
+f(1);
+</pre></code>
+      </section>
+
+      <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+      FOOTER --------------------------
+      -->
+    </div>
+  </div>
+
+  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+  <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: 'node_modules/reveal.js-menu/menu.js'
+        }
+      ],
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      //         width: 960,
+      //         height: 700,
+      width: 960,
+      height: 720,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.0,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.01,
+      maxScale: 5,
+      menu: {
+        hideMissingTitles: true,
+        titleSelector: 'h1, h2, h3',
+      },
+    });
+
+  </script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="fiddler.js"></script>
+  <script>
+    // Custom scripting
+    Reveal.addEventListener('slidechanged', function(event) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      fitty.fitAll();
+      fiddler();
+    });
+    twemoji.parse(document.body);
+    fitty('.fit');
+  </script>
+</body>
+
+</html>

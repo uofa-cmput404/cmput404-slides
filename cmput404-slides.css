@@ -40,12 +40,10 @@ table.wikitable {
     margin: 0 0;
     text-align: center;
     font-size: 40%;
-    border: 1px solid black;
 }
 table.wikitable td, table.wikitable th {
     text-align: center;
     vertical-align: middle;
-    border: 1px solid black;
     padding: 0.2em 0.2em 0.2em 0.2em;
 }
 .reveal .slides section>cite {
@@ -58,22 +56,31 @@ table.wikitable td, table.wikitable th {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 90%;
     font-weight: normal;
-    color: #000;
-    background-color: #ffb;
-    box-shadow: 0 0.24ex 0 0 #ffb, 0 -0.24ex 0 0 #ffb;
     padding-left: 0.2em;
     padding-right: 0.2em;
+    border: 1px solid #888;
+    border-radius: 0.5ex;
+    box-shadow: 0 0 0.5ex rgba(127, 127, 127, 1.0);
+    background-clip: border-box;
 }
 .reveal .slides pre {
     font-family: "Lucida Console", Monaco, monospace;
-    width: 90%;
+    width: 100%;
     line-height: 1;
-    background-color: #ffb;
+    box-shadow: 0 0 0.5ex rgba(127, 127, 127, 1.0);
+    margin-left: 0;
+    margin-right: 0;
+    border: 0px solid transparent;
+    background-clip: border-box;
+    border-radius: 0.5ex;
 }
 .reveal .slides pre code {
     overflow-x: scroll;
     width: max-content;
-    background-color: #ffb;
+    border: 1px solid #888;
+    border-radius: 0.5ex;
+    width: calc(100%-10px);
+    background-clip: border-box;
 }
 .reveal .slides samp>pre {
     font-size: 50%;
@@ -104,3 +111,46 @@ table.wikitable td, table.wikitable th {
     margin-top: 1ex;
     font-style: normal;
 }
+button {
+    border: 2px solid #444;
+    background: #444;
+    background-clip: border-box;
+    border-style: outset;
+    color: white;
+    border-radius: 0.5ex;
+    margin-left: 1ex;
+    margin-right: 1ex;
+    margin-top: 0;
+    margin-bottom: 1ex;
+}
+button:active {
+    border-style: inset;
+}
+button:hover {
+    color: #42affa;
+}
+form.fiddler {
+    display: inline;
+    float: right;
+    clear: right;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+form.fiddler button {
+    margin-top: 0;
+    margin-left: 1em;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding: 0;
+    border-color: #840;
+    background: #840;
+}
+form.fiddler button:hover {
+    color: #7F7;
+}
+form.fiddler button:active {
+    border-style: inset;
+    background: #630;
+}
+
