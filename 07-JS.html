@@ -61,10 +61,10 @@
             Copyright 2014-2019.
           </small>
         </p>
-        <p>
+        <p><small>
           <button type="button" onClick="whiteStyleSheet()">White Theme</button>
           <button type="button" onClick="blackStyleSheet()">Black Theme</button>
-        </p>
+        </small></p>
       </section>
       <section style="font-size: 80%">
         <h3>Resources</h3>
@@ -178,6 +178,103 @@ function outer(text) {
 f = outer("Hi mom I'm on the projector");
 f(1);
 </pre></code>
+      </section>
+      <section>
+        <ul>
+          <li>Functions in functions can see the outer function's variables from when the function was defined</li>
+        </ul>
+        <pre><code class="javascript">function p(a) {
+    function q() {
+        console.log("a: " + a);
+        console.log("arguments: " + arguments[0]);
+    }
+    return q;
+}
+r = p(1);
+s = p(2); // now p is finished running, what happens to a?
+r(3); // print 1
+s(4); // print 2
+</pre></code>
+      </section>
+      <section>
+        <h3>Scope</h3>
+        <ul>
+          <li>By default creating a variable makes globals</li>
+        </ul>
+        <pre><code class="javascript">function f() {
+  a = "top secret data";
+}
+f();
+console.log(a); // oops we leaked the data</pre></code>
+        <p>Solution: use <var>'use strict';</var>, <var>let</var>, <var>const</var>, and <var>var</var>.
+      </section>
+
+      <section>
+        <ul>
+          <li><var>let</var> and <var>const</var> scopes variables/constants to the enclosing block</li>
+          <li><var>var</var> scopes variables to the enclosing function</li>
+        </ul>
+        <pre><code class="javascript">"use strict";
+function f() {
+    let a = 1;
+    for (let i = 1; i<10; i++) {
+        var c = i; // var defines it inside the function
+        let b = i; // let only defines it inside the for loop
+    }
+    console.log(c); // 9
+    console.log(b); // Reference Error
+}
+f();
+console.log(a); // Reference Error</pre></code>
+      </section>
+      <section>
+        <h3>Type Coercion</h3>
+        <p>In Python the following code throws a type error:</p>
+        <pre><code class="javascript">"1" + 1</code></pre>
+        <p>But in JavaScript you get:</p>
+        <pre><code class="plaintext">"11"</code></pre>
+      </section>
+      <section>
+        <h3><var>this</var></h3>
+        <p>Like <var>self</var> in Python, except:</p>
+        <ul>
+          <li>You don't have to list in the arguments</li>
+          <li>It's not automatically bound to an object</li>
+        </ul>
+        <pre><code class="javascript">function f() {
+  console.log(this);
+}
+f();</code></pre>
+      </section>
+      <section>
+        <div class="columns" style="font-size: 90%">
+          <div class="column">
+            <h4>Python</h4>
+            <pre><code class="python">class Quiz:
+  def write(self):
+    print(self)
+    
+    
+quiz = Quiz()
+w = quiz.write
+w()</code></pre>
+          <p>In Python the w method is bound to the quiz object</p>
+          </div>
+          <div class="column">
+            <h4>JavaScript</h4>
+            <pre><code class="javascript">class Quiz {
+  write() {
+    console.log(this);
+  }
+}
+quiz = new Quiz();
+w = quiz.write
+w()
+</code></pre>
+          <p>In JavaScript the w method isn't bound to the quiz object unless
+          we call it explicitly like <var>quiz.write</var>, <var>w.call(quiz)</var> or bind it with <var>w.bind(quiz)</var></p>
+          </div>
+        </div>
       </section>
 
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 

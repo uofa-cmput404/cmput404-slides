@@ -62,6 +62,7 @@ table.wikitable td, table.wikitable th {
     border-radius: 0.5ex;
     box-shadow: 0 0 0.5ex rgba(127, 127, 127, 1.0);
     background-clip: border-box;
+    text-transform: none;
 }
 .reveal .slides pre {
     font-family: "Lucida Console", Monaco, monospace;
@@ -120,8 +121,9 @@ button {
     border-radius: 0.5ex;
     margin-left: 1ex;
     margin-right: 1ex;
-    margin-top: 0;
+    margin-top: 0ex;
     margin-bottom: 1ex;
+    font-size: 70%;
 }
 button:active {
     border-style: inset;
