@@ -316,6 +316,23 @@ var inf = Infinity;
 var negativeInfinity = -Infinity;</code></pre>
       </section>
       <section>
+        <h4>Rounding Errors</h4>
+        <p>Since everything's a double, you get rounding errors...</p>
+        <pre><code class="javascript">function horse(b) {
+  var c = b;
+  return function() {
+        return 1/c;
+  };
+}
+f = horse(101);
+g = horse(102);
+h = horse(103);
+console.log(1/f()==101);
+console.log(1/g()==102);
+console.log(1/h()==103);</code></pre>
+        <button type="button" onclick="alert(1/(1/103))">1/(1/103)</button>
+      </section>
+      <section>
         <h3>Strings</h3>
         <ul>
           <li>Unicode by default</li>
