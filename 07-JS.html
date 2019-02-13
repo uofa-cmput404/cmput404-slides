@@ -328,6 +328,23 @@ var inf = Infinity;
 var negativeInfinity = -Infinity;</code></pre>
       </section>
       <section>
+        <h3>Casting Numbers</h3>
+        <ul>
+          <li>Getting an "integer"</li>
+        </ul>
+        <pre><code class="javascript">Math.floor(0.7)
+Math.ceil(0.7)
+Math.round(0.7)
+Math.trunc(0.7)</code></pre>
+        <ul>
+          <li>Getting a float</li>
+        </ul>
+        <pre><code class="javascript">parseFloat("127")
+Number("0x7F")
++"0x7F" // Unary plus is the same as Number</code></pre>
+      </section>
+      </section>
+      <section>
         <h4>Rounding Errors</h4>
         <p>Since everything's a double, you get rounding errors...</p>
         <pre><code class="javascript">function horse(b) {
@@ -361,6 +378,21 @@ aString.length === 0;</code></pre>
         <button type="button" onclick="alert('\u2603')">&#9731;</button>
       </section>
       <section>
+        <h3>Casting Strings</h3>
+        <ul>
+          <li>Convert to string</li>
+        </ul>
+        <pre><code class="javascript">
+"" + 1;
+1 + "";
+String(1); 
+(1).toString();
+String(null); // "null"
+null.toString(); // Error
+(127).toString(16); // "7F"
+</code></pre>
+      </section>
+      <section>
         <h3>Booleans</h3>
         <ul>
           <li><var>true</var>, <var>false</var></li>
@@ -375,6 +407,133 @@ undefined
 NaN</code></pre>  
         <ul>
           <li>True values are <var>true</var> and everything else.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Equality</h3>
+        <ul>
+          <li><var>==</var> the <em>abstract</em> equality operator</li>
+          <li><var>===</var> the <em>strict</em> equality operator</li>
+        </ul>
+        <pre><code class="javascript">3=="3" // true
+3==="3" // false
+1==true // true
+1===true // false
+undefined == null // true
+undefined === null // false
+NaN==NaN // false
+NaN===NaN // false
+isNaN(NaN) // true</code></pre>  
+        <ul>
+          <li>In general you should always use <var>===</var></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Arrays</h3>
+        <ul>
+          <li>Object-oriented and full of methods</li>
+          <li>0-indexed</li>
+        </ul>
+        <pre><code class="javascript">var empty = [];
+var arrayInitialized = [1,2,3,4,'5'];//mixed!
+var arr = new Array(10);
+arr[0] === undefined;
+arr[0] = 'Assigned';
+'Assigned' === arr[0];
+arrayInitialized[4] === '5';
+arrayInitialized.length === 5;
+arrayInitialized.splice(3,1); // delete 4 from the array (slow)</code></pre>
+      </section>
+      <section>
+        <ul>
+          <li>loop over arrays with <var>for ... of</var></li>
+        </ul>
+        <pre><code class="javascript">let a = [1, 2, 3, 4, 5];
+for (let i of a) {
+  console.log(i);
+}</code></pre>  
+      </section>
+      <section>
+        <h3>Objects</h3>
+        <ul>
+          <li>Everything is an object except booleans, numbers and strings</li>
+          <li>Boolens, numbers and strings still have methods</li>
+          <li>Objects have properties</li>
+          <li>Properties are named by a string</li>
+          <li>Property values can be anything <em>including</em> undefined</li>
+          <li>Objects don't have a class</li>
+          <li>Pass by reference</li>
+        </ul>
+      </section>
+      <section>
+        <h4>Objects</h4>
+        <pre><code class="javascript">var empty = {};
+var abram = {
+   "name":"Abram Hindle",
+   "job":"Throwing Down JS",
+   "favorite tea":"puerh"
+};
+var dog = {
+   paws: 4 // note I didn't quote paws
+};
+dog.paws === 4;
+abram["favorite tea"] === "puerh";
+abram.name === "Abram Hindle";
+abram["favorite tea"] = "oolong";</code></pre>
+      </section>
+      <section>
+        <h4>Objects</h4>
+        <pre><code class="javascript">undefined.property; // Throws a type error
+undefined && undefined.property // returns undefined
+var empty = {};
+empty.property === undefined;
+var abram = {
+   "name":"Abram Hindle",
+   "job":"Throwing Down JS",
+   "favorite tea":"puerh"
+};
+keys(abram); // produces ["name","job","favorite tea"]
+//prototype!
+var abramChild = Object.create(abram)
+keys(abramChild); // produces []
+abramChild.name === "Abram Hindle"; // inherits keys from abram</code></pre>
+      </section>
+      <section>
+        <h4>Prototypes</h4>
+        <pre><code class="javascript">var abram = {
+   "name":"Abram Hindle",
+   "job":"Throwing Down JS",
+   "favorite tea":"puerh",
+   "sayName": function() {
+      alert(this.name);
+   }
+};
+abramChild = Object.create(abram);
+abramChild.name = "Child";
+function doit() {
+    abram.sayName();
+    abramChild.sayName();
+}</code></pre>
+      </section>
+      <section>
+        <h3>Looping over Properties</h3>
+        <ul>
+          <li>Use the <var>for ... in</var> syntax</li>
+        </ul>
+        <pre><code class="javascript">let author = {
+   "name":"Unknown Slide Author",
+   "job":"Making Slides",
+   "sayName": function() {
+      alert(this.name);
+   }
+};
+let hazel = Object.create(author);
+hazel.name = "Hazel Campbell";
+for (let property in hazel) {
+  alert(property + ": " + hazel[property]);
+}</code></pre>
+        <ul>
+          <li><var>for ... in</var> includes properties from the prototype!</li>
         </ul>
       </section>
 
