@@ -44,7 +44,7 @@ function fiddler() {
       } else if (code.classList.contains('css')) {
         newButton.name = "css";
       } else {
-        console.log(String("What's this: " + code.classList));
+//         console.log(String("What's this: " + code.classList));
         continue;
       }
       let text = extract_text(code);
