@@ -302,6 +302,18 @@ f.call({}, 1); // {} is ignored because it's an arrow function
 </code></pre>
       </section>
       <section>
+        <h3>Names</h3>
+        <ul>
+          <li>Start with a letter followed by underscores, letters or numbers.</li>
+          <li>Can't be a reserved word like <var>break</var> or <var>case</var> or <var>for</var> or <var>function</var> or <var>if</var> or <var>in</var> etc.</li>        
+          <li>Convention is to use <var>camelCase</var> like Java not <var>snake_case</var> like Python.</li>
+        </ul>
+        <pre><code class="javascript">var aString = "Strings";
+var break = "not allowed!";
+var BREAK = "This is allowed!";
+var BrEAK = "Try not to abuse case sensitivity";</code></pre>  
+      </section>
+      <section>
         <h3>Numbers</h3>
         <ul>
           <li>Everything is a double :(</li>
@@ -347,7 +359,24 @@ var snowMan = "\u2603";
 snowMan.length === 1;
 aString.length === 0;</code></pre>
         <button type="button" onclick="alert('\u2603')">&#9731;</button>
-        </section>
+      </section>
+      <section>
+        <h3>Booleans</h3>
+        <ul>
+          <li><var>true</var>, <var>false</var></li>
+          <li>Unfortunately conditional expressions have lot of truthy and falsey values</li>        
+          <li>False values:</li>
+        </ul>
+        <pre><code class="javascript">false
+null
+undefined
+''
+0
+NaN</code></pre>  
+        <ul>
+          <li>True values are <var>true</var> and everything else.</li>
+        </ul>
+      </section>
 
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
