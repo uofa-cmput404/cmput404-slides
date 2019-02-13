@@ -174,19 +174,16 @@
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section data-markdown>
-        <script type="text/template">
-          ## Body
+      <section>
+        <h3>Body</h3>
 
-`````
-<body>
-<p>Visible content goes here.</p>
-<p>Consider that you should not directly specify layout information
+<pre><code class="html">&lt;body>
+&lt;p>Visible content goes here.&lt;/p>
+&lt;p>Consider that you should not directly specify layout information
   here but that you should mark up blocks with a class allowing you to
-  apply layouts later. You can abstract layout</p>
-</body>
-`````
-</script>
+  apply layouts later. You can abstract layout&lt;/p>
+&lt;/body></code></pre>
+
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
@@ -242,32 +239,20 @@
         </script>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
-          ## Paragraph tag:  &lt;p&gt;
-
-You might have been taught that you can use these  &lt;p&gt; tags to
-start and end paragraphs. 
-
-The new style is to enclose paragraphs.
-
-````
-<p>
+      <section>
+        <h3>Paragraph tag:  &lt;p&gt;</h3>
+        <pre><code class="html">&lt;p>
 Now bears us onward one of the hard margins,
   And so the brooklet's mist o'ershadows it,
   From fire it saves the water and the dikes.
-</p>
-<p>
+&lt;/p>
+&lt;p>
 Even as the Flemings, 'twixt Cadsand and Bruges,
   Fearing the flood that tow'rds them hurls itself,
   Their bulwarks build to put the sea to flight;
-</p>
-````
-
-We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
-block doesn't matter.
-
-</script>
+&lt;/p></code></pre>
+        <p>We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
+        block doesn't matter.</p>
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
@@ -292,16 +277,13 @@ block doesn't matter.
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section data-markdown>
-        <script type="text/template">
-          ## Paragraph tag:  &lt;p&gt; and &lt;br&gt;
-
-The previous example broke up the explicit lines from that canto.
-
-We can make line-breaks explicit with &lt;br&gt;.
-
-````
-<p>
+      <section>
+        <h3>Paragraph tag:  &lt;p&gt; and &lt;br&gt;</h3>
+        <ul>
+          <li>The previous example broke up the explicit lines from that canto.</li>
+          <li>We can make line-breaks explicit with &lt;br&gt;.</li>
+        </ul>
+        <pre><code class="html"><p>
 Now bears us onward one of the hard margins,<br>
   And so the brooklet's mist o'ershadows it,<br>
   From fire it saves the water and the dikes.<br>
@@ -310,13 +292,11 @@ Now bears us onward one of the hard margins,<br>
 Even as the Flemings, 'twixt Cadsand and Bruges,<br>
   Fearing the flood that tow'rds them hurls itself,<br>
   Their bulwarks build to put the sea to flight;<br>
-</p>
-````
+</p></code></pre>
 
-We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
-block doesn't matter.
+<ul><li>We can use CSS to style these text blocks. Whitespace in the &lt;p&gt;
+block doesn't matter.</li></ul>
 
-</script>
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
@@ -378,14 +358,14 @@ attribute links to a URL. The URL can be relative to the location of
 the current page. Anchor tags used to place anchors on pages, but in
 HTML 5 they just navigate to ID'd sections now.
 
-````
+`````
 <a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
   Matters</a><br>
 <a href="http://cnn.com">T</a><a href="http://msn.com">a</a>
 <a href="http://softwareprocess.es/">g</a><a href="http://ualberta.ca">s</a>
 don't have to be very long.<br>
 <a href="../">The a directory down!</a> Relative Link
-````
+`````
 </script>
         </div>
         <a href="http://slashdot.org">Slashdot.org: News for Nerds Stuff that
@@ -404,7 +384,7 @@ don't have to be very long.<br>
 
       <!-- ######################## START HTML SLIDE ########################## -->
       <section>
-        <h2>Text Layout Philosophy</h2>
+        <h3>Text Layout Philosophy</h3>
         <p> Let the user agent decide how to display the text. You don't
           need to control everything. But provide the appropriate semantics
           first. Then apply layout information to those semantics.</p>
@@ -417,19 +397,14 @@ don't have to be very long.<br>
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section data-markdown>
-        <script type="text/template">
-          ## &lt;div&gt; and &lt;span&gt; tags
-
-&lt;div&gt; and &lt;span&gt; tags have no particular meaning. 
-
-&lt;div&gt; will cause a line break before it is displayed.
-
-&lt;span&gt; will be inlined.
-
-
-````
-<div>
+      <section>
+        <h3>&lt;div&gt; and &lt;span&gt; tags</h3>
+        <ul>
+          <li>&lt;div&gt; and &lt;span&gt; tags have no particular meaning.</li>
+          <li>&lt;div&gt; will cause a line break before it is displayed.</li>
+          <li>&lt;span&gt; will be inlined.</li>
+        </ul>
+        <pre><code class="html"><div>
 <span>Now bears us onward one of the hard margins,</span><br>
   And so the brooklet's mist o'ershadows it,<br>
   From fire it saves the water and the dikes.<br>
@@ -438,13 +413,7 @@ don't have to be very long.<br>
 Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
   Fearing the flood that tow'rds them hurls itself,<br>
   Their bulwarks build to put the sea to flight;<br>
-</div>
-````
-
-</script>
-
-
-
+</div></code></pre>
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
@@ -472,27 +441,22 @@ Even <span>as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
 
 
       <!-- ######################## START MARKDOWN SLIDE ########################## -->
-      <section data-markdown>
-        <script type="text/template">
-          ## &lt;div&gt; and &lt;span&gt; tags: With Style
-
-We can add a style attribute to these tags
-
-````
-<div>
-<span style="background-color:#AAAAAA;font-weight:bold">
-  Now bears us onward one of the hard margins,</span><br>
-  And so the brooklet's mist o'ershadows it,<br>
-  From fire it saves the water and the dikes.<br>
-</div>
-<div style="font-size:150%">
-Even <span style="color:red">as the Flemings</span>, 'twixt Cadsand and Bruges,<br>
-  Fearing the flood that tow'rds them hurls itself,<br>
-  Their bulwarks build to put the sea to flight;<br>
-</div>
-````
-
-</script>
+      <section>
+        <h3>&lt;div&gt; and &lt;span&gt; tags: With Style</h3>
+        <ul>
+          <li>We can add a style attribute to these tags</li>
+        </ul>
+        <pre><code class="html">&lt;div>
+&lt;span style="background-color:#AAAAAA;font-weight:bold">
+  Now bears us onward one of the hard margins,&lt;/span>&lt;br>
+  And so the brooklet's mist o'ershadows it,&lt;br>
+  From fire it saves the water and the dikes.&lt;br>
+&lt;/div>
+&lt;div style="font-size:150%">
+Even &lt;span style="color:red">as the Flemings&lt;/span>, 'twixt Cadsand and Bruges,&lt;br>
+  Fearing the flood that tow'rds them hurls itself,&lt;br>
+  Their bulwarks build to put the sea to flight;&lt;br>
+&lt;/div></pre></code>
       </section>
       <!-- ######################## END MARKDOWN SLIDE ########################## -->
 
