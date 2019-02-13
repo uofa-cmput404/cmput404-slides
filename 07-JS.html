@@ -276,6 +276,61 @@ w()
           </div>
         </div>
       </section>
+      <section>
+        <h3>Anonymous Functions</h3>
+        <pre><code class="javascript">var outer = function(text) {
+    return function(x) {
+        console.log(this);
+        alert(text);
+    }
+}
+var f = outer("Hi mom I'm on the projector");
+f.call({}, 1);
+</code></pre>
+      </section>
+      <section>
+        <h3>Arrow Functions</h3>
+        <p>Like anonymous functions but they always keep the <var>this</var> from when they were created.</p>
+        <pre><code class="javascript">var outer = function(text) {
+    return (x) => {
+        console.log(this);
+        alert(text);
+    }
+}
+var f = outer("Hi mom I'm on the projector");
+f.call({}, 1); // {} is ignored because it's an arrow function
+</code></pre>
+      </section>
+      <section>
+        <h3>Numbers</h3>
+        <ul>
+          <li>Everything is a double :(</li>
+          <li>Write integers, decimals, or decimals with an exponent</li>
+        </ul>
+        <pre><code class="javascript">var aNumber = 10;
+var aNumber = 11.11;
+var aNumber = 1e-100;
+var aNumber = 1E+100;
+var nan = NaN;
+var inf = Infinity;
+var negativeInfinity = -Infinity;</code></pre>
+      </section>
+      <section>
+        <h3>Strings</h3>
+        <ul>
+          <li>Unicode by default</li>
+          <li>Use ' ' or " "</li>
+          <li>Any characters except control characters and \, " or '</li>
+        </ul>
+        <pre><code class="javascript">var aNumber = 10;
+var aString = "";
+var anotherString ="Hi how are you";
+var escapesString = "\r\n\t\f\b\/\\\\'\"";
+var snowMan = "\u2603";
+snowMan.length === 1;
+aString.length === 0;</code></pre>
+        <button type="button" onclick="alert('\u2603')">&#9731;</button>
+        </section>
 
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
