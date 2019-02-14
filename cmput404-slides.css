@@ -161,4 +161,8 @@ form.fiddler button:active {
     border-style: inset;
     background: #630;
 }
-
+.reveal section img.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

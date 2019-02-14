@@ -73,7 +73,7 @@
       <section>
         <h3>What is AJAX?</h3>
         <ul>
-          <li>Asynchronous JavaScript and <del>XML</del><ul>
+          <li>Asynchronous JavaScript and <s>XML</s><ul>
             <li>Client Side</li>
             <li>Allows Javascript to make HTTP requests and use the results
             without redirecting the browser.</li>
@@ -112,7 +112,88 @@
       </section>
       <section>
         <h3>Fetch API</h3>
-        <img class="stretch noborder" alt="AJAX" src="images/fetch.gif">
+        <blockquote>
+          <img 
+            class="centered" 
+            id="fetchexample" 
+            alt="Stop trying to make fetch happen!"
+            height="400">
+          <cite><em>Mean Girls.</em> Paramount Home Entertainment, 2005. Performed by Rachel McAdams.</cite>
+        </blockquote>
+        <script>
+          function fetchExample() {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#Example 2019-02-14
+            var img = document.querySelector("img#fetchexample");
+            var request = new Request("images/fetch.gif");
+            var promise1 = fetch(request);
+            var promise2 = promise1.then(function(response) {
+              console.log("Got headers!");
+              return response.blob(); // return a promise for raw binary data
+            });
+            promise2.then(function(blob) {
+              console.log("Got data blob!");
+              var objectURL = URL.createObjectURL(blob);
+              img.src = objectURL;
+            });
+          }
+        </script>
+        <button type="button" onclick="fetchExample()">Fetch!</button>
+      </section>
+      <section>
+        <pre><code class="html">
+          <blockquote>
+            &lt;img height="400" class="centered" id="fetchexample" 
+              alt="Stop trying to make fetch happen!">
+            &lt;cite>&lt;em>Mean Girls.&lt;/em> Paramount Home Entertainment, 2005. Performed by Rachel McAdams.&lt;/cite>
+            &lt;button type="button" onclick="fetchExample()">Fetch!&lt;/button>
+          </blockquote>
+        </pre></code>
+        <pre><code class="javascript">
+          function fetchExample() {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#Example 2019-02-14
+            var img = document.querySelector("img#fetchexample");
+            var request = new Request("images/fetch.gif");
+            var promise1 = fetch(request);
+            var promise2 = promise1.then(function(response) {
+              console.log("Got headers!");
+              return response.blob(); // return a promise for raw binary data
+            });
+            promise2.then(function(blob) {
+              console.log("Got data blob!");
+              var objectURL = URL.createObjectURL(blob);
+              img.src = objectURL;
+            });
+          }
+        </pre></code>
+      </section>
+      <section style="font-size: 85%">
+        <h3>Promise dot-chaining</h3>
+        <pre><code class="javascript">
+          var request = new Request("images/fetch.gif");
+          var promise1 = fetch(request);
+          var promise2 = promise1.then(function(response) {
+            console.log("Got headers!");
+            return response.blob(); // return a promise for raw binary data
+          });
+          promise2.then(function(blob) {
+            console.log("Got data blob!");
+            var objectURL = URL.createObjectURL(blob);
+            img.src = objectURL;
+          });
+        }
+        </pre></code>
+        <p>is the same as</p>
+        <pre><code class="javascript">
+          var request = new Request("images/fetch.gif");
+          fetch(request).then(function(response) {
+            console.log("Got headers!");
+            return response.blob(); // return a promise for raw binary data
+          }).then(function(blob) {
+            console.log("Got data blob!");
+            var objectURL = URL.createObjectURL(blob);
+            img.src = objectURL;
+          });
+        </pre></code>
       </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
