@@ -77,10 +77,10 @@ table.wikitable td, table.wikitable th {
 }
 .reveal .slides pre code {
     overflow-x: scroll;
-    width: max-content;
+    width: 100%;
     border: 1px solid #888;
     border-radius: 0.5ex;
-    width: calc(100%-10px);
+    width: calc(100% - 10px);
     background-clip: border-box;
 }
 .reveal .slides samp>pre {
@@ -102,8 +102,12 @@ table.wikitable td, table.wikitable th {
 .reveal .slides blockquote {
     text-align: justify;
     margin: 0;
-    width: 100%;
+    width: calc(100% - 10px);
     line-height: 1.10;
+    border: 1px solid #888;
+    background-clip: border-box;
+    border-radius: 0.5ex;
+    box-shadow: 0 0 0.5ex rgba(127, 127, 127, 1.0);
 }
 .reveal .slides blockquote>cite {
     display: block;
@@ -138,6 +142,8 @@ form.fiddler {
     height: 0;
     padding: 0;
     margin: 0;
+    position: relative;
+    top: -5px;
 }
 form.fiddler button {
     margin-top: 0;
