@@ -3,6 +3,7 @@
 var assert = chai.assert;
 const tabWidth = 2;
 
+
 function extract_text(e) {
   let text = "";
   for (let child of e.childNodes) {
@@ -103,3 +104,96 @@ function stripPreIndentation( options ) {
     code.innerHTML = newGuts;
   }
 }
+
+function blackStyleSheet() {
+  document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
+  document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/rainbow.css");
+  document.getElementById("404theme").setAttribute("href", "cmput404-slides-black.css");
+}
+
+function whiteStyleSheet() {
+  document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/white.css");
+  document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/googlecode.css");
+  document.getElementById("404theme").setAttribute("href", "cmput404-slides-white.css");
+}
+
+function fixTitle() {
+  var firsth2 = document.querySelector("section h2");
+  var title = document.querySelector("title");
+  title.innerText = title.innerText + " - " + firsth2.innerText;
+}
+
+//-- Initialize Slide Deck -----------------------------------------------------
+whiteStyleSheet();
+
+fixTitle();
+
+/* From reveal.js */
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+/* end from reveal.js */
+
+stripPreIndentation()
+
+window.addEventListener("load", (event) => {
+
+  // Initialize Reveal
+  Reveal.initialize({
+    dependencies: [{
+        src: 'node_modules/reveal.js/plugin/markdown/marked.js'
+      },
+      {
+        src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+      },
+      {
+        src: 'node_modules/reveal.js/plugin/notes/notes.js',
+        async: true
+      },
+      {
+        src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      },
+      {
+        src: 'node_modules/reveal.js-menu/menu.js'
+      }
+    ],
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    //         width: 960,
+    //         height: 700,
+    width: 960,
+    height: 720,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.0,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.01,
+    maxScale: 5,
+    menu: {
+      hideMissingTitles: true,
+      titleSelector: 'h1, h2, h3',
+    },
+    history: true,
+  });
+
+  // Hook slide change event
+  Reveal.addEventListener('slidechanged', function(event) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    fitty.fitAll();
+    fiddler();
+  });
+
+  // add emojis
+  twemoji.parse(document.body);
+
+  // initilize fitty
+  fitty('.fit');
+});
