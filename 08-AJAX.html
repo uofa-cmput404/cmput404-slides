@@ -26,8 +26,6 @@
   <!-- Custom Styling -->
   <link rel="stylesheet" href="cmput404-slides.css">
   <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
-  <script src="node_modules/fitty/dist/fitty.min.js"></script>
-  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
   <script>
     function blackStyleSheet(sheet) {
       document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
@@ -522,8 +520,13 @@
 
   <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
   <script src="node_modules/reveal.js/js/reveal.js"></script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="fiddler.js"></script>
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
 
   <script>
+    stripPreIndentation()
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
@@ -568,12 +571,6 @@
         titleSelector: 'h1, h2, h3',
       },
     });
-
-  </script>
-  <script src="node_modules/chai/chai.js"></script>
-  <script src="fiddler.js"></script>
-  <script>
-    // Custom scripting
     Reveal.addEventListener('slidechanged', function(event) {
       // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       fitty.fitAll();

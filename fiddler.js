@@ -69,7 +69,7 @@ function stripPreIndentation( options ) {
     let pre = code.parentElement;
     assert(pre.nodeName === 'PRE');
     let guts = code.innerHTML;
-    let lines = guts.split(/[\r\n]+/); // https://stackoverflow.com/a/5035058 2019-02-13
+    let lines = guts.split(/\r\n|\r|\n/); // https://stackoverflow.com/a/5035058 2019-02-13
 //     console.log(lines);
     if (lines[0].match(/^[\s]*$/)) {
       lines.shift();
