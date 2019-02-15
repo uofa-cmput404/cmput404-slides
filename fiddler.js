@@ -152,53 +152,55 @@ window.addEventListener("load", (event) => {
 
   stripPreIndentation();
 
-  // Initialize Reveal
-  Reveal.initialize({
-    dependencies: [{
-        src: 'node_modules/reveal.js/plugin/markdown/marked.js'
-      },
-      {
-        src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
-      },
-      {
-        src: 'node_modules/reveal.js/plugin/notes/notes.js',
-        async: true
-      },
-      {
-        src: 'node_modules/reveal.js-menu/menu.js'
-      }
-    ],
-    // The "normal" size of the presentation, aspect ratio will be preserved
-    // when the presentation is scaled to fit different resolutions. Can be
-    // specified using percentage units.
-    //         width: 960,
-    //         height: 700,
-    width: 960,
-    height: 720,
+  link.addEventListener("load", (event) => {
+    // Initialize Reveal
+    Reveal.initialize({
+      dependencies: [{
+          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+        },
+        {
+          src: 'node_modules/reveal.js/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'node_modules/reveal.js-menu/menu.js'
+        }
+      ],
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      //         width: 960,
+      //         height: 700,
+      width: 960,
+      height: 720,
 
-    // Factor of the display size that should remain empty around the content
-    margin: 0.0,
+      // Factor of the display size that should remain empty around the content
+      margin: 0.0,
 
-    // Bounds for smallest/largest possible scale to apply to content
-    minScale: 0.01,
-    maxScale: 5,
-    menu: {
-      hideMissingTitles: true,
-      titleSelector: 'h1, h2, h3',
-    },
-    history: true,
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.01,
+      maxScale: 5,
+      menu: {
+        hideMissingTitles: true,
+        titleSelector: 'h1, h2, h3',
+      },
+      history: true,
+    });
+
+    // Hook slide change event
+    Reveal.addEventListener('slidechanged', function(event) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      fitty.fitAll();
+      fiddler();
+    });
+
+    // add emojis
+    twemoji.parse(document.body);
+
+    // initilize fitty
+    fitty('.fit');
   });
-
-  // Hook slide change event
-  Reveal.addEventListener('slidechanged', function(event) {
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-    fitty.fitAll();
-    fiddler();
-  });
-
-  // add emojis
-  twemoji.parse(document.body);
-
-  // initilize fitty
-  fitty('.fit');
 });
