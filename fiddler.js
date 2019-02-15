@@ -21,6 +21,7 @@ function extract_text(e) {
 }
 
 function fiddler() {
+  return false;
   let codes = document.querySelectorAll('section pre>code');
   for (let code of codes) {
     let pre = code.parentElement;
@@ -64,7 +65,8 @@ function fiddler() {
   }
 }
 
-function stripPreIndentation( options ) {
+function stripPreIndentation() {
+  console.log("WHAT");
   let codes = document.querySelectorAll('pre>code');
   for (let code of codes) {
     let pre = code.parentElement;
@@ -102,6 +104,7 @@ function stripPreIndentation( options ) {
     }
     let newGuts = newLines.join("\n");
     code.innerHTML = newGuts;
+    hljs.highlightBlock(code);
   }
 }
 
@@ -136,9 +139,9 @@ link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal
 document.getElementsByTagName( 'head' )[0].appendChild( link );
 /* end from reveal.js */
 
-stripPreIndentation()
 
 window.addEventListener("load", (event) => {
+  stripPreIndentation();
 
   // Initialize Reveal
   Reveal.initialize({
@@ -151,13 +154,6 @@ window.addEventListener("load", (event) => {
       {
         src: 'node_modules/reveal.js/plugin/notes/notes.js',
         async: true
-      },
-      {
-        src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
-        async: true,
-        callback: function() {
-          hljs.initHighlightingOnLoad();
-        }
       },
       {
         src: 'node_modules/reveal.js-menu/menu.js'
