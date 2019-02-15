@@ -1458,61 +1458,6 @@ Content-Length: 60
   <script src="node_modules/fitty/dist/fitty.min.js"></script>
   <script src="https://twemoji.maxcdn.com/2/twemoji.min.js"></script>
 
-  <script>
-    stripPreIndentation()
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      dependencies: [{
-          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
-        },
-        {
-          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
-        },
-        {
-          src: 'node_modules/reveal.js/plugin/notes/notes.js',
-          async: true
-        },
-        {
-          src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
-          async: true,
-          callback: function() {
-            hljs.initHighlightingOnLoad();
-          }
-        },
-        {
-          src: 'node_modules/reveal.js-menu/menu.js'
-        }
-      ],
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      //         width: 960,
-      //         height: 700,
-      width: 960,
-      height: 720,
-
-      // Factor of the display size that should remain empty around the content
-      margin: 0.0,
-
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.01,
-      maxScale: 5,
-      menu: {
-        hideMissingTitles: true,
-        titleSelector: 'h1, h2, h3',
-      },
-      history: true,
-    });
-    Reveal.addEventListener('slidechanged', function(event) {
-      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-      fitty.fitAll();
-      fiddler();
-    });
-    twemoji.parse(document.body);
-    fitty('.fit');
-  </script>
 </body>
 
 </html>
