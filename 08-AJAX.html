@@ -166,6 +166,52 @@
           }
           // Note in the DOM the img's src= attribute after running!</pre></code>
       </section>
+      <section>
+        <h3>Promises, Promises</h3>
+        <pre><code class="javascript">
+          function makeAPromise(data) {
+            return new Promise((resolve, reject) => {
+              resolve(data);
+            });
+          }
+          function promiseExample() {
+            // .then returns a NEW promise
+            var promise1 = makeAPromise("X");
+            var promise2 = promise1.then((data2) => {
+              // inner function gets called after the promise is resolved
+              alert("data2: " + data2);
+              return "Y";
+            });
+            // .then calls its argument with the return value of the
+            //     previous promises's callback function
+            var promise3 = promise2.then((data3) => {
+              alert("data3: " + data3);
+            });
+          }
+        </pre></code>
+        <script>
+          function makeAPromise(data) {
+            return new Promise((resolve, reject) => {
+              resolve(data);
+            });
+          }
+          function promiseExample() {
+            // .then returns a NEW promise
+            var promise1 = makeAPromise("X");
+            var promise2 = promise1.then((data2) => {
+              // inner function gets called after the promise is resolved
+              alert("data2: " + data2);
+              return "Y";
+            });
+            // .then calls its argument with the return value of the
+            //     previous promises's callback function
+            var promise3 = promise2.then((data3) => {
+              alert("data3: " + data3);
+            });
+          }
+        </script>
+        <button type="button" onclick="promiseExample()">promiseExample()</button>
+      </section>
       <section style="font-size: 85%">
         <h3>Promise dot-chaining</h3>
         <pre><code class="javascript">
@@ -268,6 +314,166 @@
         </script>
         <button type="button" onclick="startGetting()">Start Getting</button><button type="button" onclick="stopGetting()">Stop Getting</button>
         <blockquote id="ajaxy"></blockquote>
+      </section>
+      <section>
+       <h3>Timers</h3>
+       <ul>
+        <li><var>window.setInterval</var> lets you run a function every so many milliseconds.</li>
+        <li><var>window.setTimeout</var> lets you run a function once after so many milliseconds.</li>
+       </ul>
+      </section>
+      <section>
+        <h3>JSON</h3>
+        <ul>
+          <li>JavaScript Object Notation</li>
+          <li>Strict subset of JavaScript</li>
+          <li><a href="http://json.org/">http://json.org/</a>
+          <li><var>JSON.parse</var> parses JSON text into an Object</li>
+          <li><var>JSON.stringify</var> turns an Object into JSON text</li>
+        </ul>
+      </section>
+      <section>
+        <pre><code class="javascript">
+          function hotDogs() {
+              var obj = { "food":"hotdog", 
+                          "condiments":["ketchup","mustard","cheese"],
+                          "sausage":"weiner"
+              };
+              document.querySelector("#hotdog").innerText = 
+                JSON.stringify(obj, null, " "); //pretty print
+              var newObj = JSON.parse($("#hotdog").text()); 
+              $("#sausage").text( newObj.sausage );
+          }
+        </code></pre>
+        <script>
+          function stringifyExample() {
+            var obj = { "food":"hotdog", 
+                        "condiments":["ketchup","mustard","cheese"],
+                        "sausage":"weiner"
+            };
+            document.querySelector("#hotdog").value = 
+              JSON.stringify(obj, null, " "); // pretty print
+          }
+          function parseExample() {
+            text = document.querySelector("#hotdog").value;
+            var newObj = JSON.parse(text); 
+            document.querySelector("#sausage").innerText = newObj.sausage;
+          }
+        </script>
+        <button type="button" onclick="stringifyExample()">stringifyExample()</button>
+        <button type="parse" onclick="parseExample()">parseExample()</button><br>
+        <textarea id="hotdog" rows="10" cols="80"></textarea>
+        <blockquote id="sausage"></blockquote>
+      </section>
+      <section>
+        <h3>Design With AJAX</h3>
+        <p>Design Suggestions:</p>
+        <ul>
+          <li><a href="http://softwareas.com/ajax-patterns">Minimize AJAX requests and traffic</a>
+          </li>
+          <li>Don't hook into every event, <a href="http://serversideguy.blogspot.ca/2004/12/google-suggest-dissected.html">use timeouts?</a>
+          </li>
+          <li>Use to ease page state transitions
+          </li>
+        </ul>      
+      </section>
+      <section>
+        <p>What are your events?</p>
+        <ul>
+          <li>Per user input?</li>
+          <li>Per user commit?</li>
+          <li>Time based?</li>
+          <li>Per Server action?<ul>
+            <li>Polling?</li>
+          </ul>
+          </li>
+          <li>Data?</li>
+          <li>Content oriented?</li>
+          <li>Messages?</li>
+          <li>Multimedia?</li>
+          <li>Read-based <a href="http://www.reddit.com/r/programming/">(reddit)</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>AJAX Observer Pattern</h3>
+        <ul>
+          <li>Observer pattern is where an observable keeps a collection of observers (listeners) and notifies those observers if anything changed by sending an update message.</li>
+          <li>This works great with AJAX if the observable is held client side in a browser and the observer is client side in the browser! Go ahead!</li>
+        </ul>
+      </section>
+      <section>
+        <h4>AJAX Observer Pattern</h4>
+        <img class="centered noborder" src="images/observer.svg" alt="Observer UML Diagram">
+      </section>
+      <section>
+        <h4>AJAX Observer Pattern</h4>
+        <ul>
+          <li>Still works well with observable in browser and the observers server-side, the client simply notifies via the server's observers whenever an update occurs (but it should also communicate some lightweight state).</li>
+          <li>Due to the lack of a client-side HTTP server it is problematic to do the observer pattern with client side observers.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Observing the Server</h3>
+          <ul>
+            <li>HTTP is stateless, so a client needs to communicate somehow all of
+            the objects it is observing. <ul>
+              <li>Perhaps a serverside Observer proxy that stores observables for a
+              client</li>
+            </ul>
+            </li>
+            <li>Clients need to poll the server to check if there are updates. For
+            the observer pattern to work this polling should allow the server to
+            send update commands.</li>
+            <li>Due to bandwidth concerns and latency concerns, an update from the
+            server should probably include relevant data  </li>
+          </ul>
+      </section>
+      <section>
+        <h4>Observing the Server</h4>
+        <ul>
+          <li>Fighting against:<ul>
+            <li>Latency</li>
+            <li>Bandwidth</li>
+            <li>Lack of communication channels</li>
+            <li>Lack of ability to push messages to a client</li>
+            <li>Polling</li>
+            <li>Timer smashing</li>
+          </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h4>Observing the Server</h4>
+        <p>Solutions?</p>
+        <ul>
+          <li>Polling: the most common</li>
+          <li>Push API: not supported in all browsers</li>
+          <li>Comet "long polling": difficult server-side support</li>
+          <li>Websockets: need to make a websocket server</li>
+        </ul>
+      </section>
+      <section>
+        <h4>Observing the Server</h4>
+        <p>Solutions?</p>
+        <ul>
+          <li>Polling: the most common</li>
+          <li>Push API: not supported in all browsers</li>
+          <li>Comet "long polling": difficult server-side support</li>
+          <li>Websockets: need to make a websocket server</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Polling the Server</h3>
+        <ul>
+          <li>Don't send too many requests
+          </li>
+          <li>Batch (bundle together) requests to the server</li>
+          <li>Minimize the number of timers and the frequency of timers
+            <ul>
+              <li>E.g. if drawing, a user doesn't need more than 30FPS!</li>
+            </ul>
+          <li>Don't make requests you don't have to</li>
+        </ul>
       </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
