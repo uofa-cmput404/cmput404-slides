@@ -1,39 +1,32 @@
 <!doctype html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>CMPUT 404</title>
-
-  <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-  <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
-
-  <!-- Theme used for syntax highlighting of code -->
-  <!-- good for white on black -->
-  <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
-
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CMPUT 404</title>
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- good for white on black -->
+    <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+    <!-- Printing and PDF exports -->
+    <script> var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
-
-  <!-- Custom Styling -->
-  <link rel="stylesheet" href="cmput404-slides.css">
-  <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
-  <script src="node_modules/fitty/dist/fitty.min.js"></script>
-  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
-  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
-  <script src="node_modules/reveal.js/js/reveal.js"></script>
-  <script src="node_modules/chai/chai.js"></script>
-  <script src="fiddler.js"></script>
-  <script>
-    function blackStyleSheet(sheet) {
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="cmput404-slides.css">
+    <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
+    <script src="node_modules/fitty/dist/fitty.min.js"></script>
+    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="fiddler.js"></script>
+    <script> function blackStyleSheet(sheet) {
       document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
       document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/rainbow.css");
       document.getElementById("404theme").setAttribute("href", "cmput404-slides-black.css");
@@ -45,112 +38,115 @@
     }
     whiteStyleSheet();
   </script>
-</head>
+  </head>
 
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Anything before this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       HEADER --------------------------
       -->
-      <section>
-        <h1>CMPUT 404</h1>
-        <h3>Web Applications and Architecture</h3>
-        <h2>Part 07: JavaScript</h2>
-        <p>
-          <small>Created by <br>
-            <a href="http://softwareprocess.es">Abram Hindle</a>
-            (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br>
-            and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br>
-            Copyright 2014-2019.
-          </small>
-        </p>
-        <p><small>
-          <button type="button" onClick="whiteStyleSheet()">White Theme</button>
-          <button type="button" onClick="blackStyleSheet()">Black Theme</button>
-        </small></p>
-      </section>
-      <section style="font-size: 80%">
-        <h3>Resources</h3>
-        <p>Good resources for JavaScript:</p>
-        <ul>
-          <li>W3Schools JavaScript Tutorials: <a href="http://www.w3schools.com/js/">http://www.w3schools.com/js/</a></li>
-          <li>JSFiddle: <a href="http://jsfiddle.net/">http://jsfiddle.net/</a></li>
-          <li>Video: Firefox Debugger: <a href="http://www.youtube.com/watch?v=sK8KU8oiF8s"></a></li>
-          <li>ECMAScript 2018 Specification: <a href="https://ecma-international.org/ecma-262/9.0/index.html">https://ecma-international.org/ecma-262/9.0/index.html</a></li>
-          <li>ECMAScript Future Specification: <a href="https://tc39.github.io/ecma262/">https://tc39.github.io/ecma262/</a></li>
-          <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>History</h3>
-        <p>Where did it come from?</p>
-        <ul>
-          <li>Created in one day by Brendan Eich for Netscape in 1995</li>
-          <li>Inspired by Java, C, Self, Perl...</li>
-          <li>Multi-paradigm
-            <ul style="columns: 2;">
-              <li>Imperative</li>
-              <li>Functional</li>
-              <li>Object-oriented</li>
-              <li>Prototype-driven</li>
-              <li>Event-driven</li>
-              <li>Embeddable</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>Problems</h3>
-        <p>JavaScript has problems...</p>
-        <ul>
-          <li><a href="https://www.destroyallsoftware.com/talks/wat">https://www.destroyallsoftware.com/talks/wat</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Why?</h3>
-        <p>If JavaScript has problems then why learn it? Why use it></p>
-        <ul>
-          <li>It runs <em>everywhere</em>
-            <ul>
-              <li>Browsers (Firefox, Chrome, Edge, Safari...)</li>
-              <li>Servers (nodejs)</li>
-              <li>PDFs</li>
-            </ul>
-          </li>
-          <li>Fast: modern browsers compile JavaScript to machine code</li>
-        </ul>
-      </section>
-      <section>
-        <h3>JS on Webpages</h3>
-        <p>Put the JavaScript within <var>&lt;script></var> tags.</p>
-        <pre><code class="html">&lt;script>
+
+        <section>
+          <h1>CMPUT 404</h1>
+          <h3>Web Applications and Architecture</h3>
+          <h2>Part 07: JavaScript</h2>
+          <p>
+            <small>Created by <br>
+              <a href="http://softwareprocess.es">Abram Hindle</a> (<a href="mailto:abram.hindle@ualberta.ca">abram.hindle@ualberta.ca</a>) <br> and Hazel Campbell (<a href="mailto:hazel.campbell@ualberta.ca">hazel.campbell@ualberta.ca</a>).<br> Copyright 2014-2019. </small>
+          </p>
+          <p><small>
+              <button type="button" onClick="whiteStyleSheet()">White Theme</button>
+              <button type="button" onClick="blackStyleSheet()">Black Theme</button>
+            </small></p>
+        </section>
+
+        <section style="font-size: 80%">
+          <h3>Resources</h3>
+          <p>Good resources for JavaScript:</p>
+          <ul>
+            <li>W3Schools JavaScript Tutorials: <a href="http://www.w3schools.com/js/">http://www.w3schools.com/js/</a></li>
+            <li>JSFiddle: <a href="http://jsfiddle.net/">http://jsfiddle.net/</a></li>
+            <li>Video: Firefox Debugger: <a href="http://www.youtube.com/watch?v=sK8KU8oiF8s"></a></li>
+            <li>ECMAScript 2018 Specification: <a href="https://ecma-international.org/ecma-262/9.0/index.html">https://ecma-international.org/ecma-262/9.0/index.html</a></li>
+            <li>ECMAScript Future Specification: <a href="https://tc39.github.io/ecma262/">https://tc39.github.io/ecma262/</a></li>
+            <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>History</h3>
+          <p>Where did it come from?</p>
+          <ul>
+            <li>Created in one day by Brendan Eich for Netscape in 1995</li>
+            <li>Inspired by Java, C, Self, Perl...</li>
+            <li>Multi-paradigm <ul style="columns: 2;">
+                <li>Imperative</li>
+                <li>Functional</li>
+                <li>Object-oriented</li>
+                <li>Prototype-driven</li>
+                <li>Event-driven</li>
+                <li>Embeddable</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Problems</h3>
+          <p>JavaScript has problems...</p>
+          <ul>
+            <li><a href="https://www.destroyallsoftware.com/talks/wat">https://www.destroyallsoftware.com/talks/wat</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Why?</h3>
+          <p>If JavaScript has problems then why learn it? Why use it></p>
+          <ul>
+            <li>It runs <em>everywhere</em>
+              <ul>
+                <li>Browsers (Firefox, Chrome, Edge, Safari...)</li>
+                <li>Servers (nodejs)</li>
+                <li>PDFs</li>
+              </ul>
+            </li>
+            <li>Fast: modern browsers compile JavaScript to machine code</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>JS on Webpages</h3>
+          <p>Put the JavaScript within <var>&lt;script></var> tags.</p>
+          <pre><code class="html">&lt;script>
 var someJS = "JS in a &lt;script> tag!";
 &lt;/ｓcript>
 &lt;!-- you can embed oneliners within HTML! -->
 &lt;button onClick="alert('Stuck in JS factory, send help!');">
   Test me!&lt;/button></code></pre>
-       <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
-      </section>
-      <section>
-        <h3>JS on Webpages</h3>
-        <p>Or put the JavaScript at a seperate URL with <var>&lt;script></var> tags.</p>
-        <pre><code class="javascript">&lt;script src="myscript.js">&lt;/script>
+          <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
+        </section>
+
+        <section>
+          <h3>JS on Webpages</h3>
+          <p>Or put the JavaScript at a seperate URL with <var>&lt;script></var> tags.</p>
+          <pre><code class="javascript">&lt;script src="myscript.js">&lt;/script>
 &lt;!--You have to put the closing &lt;/script> tag 
 because script isn't a void tag!--></code></pre>
-        <p>Then in the content (file) at the URL specified:</p>
-        <pre><code class="javascript">'use strict';
+          <p>Then in the content (file) at the URL specified:</p>
+          <pre><code class="javascript">'use strict';
 var someJS = "JS in a &lt;script> tag!"; // -------------------------------------------------</pre></code>
-       <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
-      </section>
-      <section>
-        <h3>Functions</h3>
-        <ul>
-          <li>Functions can return values</li>
-          <li>Functions can have parameters</li>
-          <li>Functions can access all available scope</li>
-        </ul>
-        <pre><code class="javascript">// Function one with no parameters
+          <button onClick="alert('Stuck in JS factory, send help!');">Test me!</button>
+        </section>
+
+        <section>
+          <h3>Functions</h3>
+          <ul>
+            <li>Functions can return values</li>
+            <li>Functions can have parameters</li>
+            <li>Functions can access all available scope</li>
+          </ul>
+          <pre><code class="javascript">// Function one with no parameters
 function one() {
     return 1;
 }
@@ -165,13 +161,14 @@ f(2) == 4.0;
 button.onclick = function(e) {
     console.log(e);
 };</pre></code>
-      </section>
-      <section>
-        <h3>Closure</h3>
-        <ul>
-          <li>Functions in functions can see the outer function's variables from when the function was defined</li>
-        </ul>
-        <pre><code class="javascript">// I'm some javascript
+        </section>
+
+        <section>
+          <h3>Closure</h3>
+          <ul>
+            <li>Functions in functions can see the outer function's variables from when the function was defined</li>
+          </ul>
+          <pre><code class="javascript">// I'm some javascript
 /* also a comment */
 function outer(text) {
     function inner(x) {
@@ -182,12 +179,13 @@ function outer(text) {
 f = outer("Hi mom I'm on the projector");
 f(1);
 </pre></code>
-      </section>
-      <section>
-        <ul>
-          <li>Functions in functions can see the outer function's variables from when the function was defined</li>
-        </ul>
-        <pre><code class="javascript">function p(a) {
+        </section>
+
+        <section>
+          <ul>
+            <li>Functions in functions can see the outer function's variables from when the function was defined</li>
+          </ul>
+          <pre><code class="javascript">function p(a) {
     function q() {
         console.log("a: " + a);
         console.log("arguments: " + arguments[0]);
@@ -199,26 +197,27 @@ s = p(2); // now p is finished running, what happens to a?
 r(3); // print 1
 s(4); // print 2
 </pre></code>
-      </section>
-      <section>
-        <h3>Scope</h3>
-        <ul>
-          <li>By default creating a variable makes globals</li>
-        </ul>
-        <pre><code class="javascript">function f() {
+        </section>
+
+        <section>
+          <h3>Scope</h3>
+          <ul>
+            <li>By default creating a variable makes globals</li>
+          </ul>
+          <pre><code class="javascript">function f() {
   a = "top secret data";
 }
 f();
 console.log(a); // oops we leaked the data</pre></code>
-        <p>Solution: use <var>'use strict';</var>, <var>let</var>, <var>const</var>, and <var>var</var>.
-      </section>
+          <p>Solution: use <var>'use strict';</var>, <var>let</var>, <var>const</var>, and <var>var</var>.
+        </section>
 
-      <section>
-        <ul>
-          <li><var>let</var> and <var>const</var> scopes variables/constants to the enclosing block</li>
-          <li><var>var</var> scopes variables to the enclosing function</li>
-        </ul>
-        <pre><code class="javascript">"use strict";
+        <section>
+          <ul>
+            <li><var>let</var> and <var>const</var> scopes variables/constants to the enclosing block</li>
+            <li><var>var</var> scopes variables to the enclosing function</li>
+          </ul>
+          <pre><code class="javascript">"use strict";
 function f() {
     let a = 1;
     for (let i = 1; i<10; i++) {
@@ -230,31 +229,34 @@ function f() {
 }
 f();
 console.log(a); // Reference Error</pre></code>
-      </section>
-      <section>
-        <h3>Type Coercion</h3>
-        <p>In Python the following code throws a type error:</p>
-        <pre><code class="javascript">"1" + 1</code></pre>
-        <p>But in JavaScript you get:</p>
-        <pre><code class="plaintext">"11"</code></pre>
-      </section>
-      <section>
-        <h3><var>this</var></h3>
-        <p>Like <var>self</var> in Python, except:</p>
-        <ul>
-          <li>You don't have to list in the arguments</li>
-          <li>It's not automatically bound to an object</li>
-        </ul>
-        <pre><code class="javascript">function f() {
+        </section>
+
+        <section>
+          <h3>Type Coercion</h3>
+          <p>In Python the following code throws a type error:</p>
+          <pre><code class="javascript">"1" + 1</code></pre>
+          <p>But in JavaScript you get:</p>
+          <pre><code class="plaintext">"11"</code></pre>
+        </section>
+
+        <section>
+          <h3><var>this</var></h3>
+          <p>Like <var>self</var> in Python, except:</p>
+          <ul>
+            <li>You don't have to list in the arguments</li>
+            <li>It's not automatically bound to an object</li>
+          </ul>
+          <pre><code class="javascript">function f() {
   console.log(this);
 }
 f();</code></pre>
-      </section>
-      <section>
-        <div class="columns" style="font-size: 90%">
-          <div class="column">
-            <h4>Python</h4>
-            <pre><code class="python">class Quiz:
+        </section>
+
+        <section>
+          <div class="columns" style="font-size: 90%">
+            <div class="column">
+              <h4>Python</h4>
+              <pre><code class="python">class Quiz:
   def write(self):
     print(self)
     
@@ -262,11 +264,11 @@ f();</code></pre>
 quiz = Quiz()
 w = quiz.write
 w()</code></pre>
-          <p>In Python the w method is bound to the quiz object</p>
-          </div>
-          <div class="column">
-            <h4>JavaScript</h4>
-            <pre><code class="javascript">class Quiz {
+              <p>In Python the w method is bound to the quiz object</p>
+            </div>
+            <div class="column">
+              <h4>JavaScript</h4>
+              <pre><code class="javascript">class Quiz {
   write() {
     console.log(this);
   }
@@ -275,14 +277,14 @@ quiz = new Quiz();
 w = quiz.write
 w()
 </code></pre>
-          <p>In JavaScript the w method isn't bound to the quiz object unless
-          we call it explicitly like <var>quiz.write</var>, <var>w.call(quiz)</var> or bind it with <var>w.bind(quiz)</var></p>
+              <p>In JavaScript the w method isn't bound to the quiz object unless we call it explicitly like <var>quiz.write</var>, <var>w.call(quiz)</var> or bind it with <var>w.bind(quiz)</var></p>
+            </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <h3>Anonymous Functions</h3>
-        <pre><code class="javascript">var outer = function(text) {
+        </section>
+
+        <section>
+          <h3>Anonymous Functions</h3>
+          <pre><code class="javascript">var outer = function(text) {
     return function(x) {
         console.log(this);
         alert(text);
@@ -291,11 +293,12 @@ w()
 var f = outer("Hi mom I'm on the projector");
 f.call({}, 1);
 </code></pre>
-      </section>
-      <section>
-        <h3>Arrow Functions</h3>
-        <p>Like anonymous functions but they always keep the <var>this</var> from when they were created.</p>
-        <pre><code class="javascript">var outer = function(text) {
+        </section>
+
+        <section>
+          <h3>Arrow Functions</h3>
+          <p>Like anonymous functions but they always keep the <var>this</var> from when they were created.</p>
+          <pre><code class="javascript">var outer = function(text) {
     return (x) => {
         console.log(this);
         alert(text);
@@ -304,54 +307,58 @@ f.call({}, 1);
 var f = outer("Hi mom I'm on the projector");
 f.call({}, 1); // {} is ignored because it's an arrow function
 </code></pre>
-      </section>
-      <section>
-        <h3>Names</h3>
-        <ul>
-          <li>Start with a letter followed by underscores, letters or numbers.</li>
-          <li>Can't be a reserved word like <var>break</var> or <var>case</var> or <var>for</var> or <var>function</var> or <var>if</var> or <var>in</var> etc.</li>        
-          <li>Convention is to use <var>camelCase</var> like Java not <var>snake_case</var> like Python.</li>
-        </ul>
-        <pre><code class="javascript">var aString = "Strings";
+        </section>
+
+        <section>
+          <h3>Names</h3>
+          <ul>
+            <li>Start with a letter followed by underscores, letters or numbers.</li>
+            <li>Can't be a reserved word like <var>break</var> or <var>case</var> or <var>for</var> or <var>function</var> or <var>if</var> or <var>in</var> etc.</li>
+            <li>Convention is to use <var>camelCase</var> like Java not <var>snake_case</var> like Python.</li>
+          </ul>
+          <pre><code class="javascript">var aString = "Strings";
 var break = "not allowed!";
 var BREAK = "This is allowed!";
-var BrEAK = "Try not to abuse case sensitivity";</code></pre>  
-      </section>
-      <section>
-        <h3>Numbers</h3>
-        <ul>
-          <li>Everything is a double :(</li>
-          <li>Write integers, decimals, or decimals with an exponent</li>
-        </ul>
-        <pre><code class="javascript">var aNumber = 10;
+var BrEAK = "Try not to abuse case sensitivity";</code></pre>
+        </section>
+
+        <section>
+          <h3>Numbers</h3>
+          <ul>
+            <li>Everything is a double :(</li>
+            <li>Write integers, decimals, or decimals with an exponent</li>
+          </ul>
+          <pre><code class="javascript">var aNumber = 10;
 var aNumber = 11.11;
 var aNumber = 1e-100;
 var aNumber = 1E+100;
 var nan = NaN;
 var inf = Infinity;
 var negativeInfinity = -Infinity;</code></pre>
-      </section>
-      <section>
-        <h3>Casting Numbers</h3>
-        <ul>
-          <li>Getting an "integer"</li>
-        </ul>
-        <pre><code class="javascript">Math.floor(0.7)
+        </section>
+
+        <section>
+          <h3>Casting Numbers</h3>
+          <ul>
+            <li>Getting an "integer"</li>
+          </ul>
+          <pre><code class="javascript">Math.floor(0.7)
 Math.ceil(0.7)
 Math.round(0.7)
 Math.trunc(0.7)</code></pre>
-        <ul>
-          <li>Getting a float</li>
-        </ul>
-        <pre><code class="javascript">parseFloat("127")
+          <ul>
+            <li>Getting a float</li>
+          </ul>
+          <pre><code class="javascript">parseFloat("127")
 Number("0x7F")
 +"0x7F" // Unary plus is the same as Number</code></pre>
-      </section>
-      </section>
-      <section>
-        <h4>Rounding Errors</h4>
-        <p>Since everything's a double, you get rounding errors...</p>
-        <pre><code class="javascript">function horse(b) {
+        </section>
+        </section>
+
+        <section>
+          <h4>Rounding Errors</h4>
+          <p>Since everything's a double, you get rounding errors...</p>
+          <pre><code class="javascript">function horse(b) {
   var c = b;
   return function() {
         return 1/c;
@@ -363,30 +370,32 @@ h = horse(103);
 console.log(1/f()==101);
 console.log(1/g()==102);
 console.log(1/h()==103);</code></pre>
-        <button type="button" onclick="alert(1/(1/103))">1/(1/103)</button>
-      </section>
-      <section>
-        <h3>Strings</h3>
-        <ul>
-          <li>Unicode by default</li>
-          <li>Use ' ' or " "</li>
-          <li>Any characters except control characters and \, " or '</li>
-        </ul>
-        <pre><code class="javascript">var aNumber = 10;
+          <button type="button" onclick="alert(1/(1/103))">1/(1/103)</button>
+        </section>
+
+        <section>
+          <h3>Strings</h3>
+          <ul>
+            <li>Unicode by default</li>
+            <li>Use ' ' or " "</li>
+            <li>Any characters except control characters and \, " or '</li>
+          </ul>
+          <pre><code class="javascript">var aNumber = 10;
 var aString = "";
 var anotherString ="Hi how are you";
 var escapesString = "\r\n\t\f\b\/\\\\'\"";
 var snowMan = "\u2603";
 snowMan.length === 1;
 aString.length === 0;</code></pre>
-        <button type="button" onclick="alert('\u2603')">&#9731;</button>
-      </section>
-      <section>
-        <h3>Casting Strings</h3>
-        <ul>
-          <li>Convert to string</li>
-        </ul>
-        <pre><code class="javascript">
+          <button type="button" onclick="alert('\u2603')">&#9731;</button>
+        </section>
+
+        <section>
+          <h3>Casting Strings</h3>
+          <ul>
+            <li>Convert to string</li>
+          </ul>
+          <pre><code class="javascript">
 "" + 1;
 1 + "";
 String(1); 
@@ -395,31 +404,33 @@ String(null); // "null"
 null.toString(); // Error
 (127).toString(16); // "7F"
 </code></pre>
-      </section>
-      <section>
-        <h3>Booleans</h3>
-        <ul>
-          <li><var>true</var>, <var>false</var></li>
-          <li>Unfortunately conditional expressions have lot of truthy and falsey values</li>        
-          <li>False values:</li>
-        </ul>
-        <pre><code class="javascript">false
+        </section>
+
+        <section>
+          <h3>Booleans</h3>
+          <ul>
+            <li><var>true</var>, <var>false</var></li>
+            <li>Unfortunately conditional expressions have lot of truthy and falsey values</li>
+            <li>False values:</li>
+          </ul>
+          <pre><code class="javascript">false
 null
 undefined
 ''
 0
-NaN</code></pre>  
-        <ul>
-          <li>True values are <var>true</var> and everything else.</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Equality</h3>
-        <ul>
-          <li><var>==</var> the <em>abstract</em> equality operator</li>
-          <li><var>===</var> the <em>strict</em> equality operator</li>
-        </ul>
-        <pre><code class="javascript">3=="3" // true
+NaN</code></pre>
+          <ul>
+            <li>True values are <var>true</var> and everything else.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Equality</h3>
+          <ul>
+            <li><var>==</var> the <em>abstract</em> equality operator</li>
+            <li><var>===</var> the <em>strict</em> equality operator</li>
+          </ul>
+          <pre><code class="javascript">3=="3" // true
 3==="3" // false
 1==true // true
 1===true // false
@@ -427,18 +438,19 @@ undefined == null // true
 undefined === null // false
 NaN==NaN // false
 NaN===NaN // false
-isNaN(NaN) // true</code></pre>  
-        <ul>
-          <li>In general you should always use <var>===</var></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Arrays</h3>
-        <ul>
-          <li>Object-oriented and full of methods</li>
-          <li>0-indexed</li>
-        </ul>
-        <pre><code class="javascript">var empty = [];
+isNaN(NaN) // true</code></pre>
+          <ul>
+            <li>In general you should always use <var>===</var></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Arrays</h3>
+          <ul>
+            <li>Object-oriented and full of methods</li>
+            <li>0-indexed</li>
+          </ul>
+          <pre><code class="javascript">var empty = [];
 var arrayInitialized = [1,2,3,4,'5'];//mixed!
 var arr = new Array(10);
 arr[0] === undefined;
@@ -447,31 +459,34 @@ arr[0] = 'Assigned';
 arrayInitialized[4] === '5';
 arrayInitialized.length === 5;
 arrayInitialized.splice(3,1); // delete 4 from the array (slow)</code></pre>
-      </section>
-      <section>
-        <ul>
-          <li>loop over arrays with <var>for ... of</var></li>
-        </ul>
-        <pre><code class="javascript">let a = [1, 2, 3, 4, 5];
+        </section>
+
+        <section>
+          <ul>
+            <li>loop over arrays with <var>for ... of</var></li>
+          </ul>
+          <pre><code class="javascript">let a = [1, 2, 3, 4, 5];
 for (let i of a) {
   console.log(i);
-}</code></pre>  
-      </section>
-      <section>
-        <h3>Objects</h3>
-        <ul>
-          <li>Everything is an object except booleans, numbers and strings</li>
-          <li>Boolens, numbers and strings still have methods</li>
-          <li>Objects have properties</li>
-          <li>Properties are named by a string</li>
-          <li>Property values can be anything <em>including</em> undefined</li>
-          <li>Objects don't have a class</li>
-          <li>Pass by reference</li>
-        </ul>
-      </section>
-      <section>
-        <h4>Objects</h4>
-        <pre><code class="javascript">var empty = {};
+}</code></pre>
+        </section>
+
+        <section>
+          <h3>Objects</h3>
+          <ul>
+            <li>Everything is an object except booleans, numbers and strings</li>
+            <li>Boolens, numbers and strings still have methods</li>
+            <li>Objects have properties</li>
+            <li>Properties are named by a string</li>
+            <li>Property values can be anything <em>including</em> undefined</li>
+            <li>Objects don't have a class</li>
+            <li>Pass by reference</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Objects</h4>
+          <pre><code class="javascript">var empty = {};
 var abram = {
    "name":"Abram Hindle",
    "job":"Throwing Down JS",
@@ -484,10 +499,11 @@ dog.paws === 4;
 abram["favorite tea"] === "puerh";
 abram.name === "Abram Hindle";
 abram["favorite tea"] = "oolong";</code></pre>
-      </section>
-      <section>
-        <h4>Objects</h4>
-        <pre><code class="javascript">undefined.property; // Throws a type error
+        </section>
+
+        <section>
+          <h4>Objects</h4>
+          <pre><code class="javascript">undefined.property; // Throws a type error
 undefined && undefined.property // returns undefined
 var empty = {};
 empty.property === undefined;
@@ -501,10 +517,11 @@ keys(abram); // produces ["name","job","favorite tea"]
 var abramChild = Object.create(abram)
 keys(abramChild); // produces []
 abramChild.name === "Abram Hindle"; // inherits keys from abram</code></pre>
-      </section>
-      <section>
-        <h4>Prototypes</h4>
-        <pre><code class="javascript">var abram = {
+        </section>
+
+        <section>
+          <h4>Prototypes</h4>
+          <pre><code class="javascript">var abram = {
    "name":"Abram Hindle",
    "job":"Throwing Down JS",
    "favorite tea":"puerh",
@@ -518,13 +535,14 @@ function doit() {
     abram.sayName();
     abramChild.sayName();
 }</code></pre>
-      </section>
-      <section>
-        <h3>Looping over Properties</h3>
-        <ul>
-          <li>Use the <var>for ... in</var> syntax</li>
-        </ul>
-        <pre><code class="javascript">let author = {
+        </section>
+
+        <section>
+          <h3>Looping over Properties</h3>
+          <ul>
+            <li>Use the <var>for ... in</var> syntax</li>
+          </ul>
+          <pre><code class="javascript">let author = {
    "name":"Unknown Slide Author",
    "job":"Making Slides",
    "sayName": function() {
@@ -536,72 +554,63 @@ hazel.name = "Hazel Campbell";
 for (let property in hazel) {
   alert(property + ": " + hazel[property]);
 }</code></pre>
-        <ul>
-          <li><var>for ... in</var> includes properties from the prototype!</li>
-        </ul>
-      </section>
-
-      <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+          <ul>
+            <li><var>for ... in</var> includes properties from the prototype!</li>
+          </ul>
+        </section>
+        <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
+      </div>
     </div>
-  </div>
-
-  <script>
-    stripPreIndentation()
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      dependencies: [{
+    <script>
+      stripPreIndentation()
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [{
           src: 'node_modules/reveal.js/plugin/markdown/marked.js'
-        },
-        {
+        }, {
           src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
-        },
-        {
+        }, {
           src: 'node_modules/reveal.js/plugin/notes/notes.js',
           async: true
-        },
-        {
+        }, {
           src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
           async: true,
           callback: function() {
             hljs.initHighlightingOnLoad();
           }
-        },
-        {
+        }, {
           src: 'node_modules/reveal.js-menu/menu.js'
-        }
-      ],
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      //         width: 960,
-      //         height: 700,
-      width: 960,
-      height: 720,
+        }],
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        //         width: 960,
+        //         height: 700,
+        width: 960,
+        height: 720,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.0,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.01,
+        maxScale: 5,
+        menu: {
+          hideMissingTitles: true,
+          titleSelector: 'h1, h2, h3',
+        },
+      });
+      Reveal.addEventListener('slidechanged', function(event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        fitty.fitAll();
+        fiddler();
+      });
+      twemoji.parse(document.body);
+      fitty('.fit');
 
-      // Factor of the display size that should remain empty around the content
-      margin: 0.0,
-
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.01,
-      maxScale: 5,
-      menu: {
-        hideMissingTitles: true,
-        titleSelector: 'h1, h2, h3',
-      },
-    });
-
-    Reveal.addEventListener('slidechanged', function(event) {
-      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-      fitty.fitAll();
-      fiddler();
-    });
-    twemoji.parse(document.body);
-    fitty('.fit');
-  </script>
-</body>
+    </script>
+  </body>
 
 </html>
