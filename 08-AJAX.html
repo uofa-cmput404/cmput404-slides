@@ -195,6 +195,80 @@
           });
         </pre></code>
       </section>
+      <section>
+        <h3>Fetching JSON</h3>
+        <p>Let's make a generic JSON GET function</p>
+        <pre><code class="javascript">
+          function fetchJSON(url) {
+            var request = new Request(url);
+            return fetch(request).then((response) => {
+              if (response.status === 200) { // OK
+                return response.json(); // return a Promise
+              } else {
+                alert("Something went wrong: " + response.status);
+              }
+            });
+          }
+        </code></pre>
+        <script>
+          function fetchJSON(url) {
+            var request = new Request(url);
+            return fetch(request).then((response) => {
+              if (response.status === 200) { // OK
+                return response.json(); // return a Promise
+              } else {
+                alert("Something went wrong: " + response.status);
+              }
+            });
+          }
+        </script>
+      </section>
+      <section style="font-size: 75%">
+        <h3>Do something with the JSON</h3>
+        <pre><code class="javascript">
+          var getterID; // global
+          function startGetting() {
+            getterID = window.setInterval(() => { // callback
+              var now = new Date();
+              var s = 1 + (now.getSeconds() % 4); // remainder
+              var url = s + ".json" // 1.json 2.json 3.json...
+              fetchJSON(url).then((json) => { // another callback
+                console.log(json); // browser turned the JSON into an object
+                text = json.message; // it has properties
+                document.querySelector("#ajaxy").innerText = text;
+              });
+            }, 1000); // 1 second or 1000ms
+          }
+          function stopGetting() {
+            window.clearInterval(getterID);
+          }
+        </code></pre>
+        <pre><code class="html">
+          <button type="button" onclick="startGetting()">Start Getting</button>
+          <button type="button" onclick="stopGetting()">Stop Getting</button>
+          <blockquote id="ajaxy"></blockquote>
+        </code></pre>
+        <script>
+          var getterID; // global
+          function startGetting() {
+            getterID = window.setInterval(() => { // callback
+              var now = new Date();
+              var s = 1 + (now.getSeconds() % 4); // remainder
+              var url = s + ".json" // 1.json 2.json 3.json...
+              fetchJSON(url).then((json) => { // another callback
+                console.log(json); // browser turned the JSON into an object
+                text = json.message; // it has properties
+                document.querySelector("#ajaxy").innerText = text;
+              });
+            }, 1000); // 1 second or 1000ms
+          }
+          function stopGetting() {
+            window.clearInterval(getterID);
+          }
+        </script>
+        <button type="button" onclick="startGetting()">Start Getting</button><button type="button" onclick="stopGetting()">Stop Getting</button>
+        <blockquote id="ajaxy"></blockquote>
+      </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
