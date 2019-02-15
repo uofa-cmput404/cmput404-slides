@@ -26,19 +26,6 @@
   <!-- Custom Styling -->
   <link rel="stylesheet" href="cmput404-slides.css">
   <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
-  <script>
-    function blackStyleSheet(sheet) {
-      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
-      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/rainbow.css");
-      document.getElementById("404theme").setAttribute("href", "cmput404-slides-black.css");
-    }
-    function whiteStyleSheet(sheet) {
-      document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/white.css");
-      document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/googlecode.css");
-      document.getElementById("404theme").setAttribute("href", "cmput404-slides-white.css");
-    }
-    whiteStyleSheet();
-  </script>
 </head>
 
 <body>
@@ -521,9 +508,9 @@
   <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
   <script src="node_modules/reveal.js/js/reveal.js"></script>
   <script src="node_modules/chai/chai.js"></script>
-  <script src="fiddler.js"></script>
   <script src="node_modules/fitty/dist/fitty.min.js"></script>
   <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+  <script src="fiddler.js"></script><!-- must go last -->
 
   <script>
     stripPreIndentation()
