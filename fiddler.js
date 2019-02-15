@@ -116,30 +116,6 @@ function stripPreIndentation() {
   }
 }
 
-function linkLoadPromise() {
-  let promises = [];
-  for (let link of document.getElementsByTagName("link")) {
-    let already = false;
-    try {
-      link.sheet.cssRules;
-      already = true;
-    } catch(error) {
-      already = false;
-    }
-    console.log(link.href + " : " + already);
-    if (link.rel === "stylelink" && (!already)) {
-      let promise = new Promise((resolve, reject) => {
-        link.addEventListener("load", function loadListener(event) {
-          link.removeEventListener("load", loadListener);
-          resolve();
-        });
-      });
-      promises.push(promise);
-    }
-  }
-  return Promise.all(promises);
-}
-
 function blackStyleSheet() {
   document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
   document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/dracula.css");
@@ -159,79 +135,73 @@ function fixTitle() {
 }
 
 //-- Initialize Slide Deck -----------------------------------------------------
-window.addEventListener("load", (event) => {
-  // All the scripts have been loaded!
-  
+/* From reveal.js */
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+/* end from reveal.js */
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  // dom exists
   fixTitle();
 
   whiteStyleSheet(); // this is the default
+});
 
-  /* From reveal.js */
-  var link = document.createElement( 'link' );
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
-  document.getElementsByTagName( 'head' )[0].appendChild( link );
-  /* end from reveal.js */
-
-  stripPreIndentation();
+window.addEventListener("load", (event) => {
+  // scripts have loaded
   
-
-  linkLoadPromise().then(() => {
-    console.log("Styles loaded!");
-    // Initialize Reveal
-    Reveal.initialize({
-      dependencies: [{
-          src: 'node_modules/reveal.js/plugin/markdown/marked.js'
-        },
-        {
-          src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
-        },
-        {
-          src: 'node_modules/reveal.js/plugin/notes/notes.js',
-          async: true
-        },
-        {
-          src: 'node_modules/reveal.js-menu/menu.js'
-        }
-      ],
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      //         width: 960,
-      //         height: 700,
-      width: 960,
-      height: 720,
-
-      // Factor of the display size that should remain empty around the content
-      margin: 0.0,
-
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.01,
-      maxScale: 5,
-      menu: {
-        hideMissingTitles: true,
-        titleSelector: 'h1, h2, h3',
+  stripPreIndentation();
+  // Initialize Reveal
+  Reveal.initialize({
+    dependencies: [{
+        src: 'node_modules/reveal.js/plugin/markdown/marked.js'
       },
-      history: true,
-    });
+      {
+        src: 'node_modules/reveal.js/plugin/markdown/markdown.js'
+      },
+      {
+        src: 'node_modules/reveal.js/plugin/notes/notes.js',
+        async: true
+      },
+      {
+        src: 'node_modules/reveal.js-menu/menu.js'
+      }
+    ],
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    //         width: 960,
+    //         height: 700,
+    width: 960,
+    height: 720,
 
-    // Hook slide change event
-    Reveal.addEventListener('ready', function(event) {
-      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-      fitty.fitAll();
-      fiddler();
-    });
+    // Factor of the display size that should remain empty around the content
+    margin: 0.0,
 
-    // add emojis
-    twemoji.parse(document.body);
-
-    // initilize fitty
-    fitty('.fit');
-    
-    // force reveal to layout
-    window.setTimeout(() => {
-      Reveal.layout();
-    }, 0);
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.01,
+    maxScale: 5,
+    menu: {
+      hideMissingTitles: true,
+      titleSelector: 'h1, h2, h3',
+    },
+    history: true,
   });
+
+  // Fiddle with things
+  Reveal.addEventListener('ready', function(event) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    fitty.fitAll();
+    fiddler();
+    Reveal.layout(); // just in case
+  });
+
+  // add emojis
+  twemoji.parse(document.body);
+
+  // initilize fitty
+  fitty('.fit');
 });
