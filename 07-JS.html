@@ -554,11 +554,383 @@ hazel.name = "Hazel Campbell";
 for (let property in hazel) {
   alert(property + ": " + hazel[property]);
 }</code></pre>
-          <ul>
-            <li><var>for ... in</var> includes properties from the prototype!</li>
+        <ul>
+          <li><var>for ... in</var> includes properties from the prototype!</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Classes</h3>
+        <p>JavaScript has several ways of creating "classes"</p>
+
+        <ul>
+          <li>ECMAScript 2015 classes</li>
+          <li>Constructor functions</li>
+        </ul>
+      </section>
+      <section>
+        <h3>ECMAScript 2015 Classes</h3>
+        <ul>
+          <li>Recommended</li>
+        </ul>
+        <pre><code class="javascript">
+          class Pokemon {
+            constructor(name, level) {
+              this.name = name;
+              this.level = level;
+            }
+            levelUp() {
+              this.level += 1;
+            }
+          }
+          pikachu = new Pokemon("Pikachu", 1);
+          pikachu.levelUp();
+        </code></pre>
+      </section>
+      <section>
+        <h3>Constructor Function</h3>
+        <ul>
+          <li>You might see this in old code</li>
+        </ul>
+        <pre><code class="javascript">
+           // classes start with a capital letter by convention
+          function Pokemon() {
+            this.name = name;
+            this.level = level;
+            this.levelUp = function() {
+              this.level += 1;
+            }
+          }
+          pikachu = new Pokemon("Pikachu", 1);
+          pikachu.levelUp();
+        </code></pre>
+      </section>
+      <section>
+        <h4>Constructor Function</h4>
+        <ul>
+          <li>You might also see the methods added to the prototype later</li>
+        </ul>
+        <pre><code class="javascript">
+           // classes start with a capital letter by convention
+          function Pokemon() {
+            this.name = name;
+            this.level = level;
+            }
+          }
+          // have to include "prototype" here so "this" works in the method
+          Pokemon.prototype.levelUp = function() {
+            this.level += 1;
+          }
+          pikachu = new Pokemon("Pikachu", 1);
+          pikachu.levelUp();
+        </code></pre>
+      </section>
+      <section>
+        <h4><var>Object.create(prototype)</var></h4>
+        <ul>
+          <li>Awkward and arely used</li>
+        </ul>
+        <pre><code class="javascript">
+           // classes start with a capital letter by convention
+          var Pokemon = {
+            name: null;
+            level: null;
+            levelUp: function() {
+              this.level += 1;
+            }
+          }
+          pikachu = Object.create(Pokemon);
+          pikachu.name = Pikachu;
+          pikachu.level = 1;
+          pikachu.levelUp();
+        </code></pre>
+      </section>
+      <section>
+        <h3>Manipulating the DOM</h3>
+        <ul>
+          <li>You can use JavaScript to manipulate what's on the page</li>
+          <li>Browser turns HTML into the DOM</li>
+          <li>Document Object Model
+            <ul>
+              <li>Document: the stuff on your page, the content</li>
+              <li>Object: gets turned into objects accessible by JS</li>
+              <li>Model: it's a tree with children nodes</li>
+            </ul>
+          </li>
+          <li><a href="https://www.w3schools.com/js/js_htmldom.asp">JS HTML DOM Tutorial</a>
+        </ul>
+      </section>
+      <section>
+        <h3>DOM Elements from HTML</h3>
+        <pre><code class="html">
+          &lt;p>A paragraph&lt;/p>
+          &lt;div>
+            Hi!
+            &lt;a href="https://google.ca">Click me!&lt;/a>
+          &lt;/div>
+        </code></pre>
+        <blockquote id="domexample">
+          <p>A paragraph</p>
+          <div>
+            Hi!
+            <a href="https://google.ca">Click me!</a>
+          </div>        
+        </blockquote>
+      </section>
+      <section style="font-size: 90%">
+        <h3>Top of the DOM</h3>
+        <ul>
+          <li>Document (it's a tree with children nodes!)<ul>
+            <li>Root Element: HTML ( document.children[0] )<ul>
+              <li>Element: Head ( document.children[0].children[0] )</li>
+              <li>Element: Body ( document.children[0].children[1] )<ul>
+                <li>Element: p ( document.children[0].children[1].children[0] )<ul>
+                  <li>#text: A paragrah</li>
+                </ul>
+                </li>
+                <li>Element: div<ul>
+                  <li>Text: Hi!</li>
+                  <li>Element: a ; attribute href<ul>
+                    <li>Text: Click me!</li>
+                  </ul>
+                  </li>
+                </ul>
+                </li>
+              </ul>
+              </li>
+            </ul>
+            </li>
           </ul>
-        </section>
-        <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Recursive</h3>
+        <pre><code class="javascript">
+          function domRecurse(start, depth) {
+            var out = "";
+            for (child of start.childNodes) {
+              indent = "    ".repeat(depth);
+              out += indent + "* " + child.nodeName;
+                if (child.nodeName === "#text") {
+                  out += " " + JSON.stringify(child.wholeText);
+                }
+              out += "\n";
+              out += domRecurse(child, depth+1);
+            }
+            return out;
+          }
+        </code></pre>
+        <script>
+          function domRecurseExample() {
+            var start = document.querySelector("#domexample");
+            alert(domRecurse(start, 0));
+          }
+          function domRecurse(start, depth) {
+            var out = "";
+            for (child of start.childNodes) {
+              indent = "    ".repeat(depth);
+              out += indent + "* " + child.nodeName;
+                if (child.nodeName === "#text") {
+                  out += " " + JSON.stringify(child.wholeText);
+                }
+              out += "\n";
+              out += domRecurse(child, depth+1);
+            }
+            return out;
+          }
+        </script>
+        <button type="button" onclick="domRecurseExample()">Try it!</button>
+      </section>
+      <section>
+        <h3>querySelector</h3>
+        <ul>
+          <li>Jump straight to an element</li>
+          <li>Use CSS-style selectors</li>
+          <li>You don't need jQuery</li>
+        </ul>
+        <pre><code class="javascript">
+          function domRecurseExample() {
+            var start = document.querySelector("#domexample");
+            alert(domRecurse(start, 0));
+          }
+        </code></pre>
+        <pre><code class="html">
+          &lt;blockquote id="domexample">
+            ...
+          &lt;/blockquote>
+          &lt;button type="button" onclick="domRecurseExample()">Try it!&lt;/button>
+        </code></pre>
+        <button type="button" onclick="domRecurseExample()">Try it!</button>
+      </section>
+      <section>
+        <h3>Finding DOM Elements</h3>
+        <ul>
+          <li>Other than <var>querySelector</var></li>
+        </ul>
+        <pre><code class="javascript">
+          // Get all DIVs
+          var divs = document.getElementsByTagName("div"); 
+          // gets all elements with class divider
+          var dividers = document.getElementsByClassName("divider"); 
+          // get the element with the ID main
+          var main = document.getElementById('main');
+          // get the element by name
+          var ups = document.getElementsByName('up');
+        </code></pre>
+      </section>
+      <section>
+        <h3>jQuery?</h3>
+        <p>jQuery's functionality is now available from
+          APIs built-in to browsers.</p>
+        <ul>
+          <li>Old projects that need backwards-compatibility or already use jQuery:
+            <ul>
+              <li>Using jQuery is totally cool!</li>
+            </ul>
+          </li>
+          <li>New projects using ECMA 2016 and later:
+            <ul>
+              <li>Better to just use the tools the browser gives you.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Changing Document Content</h3>
+        <p>Changing the DOM</p>
+        <pre><code class="html">
+          &lt;div id="fillme">&lt;/div>
+        </pre></code>
+        <pre><code class="javascript">
+          function fillExample() {
+            fillme = document.getElementById("fillme");
+            fillme.textContent = "Here's some text in that div! ";
+            a = document.createElement("a"); // create an a element
+            a.textContent = "Let's make a link too!";
+            a.href = "https://google.ca/";
+            fillme.appendChild(a);
+          }
+        </pre></code>
+        <blockquote><div id="fillme"></div></blockquote>
+        <script>
+          function fillExample() {
+            fillme = document.getElementById("fillme");
+            fillme.textContent = "Here's some text in that div! ";
+            a = document.createElement("a"); // create an a element
+            a.textContent = "Let's make a link too!";
+            a.href = "https://google.ca/";
+            fillme.appendChild(a);
+          }
+        </script>
+        <button type="button" onclick="fillExample()">Try it!</button>
+      </section>
+      <section style="font-size: 90%">
+        <h3>Changing Document Style</h3>
+        <pre><code class="html">
+          &lt;div class="styleme">I'm text in a div!&lt;/div>
+          &lt;div class="styleme">I'm text in another div!&lt;/div>
+        </pre></code>
+        <pre><code class="javascript">
+          function styleExample() {
+            var divs = document.getElementsByClassName("styleme");
+            divs = Array.prototype.slice.call(divs); // convert HTMLCollection to Array
+            divs.map( (div) => {
+              console.log(div);
+              div.style.border = "5px solid";
+              div.style.borderColor = "rgb(" + (256*Math.random())
+                + ", " + (256*Math.random()) + ", " + (256*Math.random()) + ")";
+            });
+          }
+        </pre></code>
+        <blockquote>
+                  <div class="styleme">I'm text in a div!</div>
+          <div class="styleme">I'm text in another div!</div>
+        </blockquote>
+        <script>
+          function styleExample() {
+            var divs = document.getElementsByClassName("styleme");
+            divs = Array.prototype.slice.call(divs); // convert HTMLCollection to Array
+            divs.map( (div) => {
+              console.log(div);
+              div.style.border = "5px solid";
+              div.style.borderColor = "rgb(" + (256*Math.random())
+                + ", " + (256*Math.random())
+                + ", " + (256*Math.random()) + ")";
+            });
+          }
+        </script>
+        <button type="button" onclick="styleExample()">Try it!</button>
+      </section>
+      <section style="font-size: 90%">
+        <h3>Changing Document Style</h3>
+        <!--<pre><code class="html">
+          &lt;div class="styleme2">I'm text in a div!&lt;/div>
+          &lt;div class="styleme2">I'm text in another div!&lt;/div>
+        </pre></code>-->
+        <pre><code class="javascript">
+          function styleExample() {
+            old = document.getElementById("styleme2sheet");
+            if (old) {
+              old.parentNode.removeChild(old);
+            }
+            var css = "div.styleme2 { border: 5px solid "
+                + "rgb(" + (256*Math.random())
+                + ", " + (256*Math.random())
+                + ", " + (256*Math.random()) + "); }";
+            style = document.createElement('style');
+            style.type = "text/css";
+            style.id = "styleme2sheet";
+            style.textContent = css;
+            document.head.appendChild(style);
+          }
+        </pre></code>
+        <blockquote>
+                  <div class="styleme2">I'm text in a div!</div>
+          <div class="styleme2">I'm text in another div!</div>
+        </blockquote>
+        <script>
+          function styleExample() {
+            old = document.getElementById("styleme2sheet");
+            if (old) {
+              old.parentNode.removeChild(old);
+            }
+            var css = "div.styleme2 { border: 5px solid "
+                + "rgb(" + (256*Math.random())
+                + ", " + (256*Math.random())
+                + ", " + (256*Math.random()) + "); }";
+            style = document.createElement('style');
+            style.type = "text/css";
+            style.id = "styleme2sheet";
+            style.textContent = css;
+            document.head.appendChild(style);
+          }
+        </script>
+        <button type="button" onclick="styleExample()">Try it!</button>
+      </section>
+      <section>
+        <h3>Explore The DOM</h3>
+        <ul>
+          <li>Right-click -> Inspect Element</li>
+          <li>Experiment with a page like <a href="https://metafilter.com/">https://metafilter.com/</a>
+          <li>Change DOM elements and Style!</li>
+          <li>Copy parts of the HTML out to the clipboard!</li>
+          <li>Remove annoying elements! <a href="https://pintrest.com/"></a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>More Resources</h3>
+        <ul>
+          <li><a href="http://www.w3schools.com/js/js_htmldom.asp">W3CSchools Javascript DOM</a></li>
+          <li><a href="http://www.w3schools.com/js/js_dom_examples.asp">W3CSchools Javascript HTML DOM
+          Examples</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/DOM/DOM_Reference/Introduction">DOM Intro and Reference from
+          MDN</a></li>
+          <li><a href="https://developer.mozilla.org/en/docs/DOM">Mozilla Network DOM
+          Refs</a></li>
+          <li><a href="http://www.w3.org/TR/WD-DOM/introduction.html">W3C What is a DOM</a></li>
+        </ul>
+      </section>
+      <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
       </div>
@@ -614,3 +986,4 @@ for (let property in hazel) {
   </body>
 
 </html>
+
