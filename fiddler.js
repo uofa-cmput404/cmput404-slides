@@ -116,6 +116,30 @@ function stripPreIndentation() {
   }
 }
 
+function linkLoadPromise() {
+  let promises = [];
+  for (let link of document.getElementsByTagName("link")) {
+    let already = false;
+    try {
+      link.sheet.cssRules;
+      already = true;
+    } catch(error) {
+      already = false;
+    }
+    console.log(link.href + " : " + already);
+    if (link.rel === "stylelink" && (!already)) {
+      let promise = new Promise((resolve, reject) => {
+        link.addEventListener("load", function loadListener(event) {
+          link.removeEventListener("load", loadListener);
+          resolve();
+        });
+      });
+      promises.push(promise);
+    }
+  }
+  return Promise.all(promises);
+}
+
 function blackStyleSheet() {
   document.getElementById("revealtheme").setAttribute("href", "node_modules/reveal.js/css/theme/black.css");
   document.getElementById("highlighttheme").setAttribute("href", "node_modules/highlightjs/styles/dracula.css");
@@ -151,8 +175,10 @@ window.addEventListener("load", (event) => {
   /* end from reveal.js */
 
   stripPreIndentation();
+  
 
-  link.addEventListener("load", (event) => {
+  linkLoadPromise().then(() => {
+    console.log("Styles loaded!");
     // Initialize Reveal
     Reveal.initialize({
       dependencies: [{
@@ -191,7 +217,7 @@ window.addEventListener("load", (event) => {
     });
 
     // Hook slide change event
-    Reveal.addEventListener('slidechanged', function(event) {
+    Reveal.addEventListener('ready', function(event) {
       // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       fitty.fitAll();
       fiddler();
@@ -202,5 +228,10 @@ window.addEventListener("load", (event) => {
 
     // initilize fitty
     fitty('.fit');
+    
+    // force reveal to layout
+    window.setTimeout(() => {
+      Reveal.layout();
+    }, 0);
   });
 });
