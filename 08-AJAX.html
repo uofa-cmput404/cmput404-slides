@@ -9,14 +9,24 @@
   
   <!-- Styling from reveal.js -->
   <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-  <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+  <link id="revealtheme" rel="stylesheet" href="">
 
   <!-- Theme used for syntax highlighting of code -->
-  <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+  <link id="highlighttheme" rel="stylesheet" href="">
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="cmput404-slides.css">
-  <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
+  <link id="404theme" rel="stylesheet" href="">
+  
+  <!-- Scripts! -->
+  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+  <script src="node_modules/reveal.js/js/reveal.js"></script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js"></script>
+  <script src="node_modules/highlightjs/highlight.pack.js"></script>
+  <script src="fiddler.js"></script><!-- make sure fiddler is last -->
+
 </head>
 
 <body>
@@ -96,23 +106,6 @@
             height="400">
           <cite><em>Mean Girls.</em> Paramount Home Entertainment, 2005. Performed by Rachel McAdams.</cite>
         </blockquote>
-        <script>
-          function fetchExample() {
-            // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#Example 2019-02-14
-            var img = document.querySelector("img#fetchexample");
-            var request = new Request("images/fetch.gif");
-            var promise1 = fetch(request);
-            var promise2 = promise1.then(function(response) {
-              console.log("Got headers!");
-              return response.blob(); // return a promise for raw binary data
-            });
-            promise2.then(function(blob) {
-              console.log("Got data blob!");
-              var objectURL = URL.createObjectURL(blob);
-              img.src = objectURL;
-            });
-          }
-        </script>
         <button type="button" onclick="fetchExample()">Fetch!</button>
       </section>
       <section>
@@ -125,67 +118,51 @@
           </blockquote>
         </pre></code>
         <pre><code class="javascript">
-          function fetchExample() {
-            // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#Example 2019-02-14
-            var img = document.querySelector("img#fetchexample");
-            var request = new Request("images/fetch.gif");
-            var promise1 = fetch(request);
-            var promise2 = promise1.then(function(response) {
-              console.log("Got headers!");
-              return response.blob(); // return a promise for raw binary data
-            });
-            promise2.then(function(blob) {
-              console.log("Got data blob!");
-              var objectURL = URL.createObjectURL(blob);
-              img.src = objectURL;
-            });
-          }
-          // Note in the DOM the img's src= attribute after running!</pre></code>
+          <script>
+            function fetchExample() {
+              // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#Example 2019-02-14
+              var img = document.querySelector("img#fetchexample");
+              var request = new Request("images/fetch.gif");
+              var promise1 = fetch(request);
+              var promise2 = promise1.then(function(response) {
+                console.log("Got headers!");
+                return response.blob(); // return a promise for raw binary data
+              });
+              promise2.then(function(blob) {
+                console.log("Got data blob!");
+                var objectURL = URL.createObjectURL(blob);
+                img.src = objectURL;
+              });
+            }
+            // Note in the DOM the img's src= attribute after running!</pre></code>
+          </script>
+        </code></pre>
       </section>
       <section>
         <h3>Promises, Promises</h3>
         <pre><code class="javascript">
-          function makeAPromise(data) {
-            return new Promise((resolve, reject) => {
-              resolve(data);
-            });
-          }
-          function promiseExample() {
-            // .then returns a NEW promise
-            var promise1 = makeAPromise("X");
-            var promise2 = promise1.then((data2) => {
-              // inner function gets called after the promise is resolved
-              alert("data2: " + data2);
-              return "Y";
-            });
-            // .then calls its argument with the return value of the
-            //     previous promises's callback function
-            var promise3 = promise2.then((data3) => {
-              alert("data3: " + data3);
-            });
-          }
+          <script>
+            function makeAPromise(data) {
+              return new Promise((resolve, reject) => {
+                resolve(data);
+              });
+            }
+            function promiseExample() {
+              // .then returns a NEW promise
+              var promise1 = makeAPromise("X");
+              var promise2 = promise1.then((data2) => {
+                // inner function gets called after the promise is resolved
+                alert("data2: " + data2);
+                return "Y";
+              });
+              // .then calls its argument with the return value of the
+              //     previous promises's callback function
+              var promise3 = promise2.then((data3) => {
+                alert("data3: " + data3);
+              });
+            }
+          </script>
         </pre></code>
-        <script>
-          function makeAPromise(data) {
-            return new Promise((resolve, reject) => {
-              resolve(data);
-            });
-          }
-          function promiseExample() {
-            // .then returns a NEW promise
-            var promise1 = makeAPromise("X");
-            var promise2 = promise1.then((data2) => {
-              // inner function gets called after the promise is resolved
-              alert("data2: " + data2);
-              return "Y";
-            });
-            // .then calls its argument with the return value of the
-            //     previous promises's callback function
-            var promise3 = promise2.then((data3) => {
-              alert("data3: " + data3);
-            });
-          }
-        </script>
         <button type="button" onclick="promiseExample()">promiseExample()</button>
       </section>
       <section style="font-size: 85%">
@@ -221,73 +198,47 @@
         <h3>Fetching JSON</h3>
         <p>Let's make a generic JSON GET function</p>
         <pre><code class="javascript">
-          function fetchJSON(url) {
-            var request = new Request(url);
-            return fetch(request).then((response) => {
-              if (response.status === 200) { // OK
-                return response.json(); // return a Promise
-              } else {
-                alert("Something went wrong: " + response.status);
-              }
-            });
-          }
+          <script>
+            function fetchJSON(url) {
+              var request = new Request(url);
+              return fetch(request).then((response) => {
+                if (response.status === 200) { // OK
+                  return response.json(); // return a Promise
+                } else {
+                  alert("Something went wrong: " + response.status);
+                }
+              });
+            }
+          </script>
         </code></pre>
-        <script>
-          function fetchJSON(url) {
-            var request = new Request(url);
-            return fetch(request).then((response) => {
-              if (response.status === 200) { // OK
-                return response.json(); // return a Promise
-              } else {
-                alert("Something went wrong: " + response.status);
-              }
-            });
-          }
-        </script>
       </section>
       <section style="font-size: 75%">
         <h3>Do something with the JSON</h3>
         <pre><code class="javascript">
-          var getterID; // global
-          function startGetting() {
-            getterID = window.setInterval(() => { // callback
-              var now = new Date();
-              var s = 1 + (now.getSeconds() % 4); // remainder
-              var url = s + ".json" // 1.json 2.json 3.json...
-              fetchJSON(url).then((json) => { // another callback
-                console.log(json); // browser turned the JSON into an object
-                text = json.message; // it has properties
-                document.querySelector("#ajaxy").innerText = text;
-              });
-            }, 1000); // 1 second or 1000ms
-          }
-          function stopGetting() {
-            window.clearInterval(getterID);
-          }
+          <script>
+            var getterID; // global
+            function startGetting() {
+              getterID = window.setInterval(() => { // callback
+                var now = new Date();
+                var s = 1 + (now.getSeconds() % 4); // remainder
+                var url = s + ".json" // 1.json 2.json 3.json...
+                fetchJSON(url).then((json) => { // another callback
+                  console.log(json); // browser turned the JSON into an object
+                  text = json.message; // it has properties
+                  document.querySelector("#ajaxy").innerText = text;
+                });
+              }, 1000); // 1 second or 1000ms
+            }
+            function stopGetting() {
+              window.clearInterval(getterID);
+            }
+          </script>
         </code></pre>
         <pre><code class="html">
           <button type="button" onclick="startGetting()">Start Getting</button>
           <button type="button" onclick="stopGetting()">Stop Getting</button>
           <blockquote id="ajaxy"></blockquote>
         </code></pre>
-        <script>
-          var getterID; // global
-          function startGetting() {
-            getterID = window.setInterval(() => { // callback
-              var now = new Date();
-              var s = 1 + (now.getSeconds() % 4); // remainder
-              var url = s + ".json" // 1.json 2.json 3.json...
-              fetchJSON(url).then((json) => { // another callback
-                console.log(json); // browser turned the JSON into an object
-                text = json.message; // it has properties
-                document.querySelector("#ajaxy").innerText = text;
-              });
-            }, 1000); // 1 second or 1000ms
-          }
-          function stopGetting() {
-            window.clearInterval(getterID);
-          }
-        </script>
         <button type="button" onclick="startGetting()">Start Getting</button><button type="button" onclick="stopGetting()">Stop Getting</button>
         <blockquote id="ajaxy"></blockquote>
       </section>
@@ -310,32 +261,22 @@
       </section>
       <section>
         <pre><code class="javascript">
-          function hotDogs() {
+          <script>
+            function stringifyExample() {
               var obj = { "food":"hotdog", 
                           "condiments":["ketchup","mustard","cheese"],
                           "sausage":"weiner"
               };
-              document.querySelector("#hotdog").innerText = 
-                JSON.stringify(obj, null, " "); //pretty print
-              var newObj = JSON.parse($("#hotdog").text()); 
-              $("#sausage").text( newObj.sausage );
-          }
+              document.querySelector("#hotdog").value = 
+                JSON.stringify(obj, null, " "); // pretty print
+            }
+            function parseExample() {
+              text = document.querySelector("#hotdog").value;
+              var newObj = JSON.parse(text); 
+              document.querySelector("#sausage").innerText = newObj.sausage;
+            }
+          </script>
         </code></pre>
-        <script>
-          function stringifyExample() {
-            var obj = { "food":"hotdog", 
-                        "condiments":["ketchup","mustard","cheese"],
-                        "sausage":"weiner"
-            };
-            document.querySelector("#hotdog").value = 
-              JSON.stringify(obj, null, " "); // pretty print
-          }
-          function parseExample() {
-            text = document.querySelector("#hotdog").value;
-            var newObj = JSON.parse(text); 
-            document.querySelector("#sausage").innerText = newObj.sausage;
-          }
-        </script>
         <button type="button" onclick="stringifyExample()">stringifyExample()</button>
         <button type="parse" onclick="parseExample()">parseExample()</button><br>
         <textarea id="hotdog" rows="10" cols="80"></textarea>
@@ -495,14 +436,6 @@
       </section>
     </div>
   </div>
-
-  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
-  <script src="node_modules/reveal.js/js/reveal.js"></script>
-  <script src="node_modules/chai/chai.js"></script>
-  <script src="fiddler.js"></script>
-  <script src="node_modules/fitty/dist/fitty.min.js"></script>
-  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js"></script>
-
 </body>
 
 </html>

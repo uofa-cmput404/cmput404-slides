@@ -9,14 +9,24 @@
   
   <!-- Styling from reveal.js -->
   <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-  <link id="revealtheme" rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+  <link id="revealtheme" rel="stylesheet" href="">
 
   <!-- Theme used for syntax highlighting of code -->
-  <link id="highlighttheme" rel="stylesheet" href="node_modules/highlightjs/styles/googlecode.css">
+  <link id="highlighttheme" rel="stylesheet" href="">
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="cmput404-slides.css">
-  <link id="404theme" rel="stylesheet" href="cmput404-slides-white.css">
+  <link id="404theme" rel="stylesheet" href="">
+  
+  <!-- Scripts! -->
+  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+  <script src="node_modules/reveal.js/js/reveal.js"></script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="node_modules/fitty/dist/fitty.min.js"></script>
+  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js"></script>
+  <script src="node_modules/highlightjs/highlight.pack.js"></script>
+  <script src="fiddler.js"></script><!-- make sure fiddler is last -->
+
 </head>
 
 <body>
@@ -618,7 +628,7 @@ for (let property in hazel) {
             }
           }
           pikachu = Object.create(Pokemon);
-          pikachu.name = Pikachu;
+          pikachu.name = "Pikachu";
           pikachu.level = 1;
           pikachu.levelUp();
         </code></pre>
@@ -684,40 +694,29 @@ for (let property in hazel) {
       </section>
       <section>
         <h3>Recursive</h3>
-        <pre><code class="javascript">
-          function domRecurse(start, depth) {
-            var out = "";
-            for (child of start.childNodes) {
-              indent = "    ".repeat(depth);
-              out += indent + "* " + child.nodeName;
-                if (child.nodeName === "#text") {
-                  out += " " + JSON.stringify(child.wholeText);
-                }
-              out += "\n";
-              out += domRecurse(child, depth+1);
-            }
-            return out;
-          }
-        </code></pre>
         <script>
           function domRecurseExample() {
             var start = document.querySelector("#domexample");
             alert(domRecurse(start, 0));
           }
-          function domRecurse(start, depth) {
-            var out = "";
-            for (child of start.childNodes) {
-              indent = "    ".repeat(depth);
-              out += indent + "* " + child.nodeName;
-                if (child.nodeName === "#text") {
-                  out += " " + JSON.stringify(child.wholeText);
-                }
-              out += "\n";
-              out += domRecurse(child, depth+1);
-            }
-            return out;
-          }
         </script>
+        <pre><code class="javascript">
+          <script>
+            function domRecurse(start, depth) {
+              var out = "";
+              for (child of start.childNodes) {
+                indent = "    ".repeat(depth);
+                out += indent + "* " + child.nodeName;
+                  if (child.nodeName === "#text") {
+                    out += " " + JSON.stringify(child.wholeText);
+                  }
+                out += "\n";
+                out += domRecurse(child, depth+1);
+              }
+              return out;
+            }
+          </script>
+        </code></pre>
         <button type="button" onclick="domRecurseExample()">Try it!</button>
       </section>
       <section>
@@ -781,26 +780,18 @@ for (let property in hazel) {
           &lt;div id="fillme">&lt;/div>
         </pre></code>
         <pre><code class="javascript">
-          function fillExample() {
-            fillme = document.getElementById("fillme");
-            fillme.textContent = "Here's some text in that div! ";
-            a = document.createElement("a"); // create an a element
-            a.textContent = "Let's make a link too!";
-            a.href = "https://google.ca/";
-            fillme.appendChild(a);
-          }
+          <script>
+            function fillExample() {
+              fillme = document.getElementById("fillme");
+              fillme.textContent = "Here's some text in that div! ";
+              a = document.createElement("a"); // create an a element
+              a.textContent = "Let's make a link too!";
+              a.href = "https://google.ca/";
+              fillme.appendChild(a);
+            }
+          </script>
         </pre></code>
         <blockquote><div id="fillme"></div></blockquote>
-        <script>
-          function fillExample() {
-            fillme = document.getElementById("fillme");
-            fillme.textContent = "Here's some text in that div! ";
-            a = document.createElement("a"); // create an a element
-            a.textContent = "Let's make a link too!";
-            a.href = "https://google.ca/";
-            fillme.appendChild(a);
-          }
-        </script>
         <button type="button" onclick="fillExample()">Try it!</button>
       </section>
       <section style="font-size: 90%">
@@ -810,34 +801,24 @@ for (let property in hazel) {
           &lt;div class="styleme">I'm text in another div!&lt;/div>
         </pre></code>
         <pre><code class="javascript">
-          function styleExample() {
-            var divs = document.getElementsByClassName("styleme");
-            divs = Array.prototype.slice.call(divs); // convert HTMLCollection to Array
-            divs.map( (div) => {
-              console.log(div);
-              div.style.border = "5px solid";
-              div.style.borderColor = "rgb(" + (256*Math.random())
-                + ", " + (256*Math.random()) + ", " + (256*Math.random()) + ")";
-            });
-          }
+          <script>
+            function styleExample() {
+              var divs = document.getElementsByClassName("styleme");
+              divs = Array.prototype.slice.call(divs); // convert HTMLCollection to Array
+              divs.map( (div) => {
+                console.log(div);
+                div.style.border = "5px solid";
+                div.style.borderColor = "rgb(" + (256*Math.random())
+                  + ", " + (256*Math.random())
+                  + ", " + (256*Math.random()) + ")";
+              });
+            }
+          </script>
         </pre></code>
         <blockquote>
                   <div class="styleme">I'm text in a div!</div>
           <div class="styleme">I'm text in another div!</div>
         </blockquote>
-        <script>
-          function styleExample() {
-            var divs = document.getElementsByClassName("styleme");
-            divs = Array.prototype.slice.call(divs); // convert HTMLCollection to Array
-            divs.map( (div) => {
-              console.log(div);
-              div.style.border = "5px solid";
-              div.style.borderColor = "rgb(" + (256*Math.random())
-                + ", " + (256*Math.random())
-                + ", " + (256*Math.random()) + ")";
-            });
-          }
-        </script>
         <button type="button" onclick="styleExample()">Try it!</button>
       </section>
       <section style="font-size: 90%">
@@ -847,44 +828,29 @@ for (let property in hazel) {
           &lt;div class="styleme2">I'm text in another div!&lt;/div>
         </pre></code>-->
         <pre><code class="javascript">
-          function styleExample() {
-            old = document.getElementById("styleme2sheet");
-            if (old) {
-              old.parentNode.removeChild(old);
+          <script>
+            function styleExample2() {
+              old = document.getElementById("styleme2sheet");
+              if (old) {
+                old.parentNode.removeChild(old);
+              }
+              var css = "div.styleme2 { border: 5px solid "
+                  + "rgb(" + (256*Math.random())
+                  + ", " + (256*Math.random())
+                  + ", " + (256*Math.random()) + "); }";
+              style = document.createElement('style');
+              style.type = "text/css";
+              style.id = "styleme2sheet";
+              style.textContent = css;
+              document.head.appendChild(style);
             }
-            var css = "div.styleme2 { border: 5px solid "
-                + "rgb(" + (256*Math.random())
-                + ", " + (256*Math.random())
-                + ", " + (256*Math.random()) + "); }";
-            style = document.createElement('style');
-            style.type = "text/css";
-            style.id = "styleme2sheet";
-            style.textContent = css;
-            document.head.appendChild(style);
-          }
+          </script>
         </pre></code>
         <blockquote>
                   <div class="styleme2">I'm text in a div!</div>
           <div class="styleme2">I'm text in another div!</div>
         </blockquote>
-        <script>
-          function styleExample() {
-            old = document.getElementById("styleme2sheet");
-            if (old) {
-              old.parentNode.removeChild(old);
-            }
-            var css = "div.styleme2 { border: 5px solid "
-                + "rgb(" + (256*Math.random())
-                + ", " + (256*Math.random())
-                + ", " + (256*Math.random()) + "); }";
-            style = document.createElement('style');
-            style.type = "text/css";
-            style.id = "styleme2sheet";
-            style.textContent = css;
-            document.head.appendChild(style);
-          }
-        </script>
-        <button type="button" onclick="styleExample()">Try it!</button>
+        <button type="button" onclick="styleExample2()">Try it!</button>
       </section>
       <section>
         <h3>Explore The DOM</h3>
@@ -948,14 +914,6 @@ for (let property in hazel) {
       </section>
     </div>
   </div>
-
-  <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
-  <script src="node_modules/reveal.js/js/reveal.js"></script>
-  <script src="node_modules/chai/chai.js"></script>
-  <script src="fiddler.js"></script>
-  <script src="node_modules/fitty/dist/fitty.min.js"></script>
-  <script src="https://twemoji.maxcdn.com/2/twemoji.min.js"></script>
-
 </body>
 
 </html>
