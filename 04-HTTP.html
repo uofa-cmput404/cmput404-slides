@@ -112,7 +112,7 @@
       </section>
       <section>
         <ul>
-          <li>RFC: The standard for HTPP: <a href="http://tools.ietf.org/html/rfc2616">http://tools.ietf.org/html/rfc2616</a></li>
+          <li>RFC: The standard for HTTP: <a href="http://tools.ietf.org/html/rfc2616">http://tools.ietf.org/html/rfc2616</a></li>
           <li>RFC: Request For Comments
             <ul>
               <li>Hypertext Transfer Protocol &mdash; HTTP/1.1</li>
@@ -155,7 +155,7 @@
           </li>
           <li class="rare">PATCH – Modify the entity at that URI
           </li>
-          <li class="rare">OPTIONS – What options a resource can accomidate
+          <li class="rare">OPTIONS – What options a resource can accommodate
           </li>
           <li class="rare">TRACE – Debugging / Echo Request
           </li>
@@ -5058,7 +5058,7 @@ name=Hazel&occupation=Slide+maker</code></pre>
               <li>Multipurpose Internet Mail Extensions</li>
             </ul>
           </li>
-          <li>Mostly used to puload files as binary, but it can be used for any form</li>
+          <li>Mostly used to upload files as binary, but it can be used for any form</li>
           <li>Sends the content-size first and then asks the server if that's okay
             <ul>
               <li>Server responds <var>HTTP/1.1 100 Continue</var> if it can handle that <em>size</em> of data</li>
@@ -5083,7 +5083,7 @@ Expect: 100-continue
 Content-Type: multipart/form-data; boundary=----------------------------9edfbc1fb1b0</code></pre>
         <ul>
           <li>The boundary lets the server tell when one part of the form ends and another begins.</li>
-          <li>The random number should be chosen so that it won't show up in conentent.</li>
+          <li>The random number should be chosen so that it won't show up in the contents.</li>
         </ul>
       </section>
       <section>
@@ -5130,7 +5130,7 @@ Content-Type: text/html; charset=UTF-8
               <li>Compress headers for less bandwidth</li>
             </ul>
           </li>
-          <li>Pipelining: request requrest request ... response response response</li>
+          <li>Pipelining: request request request ... response response response</li>
           <li>Push: psychic servers look into the future and sends clients content before they even request it 🔮</li>
           <li>Multiplexing</li>
         </ul>
