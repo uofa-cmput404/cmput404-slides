@@ -195,7 +195,7 @@ Accept: */*
 Content-type: application/json
 Content-Length: 14
 
-</code></pre>
+{"name":"one"}</code></pre>
         <p>Server response:</p>
         <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
@@ -211,7 +211,7 @@ User-Agent: curl/7.29.0
 Host: cmput301.softwareprocess.es:8080
 Accept: application/json
 
-{"name":"one"}</code></pre>
+</code></pre>
         <p>Server response:</p>
         <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
@@ -583,7 +583,7 @@ Content-Length: 60
               <li> Maybe it could answer your request but an administrator disabled that ability.</li>
             </ul>
           </li>
-          <li><var>HTTP/1.1 404 Unauthorized</var>
+          <li><var>HTTP/1.1 404 Not Found</var>
             <ul>
               <li>You've got the wrong resource or path. Can't find what you're looking for. Droids? What droids?</li>
             </ul>
@@ -693,7 +693,7 @@ Content-Length: 60
           </li>
           <li><var>HTTP/1.1 422 Unprocessable Entity</var>
             <ul>
-              <li>Indicates that the server understood the Content-Type and the syntax of the entity (request body) is correc but that it was unable to process it.</li>
+              <li>Indicates that the server understood the Content-Type and the syntax of the entity (request body) is correct but that it was unable to process it.</li>
             </ul>
           </li>
           <li><var>HTTP/1.1 426 Upgrade Required</var>
@@ -1320,7 +1320,7 @@ Content-Length: 60
           </li>
           <li><var>Trailer: Expires</var>
             <ul>
-              <li>Tells the client there will be additional headers after the conetnet is sent</li>
+              <li>Tells the client there will be additional headers after the content is sent</li>
               <li>HTTP/1.1 requires <var>Transfer-Encoding: Chunked</var> for this to work</li>
               <li>HTTP/2 doesn't work in all browsers</li>
             </ul>
