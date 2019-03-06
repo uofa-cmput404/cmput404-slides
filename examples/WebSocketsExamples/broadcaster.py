@@ -43,15 +43,15 @@ def rndstr(n=50):
 def read_time():
     '''A greenlet function that reads from time'''
     try:
-        print "Try "
+        print("Try ")
         while True:
-            print "1"
+            print("1")
             str = time.strftime("%c")
-            print "Send %s" % str
+            print("Send %s" % str)
             send_all_json( {"msg":str} )
             gevent.sleep(3)            
     except Exception as e:
-        print e
+        print(e)
 
 def gstdin_readline():
     '''gevent doesn't play nice with all file handles'''
@@ -63,10 +63,10 @@ def read_stdin():
     try:
         while True:
             line = gstdin_readline()
-            print "Send %s" % line
+            print("Send %s" % line)
             send_all_json( {"msg":line} )
     except Exception as e:
-        print e
+        print(e)
 
 def gen_sha1():
     '''A greenlet function slowly searches for 2 zeros in a row!'''
@@ -75,19 +75,19 @@ def gen_sha1():
     try:
         while True:
             try:
-                str = rndstr()
-                hash = hashlib.sha1( str  ).hexdigest()
+                str_ = rndstr()
+                hash = hashlib.sha1(str_.encode("UTF-8")).hexdigest()
                 hashes += 1
-                zeros = "000000"
+                zeros = "000"
                 if (hash.index(zeros)>=0):
                     line = "%s [%s]=>[%s] [%s]" % (zeros, str, hash, hashes)
-                    print "Send %s" % line
+                    print("Send %s" % line)
                     send_all_json( {"msg":line} )
                     gevent.sleep(1)
             except ValueError:
                 gevent.sleep(0)
     except Exception as e:
-        print e
+        print(e)
 
 
 
@@ -141,7 +141,7 @@ def read_ws(ws,client):
     try:
         while True:
             msg = ws.receive()
-            print "WS RECV: %s" % msg
+            print("WS RECV: %s" % msg)
             if (msg is not None):
                 packet = json.loads(msg)
                 send_all_json( packet )
@@ -155,15 +155,15 @@ def subscribe_socket(ws):
     client = Client()
     clients.append(client)
     g = gevent.spawn( read_ws, ws, client )    
-    print "Subscribing"
+    print("Subscribing")
     try:
         while True:
             # block here
             msg = client.get()
-            print "Got a message!"
+            print("Got a message!")
             ws.send(msg)
     except Exception as e:# WebSocketError as e:
-        print "WS Error %s" % e
+        print("WS Error %s" % e)
     finally:
         clients.remove(client)
         gevent.kill(g)
