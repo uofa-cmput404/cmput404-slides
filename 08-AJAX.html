@@ -397,6 +397,51 @@
           Survey</a> (video)</li>
         </ul>
       </section>
+      <section>
+        <h3>More JavaScript: <var>async</var> and <var>await</var></h3>
+        <ul>
+          <li><var>async</var> functions
+            <ul>
+              <li>Return a promise!</li>
+            </ul>
+          </li>
+          <li><var>await</var> in async functions
+            <ul>
+              <li>blocks code execution (stop and wait for the promise to resolve)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section style="font-size: 75%">
+        <h3>Async Await Example</h3>
+        <pre><code class="javascript">
+          <script>
+            var getterID; // global
+            async function get2() {
+              var now = new Date();
+              var s = 1 + (now.getSeconds() % 4); // remainder
+              var url = s + ".json" // 1.json 2.json 3.json...
+              var json = await fetchJSON(url);
+              console.log(json); // browser turned the JSON into an object
+              var text = json.message; // it has properties
+              document.querySelector("#ajaxy2").innerText = text;
+            }
+            function startGetting2() {
+              getterID2 = window.setInterval(get2, 1000); // 1 second or 1000ms
+            }
+            function stopGetting2() {
+              window.clearInterval(getterID2);
+            }
+          </script>
+        </code></pre>
+        <pre><code class="html">
+          <button type="button" onclick="startGetting2()">Start Getting</button>
+          <button type="button" onclick="stopGetting2()">Stop Getting</button>
+          <blockquote id="ajaxy2"></blockquote>
+        </code></pre>
+        <button type="button" onclick="startGetting2()">Start Getting</button><button type="button" onclick="stopGetting2()">Stop Getting</button>
+        <blockquote id="ajaxy2"></blockquote>
+      </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
