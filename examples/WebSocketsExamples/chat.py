@@ -67,7 +67,7 @@ def read_ws(ws,client):
     try:
         while True:
             msg = ws.receive()
-            print "WS RECV: %s" % msg
+            print("WS RECV: %s" % msg)
             if (msg is not None):
                 packet = json.loads(msg)
                 send_all_json( packet )
@@ -87,12 +87,12 @@ def subscribe_socket(ws):
             msg = client.get()
             ws.send(msg)
     except Exception as e:# WebSocketError as e:
-        print "WS Error %s" % e
+        print("WS Error %s" % e)
     finally:
         clients.remove(client)
         gevent.kill(g)
 
 if __name__ == "__main__":
     # cheap hack
-    os.system("bash run.sh");
+    os.system("gunicorn -k flask_sockets.worker chat:app");
 
