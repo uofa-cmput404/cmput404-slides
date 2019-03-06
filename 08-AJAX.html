@@ -442,6 +442,20 @@
         <button type="button" onclick="startGetting2()">Start Getting</button><button type="button" onclick="stopGetting2()">Stop Getting</button>
         <blockquote id="ajaxy2"></blockquote>
       </section>
+      <section>
+        <h3>async/await Disadvantages</h3>
+        <ul>
+          <li>Execution stops at await, instead of continuing in parallel
+            <ul>
+              <li>In threads if the browser supports it</li>
+            </ul>
+          </li>
+          <li>With <var>.then(...)</var> in a loop, the loop completes instantly
+            and each callback function can run in parallel as soon as its ready</li>
+          <li>With <var>await</var> in a loop, the loop will keep stopping each time
+            it gets to the await</li>
+        </ul>
+      </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
       FOOTER --------------------------
       -->
