@@ -66,6 +66,17 @@
         </ul>
       </section>
       <section>
+        <h3>TLS versions</h3>
+        <ul>
+          <li>SSL 2.0: 1995-2011</li>
+          <li>SSL 3.0: 1996-2015</li>
+          <li>TLS 1.0: 1999-2020</li>
+          <li>TLS 1.1: 2006-2020</li>
+          <li>TLS 1.2: 2008-</li>
+          <li>TLS 1.3: 2018-</li>
+        </ul>
+      </section>
+      <section>
         <h3>Security</h3>
         <ul>
           <li>Identity
@@ -258,6 +269,211 @@
                 time you connected to the site (HPKP)</li>
             </ul>
           </li>
+        </ul>
+      </section>
+      <section>
+        <p>Certificate and CA in browser</p>
+        <a href="images/certificate1.png"><img src="images/certificate1.png" height="200" class="noborder"></a>
+        <a href="images/certificate2.png"><img src="images/certificate2.png" height="200" class="noborder"></a>
+        <a href="images/certificate3.png"><img src="images/certificate3.png" height="200" class="noborder"></a>
+      </section>
+      <section>
+        <h3>Identity to Privacy</h3>
+        <ul>
+          <li>Once the <em>identity</em> of the server is established,
+            and you know the server's public key is really for the
+            server you want to be talking to,</li>
+          <li>TLS can provide <em>privacy</em> and <em>authenticity</em>.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Privacy</h3>
+        <ul>
+          <li>Hiding the content being transmitted back and forth from
+            eavesdropping, snooping, man-in-the-middle, etc.</li>
+          <li>We want to prevent anyone but us and the server we want
+            to send our information to from being able to read anything
+            exchanged between us and the server</li>
+        </ul>
+      </section>
+      <section>
+        <ul style="columns: 2">
+          <li>Passwords</li>
+          <li>Credit card numbers</li>
+          <li>Search terms</li>
+          <li>Exact URLs</li>
+          <li>Cookies</li>
+          <li>Conversations</li>
+          <li>Mail</li>
+          <li>Grades</li>
+          <li>Interests</li>
+          <li>Habits</li>
+          <li>Content</li>
+          <li>Uploads</li>
+        </ul>
+        <ul>
+          <li>Most information that gets transmitted either way</li>
+        </ul>
+      </section>
+      <section>
+        <img src="images/tls.svg" class="full">
+      </section>
+      <section>
+        <h3>Authenticity</h3>
+        <ul>
+          <li>Seperate from privacy</li>
+          <li>Every message is hashed to ensure it really came from the       
+            server (client)</li>
+          <li>Prevents replay attacks, injection attacks, 
+            man-in-the-middle attacks, etc.</li>
+          <li>Everything encrypted is also authenticated</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Handshake</h3>
+        <img src="images/tls-ssl-handshake.png" class="stretch">
+        <cite><a href="https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/">Cloudflare: What happens in a TLS handshake? 2019-04-04</a></cite>
+      </section>
+      <section>
+        <h4>Handshake</h4>
+        <ol>
+          <li>TCP Handshake</li>
+          <li>Client sends TLS "hello"
+            <ul>
+              <li>TLS version</li>
+              <li>Encryption algorithms</li>
+              <li>ALPN: Application-Layer Protocol Negotiation
+                <ul>
+                  <li>e.g., select HTTP/2</li>
+                </ul>
+              </li>
+              <li>SNI: Server Name Identification
+                <ul>
+                  <li>Equivalent to <var>Host:</var> header
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Server sends TLS "hello"
+            <ul>
+              <li>Chosen encryption algorithm</li>
+              <li>Certificate</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h4>Handshake</h4>
+        <ol start="4">
+          <li>Client verifies server certificate
+            <ul>
+              <li>Using CA</li>
+            </ul>
+          </li>
+          <li>Client and server agree on an encryption key
+            <ul>
+              <li>Either:</li>
+                <ul>
+                  <li>Client sends encryption key encrypted with server's public key
+                  </li>
+                  <li>Client and server agree on encryption key by sending random bytes both directions (Diffie-Hellman Key Exchange) (more common)
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Client sends encrypted "ready"
+          </li>
+          <li>Server sends encrypted "ready"
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>Perfect Forward Secrecy</h3>
+        <ul>
+          <li>Newer versions of TLS</li>
+          <li>Data remains private even if the server or client later get hacked</li>
+          <li>Uses <em>Ephemeral</em> Diffie-Hellman Key Exchange</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Reducing Latency</h3>
+        <ul>
+          <li>Traditional TLS requires at least 2 RTT (round trip time) latency on top of TCP handshake</li>
+          <li>Newer TLS supports 1 RTT handshake protocol</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Cipher Suites</h3>
+        <a href="images/certificate1.png"><img src="images/certificate1.png" height="200" class="noborder"></a>
+        <ul>
+          <li>Client and server agree on crypto algorithm to use during
+            handshake</li>
+          <li>Many different crypto algorithms are available</li>
+        </ul>
+      </section>
+      <section style="font-size: 80%">
+        <h4>Cipher Suite Example</h4>
+        <var>TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</var> 256-bit keys, TLS 1.2
+        <ul>
+          <li>Using TLS 1.2 protocol</li>
+          <li>Using ECDSA (Elliptic Curve Digital Signature Algorithm)</li>
+          <li>Using ECDHE (Ephemeral Elliptic Curve Diffie-Hellman Exchange) to agree on an encryption key</li>
+          <li>Using CHACHA20 encryption algorithm with 256-bit key</li>
+          <li>Using Poly1305 to check authenticity of most messages</li>
+          <li>Using SHA-256 to check authenticity of some message</li>
+        </ul>
+      </section>
+      <section>
+        <h3>TLS Problems</h3>
+        <ul>
+          <li>TLS has had lots of different security problems over the
+            years, typically with fun names!</li>
+        </ul>
+        <ul style="columns: 2">
+          <li>Renegotiation</li>
+          <li>FREAK</li>
+          <li>Logjam</li>
+          <li>DROWN</li>
+          <li>BEAST</li>
+          <li>CRIME</li>
+          <li>BREACH</li>
+          <li>padding oracle</li>
+          <li>Lucky Thirteen</li>
+          <li>POODLE</li>
+          <li>Old, insecure crypto algorithms</li>
+          <li>Truncation</li>
+          <li>Unholy PAC</li>
+          <li>Sweet32</li>
+          <li>Heartbleed</li>
+          <li>BERserk</li>
+          <li>Cloudbleed</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Avoiding Security Problems</h3>
+        <ul>
+          <li>TLS <em>everything</em>
+            <ul>
+              <li>Make sure all traffic to/from your web app is running over TLS</li>
+              <li>Example: it may not help if only login is over TLS 
+                because an attacker can replace your TLS-encrypted login page with an unencrypted one by replacing the link on the unencrypted main site</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Avoiding TLS Security Problems</h3>
+        <ul>
+          <li>Keep software up to date
+            <ul>
+              <li>No Windows XP</li>
+            </ul>
+          </li>
+          <li>Don't communicate with out-of-date software</li>
+          <li>Example: if something on your site is meant to be secret,
+            even one bad client can leak the secret!</li>
         </ul>
       </section>
       <!-- Anything after this will be sync'd with the other files in the directory if you run ./sync-header-footer.py *.html 
