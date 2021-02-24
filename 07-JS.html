@@ -582,7 +582,7 @@ for (let property in hazel) {
         </ul>
         <pre><code class="javascript">
            // classes start with a capital letter by convention
-          function Pokemon() {
+          function Pokemon(name,level) {
             this.name = name;
             this.level = level;
             this.levelUp = function() {
@@ -600,10 +600,9 @@ for (let property in hazel) {
         </ul>
         <pre><code class="javascript">
            // classes start with a capital letter by convention
-          function Pokemon() {
+          function Pokemon(name,level) {
             this.name = name;
             this.level = level;
-            }
           }
           // have to include "prototype" here so "this" works in the method
           Pokemon.prototype.levelUp = function() {
@@ -621,8 +620,8 @@ for (let property in hazel) {
         <pre><code class="javascript">
            // classes start with a capital letter by convention
           var Pokemon = {
-            name: null;
-            level: null;
+            name: null,
+            level: null,
             levelUp: function() {
               this.level += 1;
             }
