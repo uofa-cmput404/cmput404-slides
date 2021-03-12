@@ -29,6 +29,9 @@
         margin: 1em; 
     }
     #queue {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
         margin: 1em;
     }
 </style>
@@ -71,7 +74,7 @@ window.onload = function() {
         var msgDiv = document.createElement("span");
         msgDiv.className = "msg";
         msgDiv.appendChild(new Text(msg));
-        queue.appendChild( msgDiv );
+        queue.insertBefore( msgDiv, queue.childNodes[0] );
     };
 };
 </script>
