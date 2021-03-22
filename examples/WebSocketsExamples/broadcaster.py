@@ -78,9 +78,9 @@ def gen_sha1():
                 str_ = rndstr()
                 hash = hashlib.sha1(str_.encode("UTF-8")).hexdigest()
                 hashes += 1
-                zeros = "000"
+                zeros = "000000"
                 if (hash.index(zeros)>=0):
-                    line = "%s [%s]=>[%s] [%s]" % (zeros, str, hash, hashes)
+                    line = "%s [%s]=>[%s] [%s]" % (zeros, str_, hash, hashes)
                     print("Send %s" % line)
                     send_all_json( {"msg":line} )
                     gevent.sleep(1)
