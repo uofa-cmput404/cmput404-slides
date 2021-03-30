@@ -1,11 +1,12 @@
-import urllib, urllib2
+import urllib
+import urllib.request
 import time
 import json
 
 def GET(url):
-    req = urllib2.Request(url)
+    req = urllib.request.Request(url)
     req.add_header( "User-Agent", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0")
-    return urllib2.urlopen(req)
+    return urllib.request.urlopen(req)
 
 artist = "devo"
 fd = GET("http://www.allmusic.com/search/all/%s" % artist)
@@ -76,11 +77,11 @@ def add_similar(graph, artist_entry, links):
 
 
 for art in graph["devo"]["similar"].keys():
-    print "Adding %s" % art
+    print("Adding %s" % art)
     if (graph.get(art,None) == None):
         graph[art] = getartist(art)
     links = get_similar( graph[art] )
-    print links
+    print(links)
     add_similar(graph, graph[art], links)
 
 
@@ -91,12 +92,12 @@ for art in graph.keys():
     if (len(graph[art]["similar"]) < 1 and 
         not graph[art].get("hit",False)):
             graph[art]["hit"] = True
-            print art
+            print(art)
             links = get_similar( graph[art] )
             add_similar(graph, graph[art], links)
             # save state just in case
             file("ourgraph.json","w").write(json.dumps(graph,indent=1))
-            print "..."
+            print("...")
             # do you want to get banned from crawling?
             time.sleep(2)
 
