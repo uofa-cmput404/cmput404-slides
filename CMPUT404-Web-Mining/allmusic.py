@@ -7,23 +7,22 @@ def GET(url):
     req = urllib.request.Request(url)
     req.add_header( "User-Agent", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0")
     return urllib.request.urlopen(req)
-
 artist = "devo"
-fd = GET("http://www.allmusic.com/search/all/%s" % artist)
+fd = GET("https://www.allmusic.com/search/all/%s" % artist)
 content = fd.read()
 # now we just have some HTML
 # we could use regexes and try to find links
 import bs4
 soup = bs4.BeautifulSoup(content)
-res = soup.findAll("",{"class":"artist"})
-ahref = res[0].findAll("",{"class":"name"})[0].a
+res = soup.findAll(None,{"class":"artist"})
+ahref = res[0].findAll(None,{"class":"name"})[0].a
 name = ahref.text.strip()
 link = ahref.attrs["href"]
 related = link + '/related'
 rfd = GET(related)
 related_content = rfd.read()
 soup = bs4.BeautifulSoup(related_content)
-res = soup.findAll("",{"class":"similars"})
+res = soup.findAll(None,{"class":"similars"})
 ahrefs = [x.a for x in res[0].findAll("li")]
 ahrefs = [x.a for x in res[0].findAll("li")]
 
@@ -48,8 +47,8 @@ def get_artist(artist):
     fd = GET("http://www.allmusic.com/search/all/%s" % uriartist)
     content = fd.read()
     soup = bs4.BeautifulSoup(content)
-    res = soup.findAll("",{"class":"artist"})
-    ahref = res[0].findAll("",{"class":"name"})[0].a
+    res = soup.findAll(None,{"class":"artist"})
+    ahref = res[0].findAll(None,{"class":"name"})[0].a
     name = ahref.text.strip()
     link = ahref.attrs["href"]
     return newartist(name,link)
@@ -60,7 +59,9 @@ def get_similar(artist_entry):
     rfd = GET(related)
     related_content = rfd.read()
     soup = bs4.BeautifulSoup(related_content)
-    res = soup.findAll("",{"class":"similars"})
+    res = soup.findAll(None,{"class":"similars"})
+    if len(res) == 0:
+        return []
     ahrefs = [x.a for x in res[0].findAll("li")]
     links = [(a.text,a.attrs["href"]) for a in ahrefs]
     return links
@@ -86,9 +87,10 @@ for art in graph["devo"]["similar"].keys():
 
 
 
-file("devo.json","w").write(json.dumps(graph,indent=1))
+open("devo.json","w").write(json.dumps(graph,indent=1))
 
-for art in graph.keys():
+# only do the first pass
+for art in list(graph.keys()):
     if (len(graph[art]["similar"]) < 1 and 
         not graph[art].get("hit",False)):
             graph[art]["hit"] = True
@@ -96,7 +98,7 @@ for art in graph.keys():
             links = get_similar( graph[art] )
             add_similar(graph, graph[art], links)
             # save state just in case
-            file("ourgraph.json","w").write(json.dumps(graph,indent=1))
+            open("ourgraph.json","w").write(json.dumps(graph,indent=1))
             print("...")
             # do you want to get banned from crawling?
             time.sleep(2)

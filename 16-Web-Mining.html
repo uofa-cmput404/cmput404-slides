@@ -324,17 +324,18 @@ Taken from http://tools.ietf.org/html/rfc4287
 <script type="text/template">
 ## Feedparser Example
 
-Let's see if CNN and CBC have similar top stories! [./rssexample.py](./rssexample.py)
+Let's see if CNN and CBC have similar top stories! [./CMPUT404-Web-Mining/rssexample.py](./CMPUT404-Web-Mining/rssexample.py)
 
 ````python
-    import feedparser
-    import difflib
-    cbc = feedparser.parse("http://rss.cbc.ca/lineup/topstories.xml")
-    cnn = feedparser.parse("http://rss.cnn.com/rss/cnn_topstories.rss")
-    cbc_titles = [x['title'] for x in cbc.get('entries')]
-    cnn_titles = [x['title'] for x in cnn.get('entries')]
-    res = [(x,difflib.get_close_matches(x,cbc_titles,1,0.01)) for x in
-                cnn_titles]
+import feedparser
+import difflib
+cbc = feedparser.parse("http://rss.cbc.ca/lineup/topstories.xml")
+cnn = feedparser.parse("http://rss.cnn.com/rss/cnn_topstories.rss")
+cbc_titles = [x['title'] for x in cbc.get('entries')]
+cnn_titles = [x['title'] for x in cnn.get('entries')]
+res = [(x,difflib.get_close_matches(x,cbc_titles,1,0.01)) for x in
+            cnn_titles]
+
 >>> res[0]
 (u'7 days to solve Crimea crisis', [u'Russian forces tighten grip on Crimea'])
 ```
