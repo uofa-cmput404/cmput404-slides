@@ -28,7 +28,10 @@ import os.path
 from Crypto.Cipher import AES
 from Crypto import Random
 import urllib
-import urlparse
+#import urlparse
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
+from urllib.parse import urlencode
 import binascii
 import hashlib
 
@@ -51,11 +54,11 @@ ourwords = []
 
 def load_words():
     global ourwords
-    words = file("server.py").read().split()
+    words = open("server.py").read().split()
     x = dict()
     for word in words:
         x[word] = 1
-    ourwords = x.keys()
+    ourwords = list(x.keys())
     ourwords.sort()
 
 def get_closest_words(entity, n):
@@ -77,13 +80,13 @@ def happy_birthday2():
     name = request.args.get('name')
     if name is None:
         name = "World"
-    str = file('templates/happybirthday2.html').read().replace("{{ name }}",name)
+    str = open('templates/happybirthday2.html').read().replace("{{ name }}",name)
     return (str, 200, {"Content-type": "text/html"})
 
 @app.route("/traverse")
 def traverse():
     entity = request.args.get('entity')
-    str = file(entity).read()
+    str = open(entity).read()
     return (str, 200, {"Content-type": "text/plain"})
 
 @app.route("/traverse_sane")
@@ -93,7 +96,7 @@ def traverse_sane():
     mycwd = os.getcwd()
     common = os.path.commonprefix([mycwd,path])
     if (len(common) >= len(mycwd)):
-        str = file(entity).read()
+        str = open(entity).read()
         return (str, 200, {"Content-type": "text/plain"})
     else:
         flask.abort(403)
@@ -114,7 +117,8 @@ def encrypt(msg):
     global key
     iv = Random.new().read(AES.block_size)
     cipher = AES.new(key, AES.MODE_CFB, iv)
-    msg = iv + cipher.encrypt(bytes(msg))
+    msg = iv + cipher.encrypt(bytes(msg,encoding='utf8'))
+    print(type(msg),msg)
     return msg
 
 def decrypt(msg):
@@ -130,27 +134,29 @@ def auth():
     v =  None
     decrypted = ""
     if request.args.get('token'): 
-        decrypted = decrypt(binascii.unhexlify(request.args.get('token')))
-        v = urlparse.parse_qs( decrypted )
+        decrypted = decrypt(binascii.unhexlify(request.args.get('token'))).decode('unicode-escape')
+        print(type(decrypted),decrypted)
+        v = parse_qs( decrypted )
         for key in v:
             v[key] = v[key][0]
     else:
         v = defv
-    print "Decrypted: [%s]" % decrypted
-    print v
+    print("Decrypted: [%s]" % decrypted)
+    print(v)
 
     v["user"] = v.get("user",defv["user"])
     if request.args.get('user'):
         v["user"] = request.args.get('user')
     v["admin"] = v.get("admin",0)
-    tosend = urllib.urlencode([("user",v["user"]),("admin",v["admin"])])
+    tosend = urlencode([("user",v["user"]),("admin",v["admin"])])
     token = encrypt( tosend )
-    hextoken = binascii.hexlify(token)
-    safe_decrypted = str(decrypted).encode('string_escape')
-    print "sd: %s " % safe_decrypted
-    safe_admin = str(v["admin"]).encode('string_escape')
-    safe_tosend = tosend.encode('string_escape')
-    safe_user = str(v["user"]).encode('string_escape')
+    hextoken = binascii.hexlify(token).decode('unicode-escape')
+    print(type(hextoken),hextoken)
+    safe_decrypted = decrypted#.decode('unicode-escape')
+    print(u"sd: %s " % safe_decrypted)
+    safe_admin = str(v["admin"])#.decode('unicode-escape')
+    safe_tosend = tosend#.decode('unicode-escape')
+    safe_user = v["user"]#.encode('unicode-escape')
     return flask.render_template('auth.html', 
                                  admin=safe_admin,
                                  adminzero= v["admin"] == '0',
@@ -171,36 +177,49 @@ def safe_auth():
         if salt is None:
             iv =  Random.new().read(4)
             salt = binascii.hexlify(iv)
-        return (hashlib.sha224(salt + secret + v["user"] + v["admin"]).hexdigest(), salt)
+            salt = salt.decode('unicode-escape')
+            print(type(salt),salt)
+            print(type(secret),secret)
+            print(type(v["user"]),v["user"])
+            print(type(v["admin"]),v["admin"])
+        hss = salt + secret + v["user"] + v["admin"]
+        return (hashlib.sha224(hss.encode('utf-8')).hexdigest(), salt)
         
     if request.args.get('token'): 
-        decrypted = decrypt(binascii.unhexlify(request.args.get('token')))
-        v = urlparse.parse_qs( decrypted )
+        # decrypted = decrypt(binascii.unhexlify(request.args.get('token')))
+        decrypted = decrypt(binascii.unhexlify(request.args.get('token'))).decode('unicode-escape')
+        v = parse_qs( decrypted )
         for key in v:
             v[key] = v[key][0]
         # verify the token
         (h,salt) = hashit(v,v.get("salt",None))
         if not (h == v["h"]):
-            print "Invalid hash! expected %s but got %s " % (h,v["h"])
+            print("Invalid hash! expected %s but got %s " % (h,v["h"]))
             flask.abort(403)
     else:
         v = defv
-    print "Decrypted: [%s]" % decrypted
-    print v
+    print("Decrypted: [%s]" % decrypted)
+    print(v)
 
     v["user"] = v.get("user",defv["user"])
     if request.args.get('user'):
         v["user"] = request.args.get('user')
     v["admin"] = v.get("admin",0)
     (h,salt) = hashit(v)
-    tosend = urllib.urlencode([("h",h),("salt",salt),("user",v["user"]),("admin",v["admin"])])
+    tosend = urlencode([("h",h),("salt",salt),("user",v["user"]),("admin",v["admin"])])
     token = encrypt( tosend )
-    hextoken = binascii.hexlify(token)
-    safe_decrypted = str(decrypted).encode('string_escape')
-    print "sd: %s " % safe_decrypted
-    safe_admin = str(v["admin"]).encode('string_escape')
-    safe_tosend = tosend.encode('string_escape')
-    safe_user = str(v["user"]).encode('string_escape')
+    #hextoken = binascii.hexlify(token)
+    hextoken = binascii.hexlify(token).decode('unicode-escape')
+    #safe_decrypted = str(decrypted).encode('unicode-escape')
+    #safe_decrypted = decrypted.decode('unicode-escape')
+    safe_decrypted = decrypted#decrypted.decode('unicode-escape')
+    print("sd: %s " % safe_decrypted)
+    #safe_admin = str(v["admin"]).encode('unicode-escape')
+    #safe_tosend = tosend.encode('unicode-escape')
+    #safe_user = str(v["user"]).encode('unicode-escape')
+    safe_admin = str(v["admin"])#.decode('unicode-escape')
+    safe_tosend = tosend#.decode('unicode-escape')
+    safe_user = v["user"]#.encode('unicode-escape')
     return flask.render_template('auth.html', 
                                  admin=safe_admin,
                                  adminzero= v["admin"] == '0',
