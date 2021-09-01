@@ -3,10 +3,14 @@
 # Under the same license as python selenium module
 # License: Apache Software License (Apache 2.0)
 
+# pip3 install --user selenium
+
 # you need chromedriver http://chromedriver.chromium.org/downloads
 # e.g. https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_linux64.zip
-
-
+import os, sys
+# Danger Danger Will Wobinson
+curdir = "."
+os.environ['PATH'] = f"{curdir}:{os.environ.get('PATH')}"
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
@@ -28,10 +32,8 @@ data = {
 	"WebHouseNumber_1188393_N0":"Complaint House Number",
 	"WebLookupStreet_1188393_N0":"Complaint Street NW",
 	"WebSuite_1188393_N0":"Complaint Suite Number",
-	"WBylawComments_1188390_N0":"Lots of ice on sidewalk. Neighbors have no ice. No maintenance past week"
+	"WBylawComments_1188390_N0":"Lots of ice on sidewalk. Neighbors have no ice. No maintenance in past week"
 }
-
-
 
 def fill_in_element(driver,elm,data):
     ''' find an element on the page and fill it in '''
@@ -77,9 +79,10 @@ complaints = [
 ]
 
 # complain on them!
-for complaint in complaints:
+for complaint in complaints[0:1]:
     for i in range(0,len(cols)):
         k = cols[i]
         v = complaint[i]
         data[k] = v
     print(report_sidewalk(data))
+

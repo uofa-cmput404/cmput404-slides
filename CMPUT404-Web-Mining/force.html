@@ -112,7 +112,7 @@ d3.json("ourgraph.json", function(error, graph) {
         .size([width, height])
         .linkDistance(400)
         .charge(10)
-        .friction(0.9)
+        .friction(0.1)
         .on("tick", tick)
         .start();
     
