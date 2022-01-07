@@ -28,14 +28,14 @@ window.onload = function() {
         // This is a call back
         xhr.onreadystatechange = function(){
             // readystate tells you how the transfer is going
-       // 4 is done
+            // 4 is done
             if( xhr.readyState === 4 ){
                 // This is the HTTP Code
                 if(xhr.status === 200){
                     obj["success"]( xhr.responseText );
-           } else {
-               alert("There was an error " + xhr.status);
-           }
+                } else {
+                    alert("There was an error " + xhr.status);
+                }
             }
         };
         // finally send it
@@ -46,7 +46,6 @@ window.onload = function() {
         obj["accept"] = "application/json";
         return ajaxReq( obj );
     }
-
     // register as a listener
     function register(id) {
         ajaxReq({
@@ -58,6 +57,7 @@ window.onload = function() {
             }
         });
     }
+
     // register as a listener
     register(id);
     //

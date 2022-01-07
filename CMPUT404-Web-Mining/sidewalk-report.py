@@ -79,7 +79,7 @@ complaints = [
 ]
 
 # complain on them!
-for complaint in complaints[0:1]:
+for complaint in complaints:
     for i in range(0,len(cols)):
         k = cols[i]
         v = complaint[i]
