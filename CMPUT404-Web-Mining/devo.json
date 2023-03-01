@@ -17,6 +17,8 @@
    "XTC": "https://www.allmusic.com/artist/xtc-mn0000678339",
    "Crack the Sky": "https://www.allmusic.com/artist/crack-the-sky-mn0000121515",
    "Eurythmics": "https://www.allmusic.com/artist/eurythmics-mn0000206241",
+   "Landscape": "https://www.allmusic.com/artist/landscape-mn0000109517",
+   "Men Without Hats": "https://www.allmusic.com/artist/men-without-hats-mn0000418670",
    "Minny Pops": "https://www.allmusic.com/artist/minny-pops-mn0000422700",
    "Monitor": "https://www.allmusic.com/artist/monitor-mn0001257578",
    "Polysics": "https://www.allmusic.com/artist/polysics-mn0000349954",
@@ -27,9 +29,13 @@
    "Von Lmo": "https://www.allmusic.com/artist/von-lmo-mn0001529406",
    "The Afternoon Delights": "https://www.allmusic.com/artist/the-afternoon-delights-mn0000029295",
    "The Rentals": "https://www.allmusic.com/artist/the-rentals-mn0000495288",
+   "Condor": "https://www.allmusic.com/artist/condor-mn0002132581",
    "M": "https://www.allmusic.com/artist/m-mn0000207876",
+   "MX-80": "https://www.allmusic.com/artist/mx-80-mn0000223169",
+   "My Dad Is Dead": "https://www.allmusic.com/artist/my-dad-is-dead-mn0000936483",
    "Oingo Boingo": "https://www.allmusic.com/artist/oingo-boingo-mn0000390532",
    "Primus": "https://www.allmusic.com/artist/primus-mn0000359326",
+   "Sloy": "https://www.allmusic.com/artist/sloy-mn0001915493",
    "Sparks": "https://www.allmusic.com/artist/sparks-mn0000009084",
    "The Method Actors": "https://www.allmusic.com/artist/the-method-actors-mn0001589334",
    "The Moog Cookbook": "https://www.allmusic.com/artist/the-moog-cookbook-mn0000891403",
@@ -42,33 +48,39 @@
   "similar": {
    "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
    "Wire": "https://www.allmusic.com/artist/wire-mn0000672910",
+   "Chrome": "https://www.allmusic.com/artist/chrome-mn0000118327",
    "Controlled Bleeding": "https://www.allmusic.com/artist/controlled-bleeding-mn0000123674",
+   "DNA": "https://www.allmusic.com/artist/dna-mn0000948557",
    "Faust": "https://www.allmusic.com/artist/faust-mn0000793329",
+   "Suicide": "https://www.allmusic.com/artist/suicide-mn0000487186",
    "Tin Huey": "https://www.allmusic.com/artist/tin-huey-mn0000596678",
    "Frank Black": "https://www.allmusic.com/artist/frank-black-mn0000167287",
+   "Half Japanese": "https://www.allmusic.com/artist/half-japanese-mn0000555654",
+   "Josef K": "https://www.allmusic.com/artist/josef-k-mn0000266534",
    "Minutemen": "https://www.allmusic.com/artist/minutemen-mn0000474482",
    "Mirrors": "https://www.allmusic.com/artist/mirrors-mn0000499073",
    "Pixies": "https://www.allmusic.com/artist/pixies-mn0000895136",
    "PJ Harvey": "https://www.allmusic.com/artist/pj-harvey-mn0000000335",
+   "Pop. 1280": "https://www.allmusic.com/artist/pop-1280-mn0002547683",
+   "Psychic TV": "https://www.allmusic.com/artist/psychic-tv-mn0000375945",
    "Public Image Ltd.": "https://www.allmusic.com/artist/public-image-ltd-mn0000364399",
+   "Television": "https://www.allmusic.com/artist/television-mn0000019701",
    "The Comsat Angels": "https://www.allmusic.com/artist/the-comsat-angels-mn0000078526",
    "The Fall": "https://www.allmusic.com/artist/the-fall-mn0000051376",
    "The Feelies": "https://www.allmusic.com/artist/the-feelies-mn0000762177",
    "The Mekons": "https://www.allmusic.com/artist/the-mekons-mn0000399895",
+   "The Pop Group": "https://www.allmusic.com/artist/the-pop-group-mn0000487663",
    "The Screamers": "https://www.allmusic.com/artist/the-screamers-mn0001873885",
-   "Bob Hund": "https://www.allmusic.com/artist/bob-hund-mn0000933804",
-   "Half Japanese": "https://www.allmusic.com/artist/half-japanese-mn0000555654",
-   "Josef K": "https://www.allmusic.com/artist/josef-k-mn0000266534",
-   "Oceans of the Moon": "https://www.allmusic.com/artist/oceans-of-the-moon-mn0003845611",
-   "Peter Hammill": "https://www.allmusic.com/artist/peter-hammill-mn0000843607",
-   "Psychic TV": "https://www.allmusic.com/artist/psychic-tv-mn0000375945",
+   "Yoko Ono": "https://www.allmusic.com/artist/yoko-ono-mn0000521704",
    "Stan Ridgway": "https://www.allmusic.com/artist/stan-ridgway-mn0000010243",
    "t\u0113t\u0113ma": "https://www.allmusic.com/artist/ttma-mn0003324692",
    "The Delta Nudes": "https://www.allmusic.com/artist/the-delta-nudes-mn0003205419",
-   "The Modern Art": "https://www.allmusic.com/artist/the-modern-art-mn0000919419",
-   "The Pop Group": "https://www.allmusic.com/artist/the-pop-group-mn0000487663",
    "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266",
-   "Yoko Ono": "https://www.allmusic.com/artist/yoko-ono-mn0000521704"
+   "Bob Hund": "https://www.allmusic.com/artist/bob-hund-mn0000933804",
+   "MX-80": "https://www.allmusic.com/artist/mx-80-mn0000223169",
+   "Oceans of the Moon": "https://www.allmusic.com/artist/oceans-of-the-moon-mn0003845611",
+   "Peter Hammill": "https://www.allmusic.com/artist/peter-hammill-mn0000843607",
+   "The Modern Art": "https://www.allmusic.com/artist/the-modern-art-mn0000919419"
   }
  },
  "Talking Heads": {
@@ -181,33 +193,35 @@
    "Sparks": "https://www.allmusic.com/artist/sparks-mn0000009084",
    "Yellow Magic Orchestra": "https://www.allmusic.com/artist/yellow-magic-orchestra-mn0000683750",
    "ABC": "https://www.allmusic.com/artist/abc-mn0000574597",
+   "Adam Ant": "https://www.allmusic.com/artist/adam-ant-mn0000496487",
+   "Dave Gahan": "https://www.allmusic.com/artist/dave-gahan-mn0001199400",
    "Howard Jones": "https://www.allmusic.com/artist/howard-jones-mn0000228099",
    "Kajagoogoo": "https://www.allmusic.com/artist/kajagoogoo-mn0000354609",
    "Marc Almond": "https://www.allmusic.com/artist/marc-almond-mn0000570046",
+   "Oingo Boingo": "https://www.allmusic.com/artist/oingo-boingo-mn0000390532",
    "Rational Youth": "https://www.allmusic.com/artist/rational-youth-mn0000402183",
+   "Robert Rental": "https://www.allmusic.com/artist/robert-rental-mn0000831594",
    "Simple Minds": "https://www.allmusic.com/artist/simple-minds-mn0000049374",
+   "Telex": "https://www.allmusic.com/artist/telex-mn0000019216",
    "The Art of Noise": "https://www.allmusic.com/artist/the-art-of-noise-mn0000930204",
    "The Cars": "https://www.allmusic.com/artist/the-cars-mn0000061172",
+   "The Normal": "https://www.allmusic.com/artist/the-normal-mn0000892586",
+   "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428",
    "Tom Bailey": "https://www.allmusic.com/artist/tom-bailey-mn0000524836",
+   "Visage": "https://www.allmusic.com/artist/visage-mn0000809446",
    "Alphaville": "https://www.allmusic.com/artist/alphaville-mn0000790509",
    "Bill Nelson": "https://www.allmusic.com/artist/bill-nelson-mn0000769238",
    "Book of Love": "https://www.allmusic.com/artist/book-of-love-mn0000100496",
-   "D.A.F.": "https://www.allmusic.com/artist/daf-mn0000147282",
+   "DAF": "https://www.allmusic.com/artist/daf-mn0000147282",
    "Fad Gadget": "https://www.allmusic.com/artist/fad-gadget-mn0000790078",
    "Martin Gore": "https://www.allmusic.com/artist/martin-gore-mn0000318966",
    "Soft Cell": "https://www.allmusic.com/artist/soft-cell-mn0000038579",
-   "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266",
-   "Adam Ant": "https://www.allmusic.com/artist/adam-ant-mn0000496487",
-   "Dave Gahan": "https://www.allmusic.com/artist/dave-gahan-mn0001199400",
-   "Missing Persons": "https://www.allmusic.com/artist/missing-persons-mn0000898275",
-   "Oingo Boingo": "https://www.allmusic.com/artist/oingo-boingo-mn0000390532",
-   "Suicide": "https://www.allmusic.com/artist/suicide-mn0000487186",
-   "Tangerine Dream": "https://www.allmusic.com/artist/tangerine-dream-mn0000002411",
    "The Danse Society": "https://www.allmusic.com/artist/the-danse-society-mn0000676885",
-   "The Normal": "https://www.allmusic.com/artist/the-normal-mn0000892586",
-   "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428",
-   "Visage": "https://www.allmusic.com/artist/visage-mn0000809446",
-   "Wiccid": "https://www.allmusic.com/artist/wiccid-mn0003652150"
+   "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266",
+   "Alan Vega": "https://www.allmusic.com/artist/alan-vega-mn0000932078",
+   "Missing Persons": "https://www.allmusic.com/artist/missing-persons-mn0000898275",
+   "Suicide": "https://www.allmusic.com/artist/suicide-mn0000487186",
+   "Tangerine Dream": "https://www.allmusic.com/artist/tangerine-dream-mn0000002411"
   }
  },
  "The Dickies": {
@@ -272,6 +286,7 @@
    "Art & Language": "https://www.allmusic.com/artist/art-language-mn0001228038",
    "Coriky": "https://www.allmusic.com/artist/coriky-mn0003910495",
    "End of a Year": "https://www.allmusic.com/artist/end-of-a-year-mn0000733363",
+   "Moderate Rebels": "https://www.allmusic.com/artist/moderate-rebels-mn0004019593",
    "Self Defense Family": "https://www.allmusic.com/artist/self-defense-family-mn0002839169",
    "The Ex": "https://www.allmusic.com/artist/the-ex-mn0000759074",
    "The Last Internationale": "https://www.allmusic.com/artist/the-last-internationale-mn0002795329",
@@ -305,7 +320,8 @@
    "Throbbing Gristle": "https://www.allmusic.com/artist/throbbing-gristle-mn0000926604",
    "Yoko Ono": "https://www.allmusic.com/artist/yoko-ono-mn0000521704",
    "Fred Lane": "https://www.allmusic.com/artist/fred-lane-mn0000183261",
-   "Jandek": "https://www.allmusic.com/artist/jandek-mn0000177970"
+   "Jandek": "https://www.allmusic.com/artist/jandek-mn0000177970",
+   "Kramer": "https://www.allmusic.com/artist/kramer-mn0000041482"
   }
  },
  "The Soft Boys": {
@@ -324,7 +340,8 @@
    "Squeeze": "https://www.allmusic.com/artist/squeeze-mn0000790732",
    "The Chameleons": "https://www.allmusic.com/artist/the-chameleons-mn0001557918",
    "The dB's": "https://www.allmusic.com/artist/the-dbs-mn0000489209",
-   "The Jam": "https://www.allmusic.com/artist/the-jam-mn0000084053"
+   "The Jam": "https://www.allmusic.com/artist/the-jam-mn0000084053",
+   "The Hawks": "https://www.allmusic.com/artist/the-hawks-mn0002008142"
   }
  },
  "The Weirdos": {
@@ -372,6 +389,8 @@
    "Thompson Twins": "https://www.allmusic.com/artist/thompson-twins-mn0000567570",
    "Tom Bailey": "https://www.allmusic.com/artist/tom-bailey-mn0000524836",
    "XTC": "https://www.allmusic.com/artist/xtc-mn0000678339",
+   "Yukihiro Takahashi": "https://www.allmusic.com/artist/yukihiro-takahashi-mn0000420055",
+   "Yello": "https://www.allmusic.com/artist/yello-mn0000683795",
    "Dead or Alive": "https://www.allmusic.com/artist/dead-or-alive-mn0000226556",
    "Eric Alexandrakis": "https://www.allmusic.com/artist/eric-alexandrakis-mn0000382336",
    "M": "https://www.allmusic.com/artist/m-mn0000207876"
@@ -412,6 +431,7 @@
    "World Party": "https://www.allmusic.com/artist/world-party-mn0000958768",
    "Nits": "https://www.allmusic.com/artist/nits-mn0000355554",
    "The Monochrome Set": "https://www.allmusic.com/artist/the-monochrome-set-mn0000475980",
+   "Anton Barbeau": "https://www.allmusic.com/artist/anton-barbeau-mn0000491163",
    "Bob Hund": "https://www.allmusic.com/artist/bob-hund-mn0000933804",
    "Dutch Uncles": "https://www.allmusic.com/artist/dutch-uncles-mn0002072342",
    "Odds": "https://www.allmusic.com/artist/odds-mn0000475738",
@@ -457,6 +477,8 @@
    "Berlin": "https://www.allmusic.com/artist/berlin-mn0000046381",
    "Duran Duran": "https://www.allmusic.com/artist/duran-duran-mn0000128440",
    "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428",
+   "Yazoo": "https://www.allmusic.com/artist/yazoo-mn0000958839",
+   "Erasure": "https://www.allmusic.com/artist/erasure-mn0000184811",
    "Grace Jones": "https://www.allmusic.com/artist/grace-jones-mn0000161920",
    "ABC": "https://www.allmusic.com/artist/abc-mn0000574597",
    "Billy Idol": "https://www.allmusic.com/artist/billy-idol-mn0000070800",
@@ -468,18 +490,57 @@
    "Niagara": "https://www.allmusic.com/artist/niagara-mn0000330945",
    "Pet Shop Boys": "https://www.allmusic.com/artist/pet-shop-boys-mn0000260212",
    "Robert Palmer": "https://www.allmusic.com/artist/robert-palmer-mn0000093632",
+   "Tears for Fears": "https://www.allmusic.com/artist/tears-for-fears-mn0000019892",
+   "The Art of Noise": "https://www.allmusic.com/artist/the-art-of-noise-mn0000930204",
    "The Associates": "https://www.allmusic.com/artist/the-associates-mn0000038977",
+   "The Fixx": "https://www.allmusic.com/artist/the-fixx-mn0000052093",
    "The Human League": "https://www.allmusic.com/artist/the-human-league-mn0000895443",
    "Thompson Twins": "https://www.allmusic.com/artist/thompson-twins-mn0000567570",
    "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266",
    "Alison Moyet": "https://www.allmusic.com/artist/alison-moyet-mn0000010458",
    "Howard Jones": "https://www.allmusic.com/artist/howard-jones-mn0000228099",
+   "Icehouse": "https://www.allmusic.com/artist/icehouse-mn0000768737",
    "Men Without Hats": "https://www.allmusic.com/artist/men-without-hats-mn0000418670",
    "Swing Out Sister": "https://www.allmusic.com/artist/swing-out-sister-mn0000045972",
    "Talking Heads": "https://www.allmusic.com/artist/talking-heads-mn0000131650",
+   "The Police": "https://www.allmusic.com/artist/the-police-mn0000413524",
    "a-ha": "https://www.allmusic.com/artist/a-ha-mn0000480108",
    "Propaganda": "https://www.allmusic.com/artist/propaganda-mn0000309217",
    "Sade": "https://www.allmusic.com/artist/sade-mn0000279337"
+  }
+ },
+ "Landscape": {
+  "url": "https://www.allmusic.com/artist/landscape-mn0000109517",
+  "name": "Landscape",
+  "similar": {
+   "New Musik": "https://www.allmusic.com/artist/new-musik-mn0000333903",
+   "The Human League": "https://www.allmusic.com/artist/the-human-league-mn0000895443",
+   "King": "https://www.allmusic.com/artist/king-mn0000089071",
+   "Spandau Ballet": "https://www.allmusic.com/artist/spandau-ballet-mn0000010538",
+   "Visage": "https://www.allmusic.com/artist/visage-mn0000809446",
+   "Buggles": "https://www.allmusic.com/artist/buggles-mn0000629417",
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "Kraftwerk": "https://www.allmusic.com/artist/kraftwerk-mn0000104714",
+   "Gary Numan": "https://www.allmusic.com/artist/gary-numan-mn0000183858",
+   "Trio": "https://www.allmusic.com/artist/trio-mn0000025394",
+   "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266"
+  }
+ },
+ "Men Without Hats": {
+  "url": "https://www.allmusic.com/artist/men-without-hats-mn0000418670",
+  "name": "Men Without Hats",
+  "similar": {
+   "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428",
+   "Rodway": "https://www.allmusic.com/artist/rodway-mn0001581034",
+   "Taco": "https://www.allmusic.com/artist/taco-mn0000019028",
+   "Trees": "https://www.allmusic.com/artist/trees-mn0000014474",
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "Howard Jones": "https://www.allmusic.com/artist/howard-jones-mn0000228099",
+   "Alphaville": "https://www.allmusic.com/artist/alphaville-mn0000790509",
+   "Duran Duran": "https://www.allmusic.com/artist/duran-duran-mn0000128440",
+   "Eurythmics": "https://www.allmusic.com/artist/eurythmics-mn0000206241",
+   "Split Enz": "https://www.allmusic.com/artist/split-enz-mn0000747757",
+   "Erasure": "https://www.allmusic.com/artist/erasure-mn0000184811"
   }
  },
  "Minny Pops": {
@@ -528,7 +589,8 @@
    "P-Model": "https://www.allmusic.com/artist/p-model-mn0001615947",
    "Shonen Knife": "https://www.allmusic.com/artist/shonen-knife-mn0000036310",
    "Ymo": "https://www.allmusic.com/artist/ymo-mn0001538122",
-   "Man or Astro-man?": "https://www.allmusic.com/artist/man-or-astro-man-mn0000954597"
+   "Buffalo Daughter": "https://www.allmusic.com/artist/buffalo-daughter-mn0000627258",
+   "Man or Astro-man?": "https://www.allmusic.com/artist/man-or-astro-man--mn0000954597"
   }
  },
  "Soft Cell": {
@@ -556,13 +618,18 @@
    "The Associates": "https://www.allmusic.com/artist/the-associates-mn0000038977",
    "The Normal": "https://www.allmusic.com/artist/the-normal-mn0000892586",
    "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428",
+   "Thompson Twins": "https://www.allmusic.com/artist/thompson-twins-mn0000567570",
    "Ultravox": "https://www.allmusic.com/artist/ultravox-mn0000809266",
+   "Visage": "https://www.allmusic.com/artist/visage-mn0000809446",
    "Gary Numan": "https://www.allmusic.com/artist/gary-numan-mn0000183858",
    "Kraftwerk": "https://www.allmusic.com/artist/kraftwerk-mn0000104714",
    "Plastic Bertrand": "https://www.allmusic.com/artist/plastic-bertrand-mn0000298766",
+   "Jimmy Somerville": "https://www.allmusic.com/artist/jimmy-somerville-mn0000771136",
    "Kas Product": "https://www.allmusic.com/artist/kas-product-mn0000100872",
    "Modern Talking": "https://www.allmusic.com/artist/modern-talking-mn0000567809",
-   "Paul Young": "https://www.allmusic.com/artist/paul-young-mn0000034382"
+   "Parade Ground": "https://www.allmusic.com/artist/parade-ground-mn0001521013",
+   "Paul Young": "https://www.allmusic.com/artist/paul-young-mn0000034382",
+   "Yazoo": "https://www.allmusic.com/artist/yazoo-mn0000958839"
   }
  },
  "The Screamers": {
@@ -578,7 +645,9 @@
    "Silver Apples": "https://www.allmusic.com/artist/silver-apples-mn0000755494",
    "The Skulls": "https://www.allmusic.com/artist/the-skulls-mn0000425166",
    "The Weirdos": "https://www.allmusic.com/artist/the-weirdos-mn0000490141",
-   "Earth Dies Burning": "https://www.allmusic.com/artist/earth-dies-burning-mn0003124293"
+   "Earth Dies Burning": "https://www.allmusic.com/artist/earth-dies-burning-mn0003124293",
+   "Metal Urbain": "https://www.allmusic.com/artist/metal-urbain-mn0000449383",
+   "Mouth Congress": "https://www.allmusic.com/artist/mouth-congress-mn0004154185"
   }
  },
  "They Might Be Giants": {
@@ -593,18 +662,27 @@
    "Dead Milkmen": "https://www.allmusic.com/artist/dead-milkmen-mn0000140891",
    "Fountains of Wayne": "https://www.allmusic.com/artist/fountains-of-wayne-mn0000739041",
    "OK Go": "https://www.allmusic.com/artist/ok-go-mn0000390743",
+   "Optiganally Yours": "https://www.allmusic.com/artist/optiganally-yours-mn0000471623",
+   "Otis Ball": "https://www.allmusic.com/artist/otis-ball-mn0001358056",
    "Poi Dog Pondering": "https://www.allmusic.com/artist/poi-dog-pondering-mn0000299567",
    "Swimming Pool Q's": "https://www.allmusic.com/artist/swimming-pool-qs-mn0000037525",
    "The Feelies": "https://www.allmusic.com/artist/the-feelies-mn0000762177",
    "The Philistines Jr.": "https://www.allmusic.com/artist/the-philistines-jr-mn0000188955",
    "The Proclaimers": "https://www.allmusic.com/artist/the-proclaimers-mn0000492037",
    "The Sugarcubes": "https://www.allmusic.com/artist/the-sugarcubes-mn0000919525",
+   "Walter Martin": "https://www.allmusic.com/artist/walter-martin-mn0002456385",
    "Ween": "https://www.allmusic.com/artist/ween-mn0000817754",
    "XTC": "https://www.allmusic.com/artist/xtc-mn0000678339",
+   "\"Awesome\"": "https://www.allmusic.com/artist/awesome-mn0001898941",
+   "Alison Faith Levy": "https://www.allmusic.com/artist/alison-faith-levy-mn0000744161",
+   "Antsy Pants": "https://www.allmusic.com/artist/antsy-pants-mn0000664578",
+   "Barely Works": "https://www.allmusic.com/artist/barely-works-mn0000783839",
    "Beck": "https://www.allmusic.com/artist/beck-mn0000124492",
    "Butterfly Joe": "https://www.allmusic.com/artist/butterfly-joe-mn0000938644",
    "Crash Test Dummies": "https://www.allmusic.com/artist/crash-test-dummies-mn0000108679",
+   "Dan Bryk": "https://www.allmusic.com/artist/dan-bryk-mn0000951971",
    "Eels": "https://www.allmusic.com/artist/eels-mn0000174752",
+   "Jon Lajoie": "https://www.allmusic.com/artist/jon-lajoie-mn0002584364",
    "Joy Poppers": "https://www.allmusic.com/artist/joy-poppers-mn0000768211",
    "Mike Doughty": "https://www.allmusic.com/artist/mike-doughty-mn0000410964",
    "Post Office": "https://www.allmusic.com/artist/post-office-mn0001886302",
@@ -615,13 +693,14 @@
    "The Aquabats": "https://www.allmusic.com/artist/the-aquabats-mn0000034088",
    "The Cells": "https://www.allmusic.com/artist/the-cells-mn0000761972",
    "The Flaming Lips": "https://www.allmusic.com/artist/the-flaming-lips-mn0000065590",
+   "The Front Bottoms": "https://www.allmusic.com/artist/the-front-bottoms-mn0002744136",
+   "The Monks of Doom": "https://www.allmusic.com/artist/the-monks-of-doom-mn0000481831",
    "The Mountain Goats": "https://www.allmusic.com/artist/the-mountain-goats-mn0000480830",
    "Tiny Lights": "https://www.allmusic.com/artist/tiny-lights-mn0000930249",
+   "Too Much Joy": "https://www.allmusic.com/artist/too-much-joy-mn0000158771",
    "Violent Femmes": "https://www.allmusic.com/artist/violent-femmes-mn0000922200",
    "Weezer": "https://www.allmusic.com/artist/weezer-mn0000243008",
    "Bombadil": "https://www.allmusic.com/artist/bombadil-mn0000543653",
-   "Optiganally Yours": "https://www.allmusic.com/artist/optiganally-yours-mn0000471623",
-   "The Front Bottoms": "https://www.allmusic.com/artist/the-front-bottoms-mn0002744136",
    "The La's": "https://www.allmusic.com/artist/the-las-mn0000104455"
   }
  },
@@ -637,7 +716,7 @@
    "The Feelies": "https://www.allmusic.com/artist/the-feelies-mn0000762177",
    "Couch Flambeau": "https://www.allmusic.com/artist/couch-flambeau-mn0000693561",
    "Daniel Johnston": "https://www.allmusic.com/artist/daniel-johnston-mn0000674263",
-   "Dharma Bums": "https://www.allmusic.com/artist/dharma-bums-mn0003807857",
+   "Dharma Bums": "https://www.allmusic.com/artist/dharma-bums-mn0000250743",
    "Golden Shoulders": "https://www.allmusic.com/artist/golden-shoulders-mn0000670727",
    "Half Japanese": "https://www.allmusic.com/artist/half-japanese-mn0000555654",
    "Minutemen": "https://www.allmusic.com/artist/minutemen-mn0000474482",
@@ -652,6 +731,9 @@
    "Wonderful Broken Thing": "https://www.allmusic.com/artist/wonderful-broken-thing-mn0000102333",
    "Timbuk 3": "https://www.allmusic.com/artist/timbuk-3-mn0000599261",
    "King Missile": "https://www.allmusic.com/artist/king-missile-mn0000092303",
+   "Mojo Nixon": "https://www.allmusic.com/artist/mojo-nixon-mn0000578028",
+   "Night Crickets": "https://www.allmusic.com/artist/night-crickets-mn0004154726",
+   "The Pogues": "https://www.allmusic.com/artist/the-pogues-mn0000489876",
    "Beat Happening": "https://www.allmusic.com/artist/beat-happening-mn0000154530"
   }
  },
@@ -710,6 +792,16 @@
    "Nerf Herder": "https://www.allmusic.com/artist/nerf-herder-mn0000400815"
   }
  },
+ "Condor": {
+  "url": "https://www.allmusic.com/artist/condor-mn0002132581",
+  "name": "Condor",
+  "similar": {
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "The Cure": "https://www.allmusic.com/artist/the-cure-mn0000137390",
+   "The Faint": "https://www.allmusic.com/artist/the-faint-mn0000058934",
+   "The Smiths": "https://www.allmusic.com/artist/the-smiths-mn0000899530"
+  }
+ },
  "M": {
   "url": "https://www.allmusic.com/artist/m-mn0000207876",
   "name": "M",
@@ -722,6 +814,38 @@
    "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
    "Ryuichi Sakamoto": "https://www.allmusic.com/artist/ryuichi-sakamoto-mn0000587608",
    "Thomas Dolby": "https://www.allmusic.com/artist/thomas-dolby-mn0000926428"
+  }
+ },
+ "MX-80": {
+  "url": "https://www.allmusic.com/artist/mx-80-mn0000223169",
+  "name": "MX-80",
+  "similar": {
+   "Pere Ubu": "https://www.allmusic.com/artist/pere-ubu-mn0000838272",
+   "Chrome": "https://www.allmusic.com/artist/chrome-mn0000118327",
+   "Henry Kaiser": "https://www.allmusic.com/artist/henry-kaiser-mn0000673577",
+   "Metal Urbain": "https://www.allmusic.com/artist/metal-urbain-mn0000449383",
+   "Mission of Burma": "https://www.allmusic.com/artist/mission-of-burma-mn0000423305",
+   "Snakefinger": "https://www.allmusic.com/artist/snakefinger-mn0000034504",
+   "The Pop Group": "https://www.allmusic.com/artist/the-pop-group-mn0000487663",
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "Gizmos": "https://www.allmusic.com/artist/gizmos-mn0000934320",
+   "Wire": "https://www.allmusic.com/artist/wire-mn0000672910",
+   "Burk Price": "https://www.allmusic.com/artist/burk-price-mn0003474301",
+   "Peter Laughner": "https://www.allmusic.com/artist/peter-laughner-mn0000276273",
+   "The Numbers Band": "https://www.allmusic.com/artist/the-numbers-band-mn0000725931"
+  }
+ },
+ "My Dad Is Dead": {
+  "url": "https://www.allmusic.com/artist/my-dad-is-dead-mn0000936483",
+  "name": "My Dad Is Dead",
+  "similar": {
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "Interpol": "https://www.allmusic.com/artist/interpol-mn0000096576",
+   "XTC": "https://www.allmusic.com/artist/xtc-mn0000678339",
+   "Butthole Surfers": "https://www.allmusic.com/artist/butthole-surfers-mn0000633181",
+   "Guided by Voices": "https://www.allmusic.com/artist/guided-by-voices-mn0000545726",
+   "Pixies": "https://www.allmusic.com/artist/pixies-mn0000895136",
+   "Bizarre Sex Trio": "https://www.allmusic.com/artist/bizarre-sex-trio-mn0000107035"
   }
  },
  "Oingo Boingo": {
@@ -789,6 +913,21 @@
    "Weezer": "https://www.allmusic.com/artist/weezer-mn0000243008"
   }
  },
+ "Sloy": {
+  "url": "https://www.allmusic.com/artist/sloy-mn0001915493",
+  "name": "Sloy",
+  "similar": {
+   "Big Black": "https://www.allmusic.com/artist/big-black-mn0000758520",
+   "Deche dans Face": "https://www.allmusic.com/artist/deche-dans-face-mn0001928285",
+   "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
+   "Joy Division": "https://www.allmusic.com/artist/joy-division-mn0000290812",
+   "Shellac": "https://www.allmusic.com/artist/shellac-mn0000748262",
+   "Steve Albini": "https://www.allmusic.com/artist/steve-albini-mn0000023358",
+   "Talking Heads": "https://www.allmusic.com/artist/talking-heads-mn0000131650",
+   "The Cure": "https://www.allmusic.com/artist/the-cure-mn0000137390",
+   "The Jesus Lizard": "https://www.allmusic.com/artist/the-jesus-lizard-mn0000089305"
+  }
+ },
  "Sparks": {
   "url": "https://www.allmusic.com/artist/sparks-mn0000009084",
   "name": "Sparks",
@@ -836,6 +975,7 @@
    "Tubeway Army": "https://www.allmusic.com/artist/tubeway-army-mn0000203710",
    "Deaf School": "https://www.allmusic.com/artist/deaf-school-mn0000225742",
    "Electric Six": "https://www.allmusic.com/artist/electric-six-mn0000163059",
+   "The Mumps": "https://www.allmusic.com/artist/the-mumps-mn0000512492",
    "The Spent Poets": "https://www.allmusic.com/artist/the-spent-poets-mn0000483013"
   }
  },
@@ -850,12 +990,12 @@
    "Bush Tetras": "https://www.allmusic.com/artist/bush-tetras-mn0000640269",
    "Devo": "https://www.allmusic.com/artist/devo-mn0000249973",
    "Essential Logic": "https://www.allmusic.com/artist/essential-logic-mn0000199102",
-   "Necessaries": "https://www.allmusic.com/artist/necessaries-mn0001527597",
    "Suburban Lawns": "https://www.allmusic.com/artist/suburban-lawns-mn0000581937",
    "Swimming Pool Q's": "https://www.allmusic.com/artist/swimming-pool-qs-mn0000037525",
    "Talking Heads": "https://www.allmusic.com/artist/talking-heads-mn0000131650",
    "The Au Pairs": "https://www.allmusic.com/artist/the-au-pairs-mn0000043190",
    "The B-52s": "https://www.allmusic.com/artist/the-b-52s-mn0000043489",
+   "The Necessaries": "https://www.allmusic.com/artist/the-necessaries-mn0001527597",
    "Love Tractor": "https://www.allmusic.com/artist/love-tractor-mn0000301882"
   }
  },
@@ -872,7 +1012,7 @@
    "Kraftwerk": "https://www.allmusic.com/artist/kraftwerk-mn0000104714",
    "Rick Wakeman": "https://www.allmusic.com/artist/rick-wakeman-mn0000300245",
    "The Rentals": "https://www.allmusic.com/artist/the-rentals-mn0000495288",
-   "Big Bad Bosses ": "https://www.allmusic.com/artist/big-bad-bosses-mn0003469957",
+   "Big Bad Bosses": "https://www.allmusic.com/artist/big-bad-bosses-mn0003469957",
    "Kody Nielson": "https://www.allmusic.com/artist/kody-nielson-mn0001958350",
    "Super Smart": "https://www.allmusic.com/artist/super-smart-mn0001717010",
    "The Network": "https://www.allmusic.com/artist/the-network-mn0000477806"
@@ -901,6 +1041,659 @@
    "The Gun Club": "https://www.allmusic.com/artist/the-gun-club-mn0000091438"
   }
  },
+ "Taylor Swift": {
+  "url": "https://www.allmusic.com/artist/taylor-swift-mn0000472102",
+  "name": "Taylor Swift",
+  "similar": {
+   "Demi Lovato": "https://www.allmusic.com/artist/demi-lovato-mn0000996127",
+   "Ed Sheeran": "https://www.allmusic.com/artist/ed-sheeran-mn0002639628",
+   "Harry Styles": "https://www.allmusic.com/artist/harry-styles-mn0002854537",
+   "Kelly Clarkson": "https://www.allmusic.com/artist/kelly-clarkson-mn0000086927",
+   "Regina Spektor": "https://www.allmusic.com/artist/regina-spektor-mn0000386560",
+   "Ariana Grande": "https://www.allmusic.com/artist/ariana-grande-mn0002264745",
+   "Avril Lavigne": "https://www.allmusic.com/artist/avril-lavigne-mn0000762885",
+   "Carly Rae Jepsen": "https://www.allmusic.com/artist/carly-rae-jepsen-mn0002089077",
+   "Colbie Caillat": "https://www.allmusic.com/artist/colbie-caillat-mn0000563390",
+   "HAIM": "https://www.allmusic.com/artist/haim-mn0003051113",
+   "Hilary Duff": "https://www.allmusic.com/artist/hilary-duff-mn0000956973", Allen": "https://www.allmusic.com/artist/lily-allen-mn0000562850",
+   "Maren Morris": "https://www.allmusic.com/artist/maren-morris-mn0000328633",
+   "One Direction": "https://www.allmusic.com/artist/one-direction-mn0002766592",
+   "Selena Gomez": "https://www.allmusic.com/artist/selena-gomez-mn0000996096",
+   "Shania Twain": "https://www.allmusic.com/artist/shania-twain-mn0000161808",
+   "The Band Perry": "https://www.allmusic.com/artist/the-band-perry-mn0002372262",
+   "Ashley Monroe": "https://www.allmusic.com/artist/ashley-monroe-mn0000522765",
+   "Ashton Shepherd": "https://www.allmusic.com/artist/ashton-shepherd-mn0001982001",
+   "Brandi Carlile": "https://www.allmusic.com/artist/brandi-carlile-mn0000376793",
+   "Carmen Rasmusen": "https://www.allmusic.com/artist/carmen-rasmusen-mn0000180595",
+   "Carrie Underwood": "https://www.allmusic.com/artist/carrie-underwood-mn0000861252",
+   "Cher Lloyd": "https://www.allmusic.com/artist/cher-lloyd-mn0002641312",
+   "Christina Grimmie": "https://www.allmusic.com/artist/christina-grimmie-mn0002608562",
+   "Ellie Goulding": "https://www.allmusic.com/artist/ellie-goulding-mn0001596642",
+   "Erika Jo": "https://www.allmusic.com/artist/erika-jo-mn0000376806",
+   "Ingrid Michaelson": "https://www.allmusic.com/artist/ingrid-michaelson-mn0000485204",
+   "Jax": "https://www.allmusic.com/artist/jax-mn0003426894",
+   "Julianne Hough": "https://www.allmusic.com/artist/julianne-hough-mn0000993271",
+   "Justin Bieber": "https://www.allmusic.com/artist/justin-bieber-mn0002165952",
+   "Kacey Musgraves": "https://www.allmusic.com/artist/kacey-musgraves-mn0002077491",
+   "Kasey Chambers": "https://www.allmusic.com/artist/kasey-chambers-mn0000359658",
+   "Katy Perry": "https://www.allmusic.com/artist/katy-perry-mn0000859589",
+   "Kellie Pickler": "https://www.allmusic.com/artist/kellie-pickler-mn0000732652",
+   "Kristy Lee Cook": "https://www.allmusic.com/artist/kristy-lee-cook-mn0001012880",
+   "Lady A": "https://www.allmusic.com/artist/lady-a-mn0000946769",
+   "Lauren Alaina": "https://www.allmusic.com/artist/lauren-alaina-mn0002702852",
+   "Little Big Town": "https://www.allmusic.com/artist/little-big-town-mn0000257787",
+   "Mickey Guyton": "https://www.allmusic.com/artist/mickey-guyton-mn0003237096",
+   "Miley Cyrus": "https://www.allmusic.com/artist/miley-cyrus-mn0000551762",
+   "Miranda Cosgrove": "https://www.allmusic.com/artist/miranda-cosgrove-mn0000996972",
+   "Miranda Lambert": "https://www.allmusic.com/artist/miranda-lambert-mn0000503242",
+   "Nick Jonas": "https://www.allmusic.com/artist/nick-jonas-mn0002515882",
+   "P!nk": "https://www.allmusic.com/artist/p%21nk-mn0001878899",
+   "Rosie": "https://www.allmusic.com/artist/rosie-mn0004035268",
+   "Sam Smith": "https://www.allmusic.com/artist/sam-smith-mn0002509942",
+   "Shawn Mendes": "https://www.allmusic.com/artist/shawn-mendes-mn0003276902",
+   "Sugarland": "https://www.allmusic.com/artist/sugarland-mn0000484880",
+   "Sunny Sweeney": "https://www.allmusic.com/artist/sunny-sweeney-mn0000939033",
+   "Whitney Duncan": "https://www.allmusic.com/artist/whitney-duncan-mn0000159086",
+   "Aly & AJ": "https://www.allmusic.com/artist/aly-aj-mn0000390185",
+   "Brynn Elliott": "https://www.allmusic.com/artist/brynn-elliott-mn0003739878",
+   "CAPPA": "https://www.allmusic.com/artist/cappa-mn0002845990",
+   "Carly Pearce": "https://www.allmusic.com/artist/carly-pearce-mn0000585748",
+   "Dagny": "https://www.allmusic.com/artist/dagny-mn0003505087",
+   "Danielle Bradbery": "https://www.allmusic.com/artist/danielle-bradbery-mn0003121194",
+   "Emma Wahlin": "https://www.allmusic.com/artist/emma-wahlin-mn0003785988",
+   "Gloriana": "https://www.allmusic.com/artist/gloriana-mn0002347630",
+   "Gretchen Wilson": "https://www.allmusic.com/artist/gretchen-wilson-mn0000196976",
+   "Hailee Steinfeld": "https://www.allmusic.com/artist/hailee-steinfeld-mn0003276047",
+   "Hayley Williams": "https://www.allmusic.com/artist/hayley-williams-mn0000364537",
+   "Jennifer Nettles": "https://www.allmusic.com/artist/jennifer-nettles-mn0000224750",
+   "Jessica Andrews": "https://www.allmusic.com/artist/jessica-andrews-mn0000286530",
+   "Jillette Johnson": "https://www.allmusic.com/artist/jillette-johnson-mn0002983634",
+   "Jordin Sparks": "https://www.allmusic.com/artist/jordin-sparks-mn0000729857",
+   "Kelsea Ballerini": "https://www.allmusic.com/artist/kelsea-ballerini-mn0003312551",
+   "Kenny Chesney": "https://www.allmusic.com/artist/kenny-chesney-mn0000068551",
+   "Leona Lewis": "https://www.allmusic.com/artist/leona-lewis-mn0000944700",
+   "Liz Huett": "https://www.allmusic.com/artist/liz-huett-mn0002576524",
+   "Maddie & Tae": "https://www.allmusic.com/artist/maddie-tae-mn0003282505",
+   "Mandy Moore": "https://www.allmusic.com/artist/mandy-moore-mn0000673933",
+   "Mary Lambert": "https://www.allmusic.com/artist/mary-lambert-mn0003145435",
+   "Meghan Trainor": "https://www.allmusic.com/artist/meghan-trainor-mn0002811293",
+   "Natasha Bedingfield": "https://www.allmusic.com/artist/natasha-bedingfield-mn0000558954",
+   "Sara Bareilles": "https://www.allmusic.com/artist/sara-bareilles-mn0000370326",
+   "Sarah Buxton": "https://www.allmusic.com/artist/sarah-buxton-mn0000529510",
+   "Sia": "https://www.allmusic.com/artist/sia-mn0000753742",
+   "Tori Kelly": "https://www.allmusic.com/artist/tori-kelly-mn0002717459",
+   "Whitney Woerz": "https://www.allmusic.com/artist/whitney-woerz-mn0003513340",
+   "1GN": "https://www.allmusic.com/artist/1gn-mn0003511236",
+   "Addison Rae": "https://www.allmusic.com/artist/addison-rae-mn0004037627",
+   "Alissa Griffith": "https://www.allmusic.com/artist/alissa-griffith-mn0000610920",
+   "Annie LeBlanc": "https://www.allmusic.com/artist/annie-leblanc-mn0003648194",
+   "Bailey Bryan": "https://www.allmusic.com/artist/bailey-bryan-mn0003554454",
+   "Brandon Ratcliff": "https://www.allmusic.com/artist/brandon-ratcliff-mn0003808201",
+   "Callista Clark": "https://www.allmusic.com/artist/callista-clark-mn0004022632",
+   "Claire Rosinkranz": "https://www.allmusic.com/artist/claire-rosinkranz-mn0003970104",
+   "Dwntwn": "https://www.allmusic.com/artist/dwntwn-mn0002917388",
+   "Edens Edge": "https://www.allmusic.com/artist/edens-edge-mn0002671928",
+   "Explorer Tapes": "https://www.allmusic.com/artist/explorer-tapes-mn0004082917",
+   "Jasmine Thompson": "https://www.allmusic.com/artist/jasmine-thompson-mn0002833281",
+   "Jessie James": "https://www.allmusic.com/artist/jessie-james-mn0000341806",
+   "Jonas Brothers": "https://www.allmusic.com/artist/jonas-brothers-mn0000548397",
+   "Kate Tucker": "https://www.allmusic.com/artist/kate-tucker-mn0001046369",
+   "Kirsten Arian": "https://www.allmusic.com/artist/kirsten-arian-mn0003595195",
+   "Laura Marano": "https://www.allmusic.com/artist/laura-marano-mn0002411221",
+   "MARINA": "https://www.allmusic.com/artist/marina-mn0003509515",
+   "Midnight Red": "https://www.allmusic.com/artist/midnight-red-mn0002764754",
+   "Rachel Wammack": "https://www.allmusic.com/artist/rachel-wammack-mn0003301174",
+   "Ryan Folles\u00e9": "https://www.allmusic.com/artist/ryan-folles%C3%A9-mn0003325120",
+   "Sam Williams": "https://www.allmusic.com/artist/sam-williams-mn0003339197",
+   "Sarah Ross": "https://www.allmusic.com/artist/sarah-ross-mn0003381566",
+   "Sinead Burgess": "https://www.allmusic.com/artist/sinead-burgess-mn0001595127",
+   "Sonia Leigh": "https://www.allmusic.com/artist/sonia-leigh-mn0001907052",
+   "Sons of Sylvia": "https://www.allmusic.com/artist/sons-of-sylvia-mn0001096935",
+   "Tenille Arts": "https://www.allmusic.com/artist/tenille-arts-mn0003714371",
+   "Twinnie": "https://www.allmusic.com/artist/twinnie-mn0003809112",
+   "Megan & Liz": "https://www.allmusic.com/artist/megan-liz-mn0002877240"
+  }
+ },
+ "Demi Lovato": {
+  "url": "https://www.allmusic.com/artist/demi-lovato-mn0000996127",
+  "name": "Demi Lovato",
+  "similar": {}
+ },
+ "Ed Sheeran": {
+  "url": "https://www.allmusic.com/artist/ed-sheeran-mn0002639628",
+  "name": "Ed Sheeran",
+  "similar": {}
+ },
+ "Harry Styles": {
+  "url": "https://www.allmusic.com/artist/harry-styles-mn0002854537",
+  "name": "Harry Styles",
+  "similar": {}
+ },
+ "Kelly Clarkson": {
+  "url": "https://www.allmusic.com/artist/kelly-clarkson-mn0000086927",
+  "name": "Kelly Clarkson",
+  "similar": {}
+ },
+ "Regina Spektor": {
+  "url": "https://www.allmusic.com/artist/regina-spektor-mn0000386560",
+  "name": "Regina Spektor",
+  "similar": {}
+ },
+ "Ariana Grande": {
+  "url": "https://www.allmusic.com/artist/ariana-grande-mn0002264745",
+  "name": "Ariana Grande",
+  "similar": {}
+ },
+ "Avril Lavigne": {
+  "url": "https://www.allmusic.com/artist/avril-lavigne-mn0000762885",
+  "name": "Avril Lavigne",
+  "similar": {}
+ },
+ "Carly Rae Jepsen": {
+  "url": "https://www.allmusic.com/artist/carly-rae-jepsen-mn0002089077",
+  "name": "Carly Rae Jepsen",
+  "similar": {}
+ },
+ "Colbie Caillat": {
+  "url": "https://www.allmusic.com/artist/colbie-caillat-mn0000563390",
+  "name": "Colbie Caillat",
+  "similar": {}
+ },
+ "HAIM": {
+  "url": "https://www.allmusic.com/artist/haim-mn0003051113",
+  "name": "HAIM",
+  "similar": {}
+ },
+ "Hilary Duff": {
+  "url": "https://www.allmusic.com/artist/hilary-duff-mn0000956973",
+  "name": "Hilary Duff",
+  "similar": {}
+ },
+ "Lily Allen": {
+  "url": "https://www.allmusic.com/artist/lily-allen-mn0000562850",
+  "name": "Lily Allen",
+  "similar": {}
+ },
+ "Maren Morris": {
+  "url": "https://www.allmusic.com/artist/maren-morris-mn0000328633",
+  "name": "Maren Morris",
+  "similar": {}
+ },
+ "One Direction": {
+  "url": "https://www.allmusic.com/artist/one-direction-mn0002766592",
+  "name": "One Direction",
+  "similar": {}
+ },
+ "Selena Gomez": {
+  "url": "https://www.allmusic.com/artist/selena-gomez-mn0000996096",
+  "name": "Selena Gomez",
+  "similar": {}
+ },
+ "Shania Twain": {
+  "url": "https://www.allmusic.com/artist/shania-twain-mn0000161808",
+  "name": "Shania Twain",
+  "similar": {}
+ },
+ "The Band Perry": {
+  "url": "https://www.allmusic.com/artist/the-band-perry-mn0002372262",
+  "name": "The Band Perry",
+  "similar": {}
+ },
+ "Ashley Monroe": {
+  "url": "https://www.allmusic.com/artist/ashley-monroe-mn0000522765",
+  "name": "Ashley Monroe",
+  "similar": {}
+ },
+ "Ashton Shepherd": {
+  "url": "https://www.allmusic.com/artist/ashton-shepherd-mn0001982001",
+  "name": "Ashton Shepherd",
+  "similar": {}
+ },
+ "Brandi Carlile": {
+  "url": "https://www.allmusic.com/artist/brandi-carlile-mn0000376793",
+  "name": "Brandi Carlile",
+  "similar": {}
+ },
+ "Carmen Rasmusen": {
+  "url": "https://www.allmusic.com/artist/carmen-rasmusen-mn0000180595",
+  "name": "Carmen Rasmusen",
+  "similar": {}
+ },
+ "Carrie Underwood": {
+  "url": "https://www.allmusic.com/artist/carrie-underwood-mn0000861252",
+  "name": "Carrie Underwood",
+  "similar": {}
+ },
+ "Cher Lloyd": {
+  "url": "https://www.allmusic.com/artist/cher-lloyd-mn0002641312",
+  "name": "Cher Lloyd",
+  "similar": {}
+ },
+ "Christina Grimmie": {
+  "url": "https://www.allmusic.com/artist/christina-grimmie-mn0002608562",
+  "name": "Christina Grimmie",
+  "similar": {}
+ },
+ "Ellie Goulding": {
+  "url": "https://www.allmusic.com/artist/ellie-goulding-mn0001596642",
+  "name": "Ellie Goulding",
+  "similar": {}
+ },
+ "Erika Jo": {
+  "url": "https://www.allmusic.com/artist/erika-jo-mn0000376806",
+  "name": "Erika Jo",
+  "similar": {}
+ },
+ "Ingrid Michaelson": {
+  "url": "https://www.allmusic.com/artist/ingrid-michaelson-mn0000485204",
+  "name": "Ingrid Michaelson",
+  "similar": {}
+ },
+ "Jax": {
+  "url": "https://www.allmusic.com/artist/jax-mn0003426894",
+  "name": "Jax",
+  "similar": {}
+ },
+ "Julianne Hough": {
+  "url": "https://www.allmusic.com/artist/julianne-hough-mn0000993271",
+  "name": "Julianne Hough",
+  "similar": {}
+ },
+ "Justin Bieber": {
+  "url": "https://www.allmusic.com/artist/justin-bieber-mn0002165952",
+  "name": "Justin Bieber",
+  "similar": {}
+ },
+ "Kacey Musgraves": {
+  "url": "https://www.allmusic.com/artist/kacey-musgraves-mn0002077491",
+  "name": "Kacey Musgraves",
+  "similar": {}
+ },
+ "Kasey Chambers": {
+  "url": "https://www.allmusic.com/artist/kasey-chambers-mn0000359658",
+  "name": "Kasey Chambers",
+  "similar": {}
+ },
+ "Katy Perry": {
+  "url": "https://www.allmusic.com/artist/katy-perry-mn0000859589",
+  "name": "Katy Perry",
+  "similar": {}
+ },
+ "Kellie Pickler": {
+  "url": "https://www.allmusic.com/artist/kellie-pickler-mn0000732652",
+  "name": "Kellie Pickler",
+  "similar": {}
+ },
+ "Kristy Lee Cook": {
+  "url": "https://www.allmusic.com/artist/kristy-lee-cook-mn0001012880",
+  "name": "Kristy Lee Cook",
+  "similar": {}
+ },
+ "Lady A": {
+  "url": "https://www.allmusic.com/artist/lady-a-mn0000946769",
+  "name": "Lady A",
+  "similar": {}
+ },
+ "Lauren Alaina": {
+  "url": "https://www.allmusic.com/artist/lauren-alaina-mn0002702852",
+  "name": "Lauren Alaina",
+  "similar": {}
+ },
+ "Little Big Town": {
+  "url": "https://www.allmusic.com/artist/little-big-town-mn0000257787",
+  "name": "Little Big Town",
+  "similar": {}
+ },
+ "Mickey Guyton": {
+  "url": "https://www.allmusic.com/artist/mickey-guyton-mn0003237096",
+  "name": "Mickey Guyton",
+  "similar": {}
+ },
+ "Miley Cyrus": {
+  "url": "https://www.allmusic.com/artist/miley-cyrus-mn0000551762",
+  "name": "Miley Cyrus",
+  "similar": {}
+ },
+ "Miranda Cosgrove": {
+  "url": "https://www.allmusic.com/artist/miranda-cosgrove-mn0000996972",
+  "name": "Miranda Cosgrove",
+  "similar": {}
+ },
+ "Miranda Lambert": {
+  "url": "https://www.allmusic.com/artist/miranda-lambert-mn0000503242",
+  "name": "Miranda Lambert",
+  "similar": {}
+ },
+ "Nick Jonas": {
+  "url": "https://www.allmusic.com/artist/nick-jonas-mn0002515882",
+  "name": "Nick Jonas",
+  "similar": {}
+ },
+ "P!nk": {
+  "url": "https://www.allmusic.com/artist/p%21nk-mn0001878899",
+  "name": "P!nk",
+  "similar": {}
+ },
+ "Rosie": {
+  "url": "https://www.allmusic.com/artist/rosie-mn0004035268",
+  "name": "Rosie",
+  "similar": {}
+ },
+ "Sam Smith": {
+  "url": "https://www.allmusic.com/artist/sam-smith-mn0002509942",
+  "name": "Sam Smith",
+  "similar": {}
+ },
+ "Shawn Mendes": {
+  "url": "https://www.allmusic.com/artist/shawn-mendes-mn0003276902",
+  "name": "Shawn Mendes",
+  "similar": {}
+ },
+ "Sugarland": {
+  "url": "https://www.allmusic.com/artist/sugarland-mn0000484880",
+  "name": "Sugarland",
+  "similar": {}
+ },
+ "Sunny Sweeney": {
+  "url": "https://www.allmusic.com/artist/sunny-sweeney-mn0000939033",
+  "name": "Sunny Sweeney",
+  "similar": {}
+ },
+ "Whitney Duncan": {
+  "url": "https://www.allmusic.com/artist/whitney-duncan-mn0000159086",
+  "name": "Whitney Duncan",
+  "similar": {}
+ },
+ "Aly & AJ": {
+  "url": "https://www.allmusic.com/artist/aly-aj-mn0000390185",
+  "name": "Aly & AJ",
+  "similar": {}
+ },
+ "Brynn Elliott": {
+  "url": "https://www.allmusic.com/artist/brynn-elliott-mn0003739878",
+  "name": "Brynn Elliott",
+  "similar": {}
+ },
+ "CAPPA": {
+  "url": "https://www.allmusic.com/artist/cappa-mn0002845990",
+  "name": "CAPPA",
+  "similar": {}
+ },
+ "Carly Pearce": {
+  "url": "https://www.allmusic.com/artist/carly-pearce-mn0000585748",
+  "name": "Carly Pearce",
+  "similar": {}
+ },
+ "Dagny": {
+  "url": "https://www.allmusic.com/artist/dagny-mn0003505087",
+  "name": "Dagny",
+  "similar": {}
+ },
+ "Danielle Bradbery": {
+  "url": "https://www.allmusic.com/artist/danielle-bradbery-mn0003121194",
+  "name": "Danielle Bradbery",
+  "similar": {}
+ },
+ "Emma Wahlin": {
+  "url": "https://www.allmusic.com/artist/emma-wahlin-mn0003785988",
+  "name": "Emma Wahlin",
+  "similar": {}
+ },
+ "Gloriana": {
+  "url": "https://www.allmusic.com/artist/gloriana-mn0002347630",
+  "name": "Gloriana",
+  "similar": {}
+ },
+ "Gretchen Wilson": {
+  "url": "https://www.allmusic.com/artist/gretchen-wilson-mn0000196976",
+  "name": "Gretchen Wilson",
+  "similar": {}
+ },
+ "Hailee Steinfeld": {
+  "url": "https://www.allmusic.com/artist/hailee-steinfeld-mn0003276047",
+  "name": "Hailee Steinfeld",
+  "similar": {}
+ },
+ "Hayley Williams": {
+  "url": "https://www.allmusic.com/artist/hayley-williams-mn0000364537",
+  "name": "Hayley Williams",
+  "similar": {}
+ },
+ "Jennifer Nettles": {
+  "url": "https://www.allmusic.com/artist/jennifer-nettles-mn0000224750",
+  "name": "Jennifer Nettles",
+  "similar": {}
+ },
+ "Jessica Andrews": {
+  "url": "https://www.allmusic.com/artist/jessica-andrews-mn0000286530",
+  "name": "Jessica Andrews",
+  "similar": {}
+ },
+ "Jillette Johnson": {
+  "url": "https://www.allmusic.com/artist/jillette-johnson-mn0002983634",
+  "name": "Jillette Johnson",
+  "similar": {}
+ },
+ "Jordin Sparks": {
+  "url": "https://www.allmusic.com/artist/jordin-sparks-mn0000729857",
+  "name": "Jordin Sparks",
+  "similar": {}
+ },
+ "Kelsea Ballerini": {
+  "url": "https://www.allmusic.com/artist/kelsea-ballerini-mn0003312551",
+  "name": "Kelsea Ballerini",
+  "similar": {}
+ },
+ "Kenny Chesney": {
+  "url": "https://www.allmusic.com/artist/kenny-chesney-mn0000068551",
+  "name": "Kenny Chesney",
+  "similar": {}
+ },
+ "Leona Lewis": {
+  "url": "https://www.allmusic.com/artist/leona-lewis-mn0000944700",
+  "name": "Leona Lewis",
+  "similar": {}
+ },
+ "Liz Huett": {
+  "url": "https://www.allmusic.com/artist/liz-huett-mn0002576524",
+  "name": "Liz Huett",
+  "similar": {}
+ },
+ "Maddie & Tae": {
+  "url": "https://www.allmusic.com/artist/maddie-tae-mn0003282505",
+  "name": "Maddie & Tae",
+  "similar": {}
+ },
+ "Mandy Moore": {
+  "url": "https://www.allmusic.com/artist/mandy-moore-mn0000673933",
+  "name": "Mandy Moore",
+  "similar": {}
+ },
+ "Mary Lambert": {
+  "url": "https://www.allmusic.com/artist/mary-lambert-mn0003145435",
+  "name": "Mary Lambert",
+  "similar": {}
+ },
+ "Meghan Trainor": {
+  "url": "https://www.allmusic.com/artist/meghan-trainor-mn0002811293",
+  "name": "Meghan Trainor",
+  "similar": {}
+ },
+ "Natasha Bedingfield": {
+  "url": "https://www.allmusic.com/artist/natasha-bedingfield-mn0000558954",
+  "name": "Natasha Bedingfield",
+  "similar": {}
+ },
+ "Sara Bareilles": {
+  "url": "https://www.allmusic.com/artist/sara-bareilles-mn0000370326",
+  "name": "Sara Bareilles",
+  "similar": {}
+ },
+ "Sarah Buxton": {
+  "url": "https://www.allmusic.com/artist/sarah-buxton-mn0000529510",
+  "name": "Sarah Buxton",
+  "similar": {}
+ },
+ "Sia": {
+  "url": "https://www.allmusic.com/artist/sia-mn0000753742",
+  "name": "Sia",
+  "similar": {}
+ },
+ "Tori Kelly": {
+  "url": "https://www.allmusic.com/artist/tori-kelly-mn0002717459",
+  "name": "Tori Kelly",
+  "similar": {}
+ },
+ "Whitney Woerz": {
+  "url": "https://www.allmusic.com/artist/whitney-woerz-mn0003513340",
+  "name": "Whitney Woerz",
+  "similar": {}
+ },
+ "1GN": {
+  "url": "https://www.allmusic.com/artist/1gn-mn0003511236",
+  "name": "1GN",
+  "similar": {}
+ },
+ "Addison Rae": {
+  "url": "https://www.allmusic.com/artist/addison-rae-mn0004037627",
+  "name": "Addison Rae",
+  "similar": {}
+ },
+ "Alissa Griffith": {
+  "url": "https://www.allmusic.com/artist/alissa-griffith-mn0000610920",
+  "name": "Alissa Griffith",
+  "similar": {}
+ },
+ "Annie LeBlanc": {
+  "url": "https://www.allmusic.com/artist/annie-leblanc-mn0003648194",
+  "name": "Annie LeBlanc",
+  "similar": {}
+ },
+ "Bailey Bryan": {
+  "url": "https://www.allmusic.com/artist/bailey-bryan-mn0003554454",
+  "name": "Bailey Bryan",
+  "similar": {}
+ },
+ "Brandon Ratcliff": {
+  "url": "https://www.allmusic.com/artist/brandon-ratcliff-mn0003808201",
+  "name": "Brandon Ratcliff",
+  "similar": {}
+ },
+ "Callista Clark": {
+  "url": "https://www.allmusic.com/artist/callista-clark-mn0004022632",
+  "name": "Callista Clark",
+  "similar": {}
+ },
+ "Claire Rosinkranz": {
+  "url": "https://www.allmusic.com/artist/claire-rosinkranz-mn0003970104",
+  "name": "Claire Rosinkranz",
+  "similar": {}
+ },
+ "Dwntwn": {
+  "url": "https://www.allmusic.com/artist/dwntwn-mn0002917388",
+  "name": "Dwntwn",
+  "similar": {}
+ },
+ "Edens Edge": {
+  "url": "https://www.allmusic.com/artist/edens-edge-mn0002671928",
+  "name": "Edens Edge",
+  "similar": {}
+ },
+ "Explorer Tapes": {
+  "url": "https://www.allmusic.com/artist/explorer-tapes-mn0004082917",
+  "name": "Explorer Tapes",
+  "similar": {}
+ },
+ "Jasmine Thompson": {
+  "url": "https://www.allmusic.com/artist/jasmine-thompson-mn0002833281",
+  "name": "Jasmine Thompson",
+  "similar": {}
+ },
+ "Jessie James": {
+  "url": "https://www.allmusic.com/artist/jessie-james-mn0000341806",
+  "name": "Jessie James",
+  "similar": {}
+ },
+ "Jonas Brothers": {
+  "url": "https://www.allmusic.com/artist/jonas-brothers-mn0000548397",
+  "name": "Jonas Brothers",
+  "similar": {}
+ },
+ "Kate Tucker": {
+  "url": "https://www.allmusic.com/artist/kate-tucker-mn0001046369",
+  "name": "Kate Tucker",
+  "similar": {}
+ },
+ "Kirsten Arian": {
+  "url": "https://www.allmusic.com/artist/kirsten-arian-mn0003595195",
+  "name": "Kirsten Arian",
+  "similar": {}
+ },
+ "Laura Marano": {
+  "url": "https://www.allmusic.com/artist/laura-marano-mn0002411221",
+  "name": "Laura Marano",
+  "similar": {}
+ },
+ "MARINA": {
+  "url": "https://www.allmusic.com/artist/marina-mn0003509515",
+  "name": "MARINA",
+  "similar": {}
+ },
+ "Midnight Red": {
+  "url": "https://www.allmusic.com/artist/midnight-red-mn0002764754",
+  "name": "Midnight Red",
+  "similar": {}
+ },
+ "Rachel Wammack": {
+  "url": "https://www.allmusic.com/artist/rachel-wammack-mn0003301174",
+  "name": "Rachel Wammack",
+  "similar": {}
+ },
+ "Ryan Folles\u00e9": {
+  "url": "https://www.allmusic.com/artist/ryan-folles%C3%A9-mn0003325120",
+  "name": "Ryan Folles\u00e9",
+  "similar": {}
+ },
+ "Sam Williams": {
+  "url": "https://www.allmusic.com/artist/sam-williams-mn0003339197",
+  "name": "Sam Williams",
+  "similar": {}
+ },
+ "Sarah Ross": {
+  "url": "https://www.allmusic.com/artist/sarah-ross-mn0003381566",
+  "name": "Sarah Ross",
+  "similar": {}
+ },
+ "Sinead Burgess": {
+  "url": "https://www.allmusic.com/artist/sinead-burgess-mn0001595127",
+  "name": "Sinead Burgess",
+  "similar": {}
+ },
+ "Sonia Leigh": {
+  "url": "https://www.allmusic.com/artist/sonia-leigh-mn0001907052",
+  "name": "Sonia Leigh",
+  "similar": {}
+ },
+ "Sons of Sylvia": {
+  "url": "https://www.allmusic.com/artist/sons-of-sylvia-mn0001096935",
+  "name": "Sons of Sylvia",
+  "similar": {}
+ },
+ "Tenille Arts": {
+  "url": "https://www.allmusic.com/artist/tenille-arts-mn0003714371",
+  "name": "Tenille Arts",
+  "similar": {}
+ },
+ "Twinnie": {
+  "url": "https://www.allmusic.com/artist/twinnie-mn0003809112",
+  "name": "Twinnie",
+  "similar": {}
+ },
+ "Megan & Liz": {
+  "url": "https://www.allmusic.com/artist/megan-liz-mn0002877240",
+  "name": "Megan & Liz",
+  "similar": {}
+ },
  "Devo": {
   "url": "https://www.allmusic.com/artist/devo-mn0000249973",
   "name": "Devo",
@@ -911,14 +1704,29 @@
   "name": "Wire",
   "similar": {}
  },
+ "Chrome": {
+  "url": "https://www.allmusic.com/artist/chrome-mn0000118327",
+  "name": "Chrome",
+  "similar": {}
+ },
  "Controlled Bleeding": {
   "url": "https://www.allmusic.com/artist/controlled-bleeding-mn0000123674",
   "name": "Controlled Bleeding",
   "similar": {}
  },
+ "DNA": {
+  "url": "https://www.allmusic.com/artist/dna-mn0000948557",
+  "name": "DNA",
+  "similar": {}
+ },
  "Faust": {
   "url": "https://www.allmusic.com/artist/faust-mn0000793329",
   "name": "Faust",
+  "similar": {}
+ },
+ "Suicide": {
+  "url": "https://www.allmusic.com/artist/suicide-mn0000487186",
+  "name": "Suicide",
   "similar": {}
  },
  "Tin Huey": {
@@ -929,6 +1737,16 @@
  "Frank Black": {
   "url": "https://www.allmusic.com/artist/frank-black-mn0000167287",
   "name": "Frank Black",
+  "similar": {}
+ },
+ "Half Japanese": {
+  "url": "https://www.allmusic.com/artist/half-japanese-mn0000555654",
+  "name": "Half Japanese",
+  "similar": {}
+ },
+ "Josef K": {
+  "url": "https://www.allmusic.com/artist/josef-k-mn0000266534",
+  "name": "Josef K",
   "similar": {}
  },
  "Minutemen": {
@@ -951,9 +1769,24 @@
   "name": "PJ Harvey",
   "similar": {}
  },
+ "Pop. 1280": {
+  "url": "https://www.allmusic.com/artist/pop-1280-mn0002547683",
+  "name": "Pop. 1280",
+  "similar": {}
+ },
+ "Psychic TV": {
+  "url": "https://www.allmusic.com/artist/psychic-tv-mn0000375945",
+  "name": "Psychic TV",
+  "similar": {}
+ },
  "Public Image Ltd.": {
   "url": "https://www.allmusic.com/artist/public-image-ltd-mn0000364399",
   "name": "Public Image Ltd.",
+  "similar": {}
+ },
+ "Television": {
+  "url": "https://www.allmusic.com/artist/television-mn0000019701",
+  "name": "Television",
   "similar": {}
  },
  "The Comsat Angels": {
@@ -971,34 +1804,14 @@
   "name": "The Feelies",
   "similar": {}
  },
- "Bob Hund": {
-  "url": "https://www.allmusic.com/artist/bob-hund-mn0000933804",
-  "name": "Bob Hund",
+ "The Pop Group": {
+  "url": "https://www.allmusic.com/artist/the-pop-group-mn0000487663",
+  "name": "The Pop Group",
   "similar": {}
  },
- "Half Japanese": {
-  "url": "https://www.allmusic.com/artist/half-japanese-mn0000555654",
-  "name": "Half Japanese",
-  "similar": {}
- },
- "Josef K": {
-  "url": "https://www.allmusic.com/artist/josef-k-mn0000266534",
-  "name": "Josef K",
-  "similar": {}
- },
- "Oceans of the Moon": {
-  "url": "https://www.allmusic.com/artist/oceans-of-the-moon-mn0003845611",
-  "name": "Oceans of the Moon",
-  "similar": {}
- },
- "Peter Hammill": {
-  "url": "https://www.allmusic.com/artist/peter-hammill-mn0000843607",
-  "name": "Peter Hammill",
-  "similar": {}
- },
- "Psychic TV": {
-  "url": "https://www.allmusic.com/artist/psychic-tv-mn0000375945",
-  "name": "Psychic TV",
+ "Yoko Ono": {
+  "url": "https://www.allmusic.com/artist/yoko-ono-mn0000521704",
+  "name": "Yoko Ono",
   "similar": {}
  },
  "Stan Ridgway": {
@@ -1016,24 +1829,29 @@
   "name": "The Delta Nudes",
   "similar": {}
  },
- "The Modern Art": {
-  "url": "https://www.allmusic.com/artist/the-modern-art-mn0000919419",
-  "name": "The Modern Art",
-  "similar": {}
- },
- "The Pop Group": {
-  "url": "https://www.allmusic.com/artist/the-pop-group-mn0000487663",
-  "name": "The Pop Group",
-  "similar": {}
- },
  "Ultravox": {
   "url": "https://www.allmusic.com/artist/ultravox-mn0000809266",
   "name": "Ultravox",
   "similar": {}
  },
- "Yoko Ono": {
-  "url": "https://www.allmusic.com/artist/yoko-ono-mn0000521704",
-  "name": "Yoko Ono",
+ "Bob Hund": {
+  "url": "https://www.allmusic.com/artist/bob-hund-mn0000933804",
+  "name": "Bob Hund",
+  "similar": {}
+ },
+ "Oceans of the Moon": {
+  "url": "https://www.allmusic.com/artist/oceans-of-the-moon-mn0003845611",
+  "name": "Oceans of the Moon",
+  "similar": {}
+ },
+ "Peter Hammill": {
+  "url": "https://www.allmusic.com/artist/peter-hammill-mn0000843607",
+  "name": "Peter Hammill",
+  "similar": {}
+ },
+ "The Modern Art": {
+  "url": "https://www.allmusic.com/artist/the-modern-art-mn0000919419",
+  "name": "The Modern Art",
   "similar": {}
  },
  "Blondie": {
@@ -1059,11 +1877,6 @@
  "Richard Hell": {
   "url": "https://www.allmusic.com/artist/richard-hell-mn0000848913",
   "name": "Richard Hell",
-  "similar": {}
- },
- "Television": {
-  "url": "https://www.allmusic.com/artist/television-mn0000019701",
-  "name": "Television",
   "similar": {}
  },
  "Iggy Pop": {
@@ -1109,11 +1922,6 @@
  "Split Enz": {
   "url": "https://www.allmusic.com/artist/split-enz-mn0000747757",
   "name": "Split Enz",
-  "similar": {}
- },
- "Suicide": {
-  "url": "https://www.allmusic.com/artist/suicide-mn0000487186",
-  "name": "Suicide",
   "similar": {}
  },
  "The Go-Go's": {
@@ -1331,6 +2139,16 @@
   "name": "ABC",
   "similar": {}
  },
+ "Adam Ant": {
+  "url": "https://www.allmusic.com/artist/adam-ant-mn0000496487",
+  "name": "Adam Ant",
+  "similar": {}
+ },
+ "Dave Gahan": {
+  "url": "https://www.allmusic.com/artist/dave-gahan-mn0001199400",
+  "name": "Dave Gahan",
+  "similar": {}
+ },
  "Howard Jones": {
   "url": "https://www.allmusic.com/artist/howard-jones-mn0000228099",
   "name": "Howard Jones",
@@ -1351,14 +2169,34 @@
   "name": "Rational Youth",
   "similar": {}
  },
+ "Robert Rental": {
+  "url": "https://www.allmusic.com/artist/robert-rental-mn0000831594",
+  "name": "Robert Rental",
+  "similar": {}
+ },
+ "Telex": {
+  "url": "https://www.allmusic.com/artist/telex-mn0000019216",
+  "name": "Telex",
+  "similar": {}
+ },
  "The Art of Noise": {
   "url": "https://www.allmusic.com/artist/the-art-of-noise-mn0000930204",
   "name": "The Art of Noise",
   "similar": {}
  },
+ "The Normal": {
+  "url": "https://www.allmusic.com/artist/the-normal-mn0000892586",
+  "name": "The Normal",
+  "similar": {}
+ },
  "Tom Bailey": {
   "url": "https://www.allmusic.com/artist/tom-bailey-mn0000524836",
   "name": "Tom Bailey",
+  "similar": {}
+ },
+ "Visage": {
+  "url": "https://www.allmusic.com/artist/visage-mn0000809446",
+  "name": "Visage",
   "similar": {}
  },
  "Alphaville": {
@@ -1376,9 +2214,9 @@
   "name": "Book of Love",
   "similar": {}
  },
- "D.A.F.": {
+ "DAF": {
   "url": "https://www.allmusic.com/artist/daf-mn0000147282",
-  "name": "D.A.F.",
+  "name": "DAF",
   "similar": {}
  },
  "Fad Gadget": {
@@ -1391,14 +2229,14 @@
   "name": "Martin Gore",
   "similar": {}
  },
- "Adam Ant": {
-  "url": "https://www.allmusic.com/artist/adam-ant-mn0000496487",
-  "name": "Adam Ant",
+ "The Danse Society": {
+  "url": "https://www.allmusic.com/artist/the-danse-society-mn0000676885",
+  "name": "The Danse Society",
   "similar": {}
  },
- "Dave Gahan": {
-  "url": "https://www.allmusic.com/artist/dave-gahan-mn0001199400",
-  "name": "Dave Gahan",
+ "Alan Vega": {
+  "url": "https://www.allmusic.com/artist/alan-vega-mn0000932078",
+  "name": "Alan Vega",
   "similar": {}
  },
  "Missing Persons": {
@@ -1409,26 +2247,6 @@
  "Tangerine Dream": {
   "url": "https://www.allmusic.com/artist/tangerine-dream-mn0000002411",
   "name": "Tangerine Dream",
-  "similar": {}
- },
- "The Danse Society": {
-  "url": "https://www.allmusic.com/artist/the-danse-society-mn0000676885",
-  "name": "The Danse Society",
-  "similar": {}
- },
- "The Normal": {
-  "url": "https://www.allmusic.com/artist/the-normal-mn0000892586",
-  "name": "The Normal",
-  "similar": {}
- },
- "Visage": {
-  "url": "https://www.allmusic.com/artist/visage-mn0000809446",
-  "name": "Visage",
-  "similar": {}
- },
- "Wiccid": {
-  "url": "https://www.allmusic.com/artist/wiccid-mn0003652150",
-  "name": "Wiccid",
   "similar": {}
  },
  "Buzzcocks": {
@@ -1596,6 +2414,11 @@
   "name": "End of a Year",
   "similar": {}
  },
+ "Moderate Rebels": {
+  "url": "https://www.allmusic.com/artist/moderate-rebels-mn0004019593",
+  "name": "Moderate Rebels",
+  "similar": {}
+ },
  "Self Defense Family": {
   "url": "https://www.allmusic.com/artist/self-defense-family-mn0002839169",
   "name": "Self Defense Family",
@@ -1701,6 +2524,11 @@
   "name": "Jandek",
   "similar": {}
  },
+ "Kramer": {
+  "url": "https://www.allmusic.com/artist/kramer-mn0000041482",
+  "name": "Kramer",
+  "similar": {}
+ },
  "The Teardrop Explodes": {
   "url": "https://www.allmusic.com/artist/the-teardrop-explodes-mn0000569402",
   "name": "The Teardrop Explodes",
@@ -1751,6 +2579,11 @@
   "name": "The Jam",
   "similar": {}
  },
+ "The Hawks": {
+  "url": "https://www.allmusic.com/artist/the-hawks-mn0002008142",
+  "name": "The Hawks",
+  "similar": {}
+ },
  "The Skulls": {
   "url": "https://www.allmusic.com/artist/the-skulls-mn0000425166",
   "name": "The Skulls",
@@ -1781,11 +2614,6 @@
   "name": "Jean-Michel Jarre",
   "similar": {}
  },
- "Men Without Hats": {
-  "url": "https://www.allmusic.com/artist/men-without-hats-mn0000418670",
-  "name": "Men Without Hats",
-  "similar": {}
- },
  "Pet Shop Boys": {
   "url": "https://www.allmusic.com/artist/pet-shop-boys-mn0000260212",
   "name": "Pet Shop Boys",
@@ -1799,6 +2627,16 @@
  "Thompson Twins": {
   "url": "https://www.allmusic.com/artist/thompson-twins-mn0000567570",
   "name": "Thompson Twins",
+  "similar": {}
+ },
+ "Yukihiro Takahashi": {
+  "url": "https://www.allmusic.com/artist/yukihiro-takahashi-mn0000420055",
+  "name": "Yukihiro Takahashi",
+  "similar": {}
+ },
+ "Yello": {
+  "url": "https://www.allmusic.com/artist/yello-mn0000683795",
+  "name": "Yello",
   "similar": {}
  },
  "Dead or Alive": {
@@ -1909,6 +2747,11 @@
  "The Monochrome Set": {
   "url": "https://www.allmusic.com/artist/the-monochrome-set-mn0000475980",
   "name": "The Monochrome Set",
+  "similar": {}
+ },
+ "Anton Barbeau": {
+  "url": "https://www.allmusic.com/artist/anton-barbeau-mn0000491163",
+  "name": "Anton Barbeau",
   "similar": {}
  },
  "Dutch Uncles": {
@@ -2041,6 +2884,16 @@
   "name": "Supertramp",
   "similar": {}
  },
+ "Yazoo": {
+  "url": "https://www.allmusic.com/artist/yazoo-mn0000958839",
+  "name": "Yazoo",
+  "similar": {}
+ },
+ "Erasure": {
+  "url": "https://www.allmusic.com/artist/erasure-mn0000184811",
+  "name": "Erasure",
+  "similar": {}
+ },
  "Grace Jones": {
   "url": "https://www.allmusic.com/artist/grace-jones-mn0000161920",
   "name": "Grace Jones",
@@ -2076,14 +2929,29 @@
   "name": "Robert Palmer",
   "similar": {}
  },
+ "Tears for Fears": {
+  "url": "https://www.allmusic.com/artist/tears-for-fears-mn0000019892",
+  "name": "Tears for Fears",
+  "similar": {}
+ },
  "The Associates": {
   "url": "https://www.allmusic.com/artist/the-associates-mn0000038977",
   "name": "The Associates",
   "similar": {}
  },
+ "The Fixx": {
+  "url": "https://www.allmusic.com/artist/the-fixx-mn0000052093",
+  "name": "The Fixx",
+  "similar": {}
+ },
  "Alison Moyet": {
   "url": "https://www.allmusic.com/artist/alison-moyet-mn0000010458",
   "name": "Alison Moyet",
+  "similar": {}
+ },
+ "Icehouse": {
+  "url": "https://www.allmusic.com/artist/icehouse-mn0000768737",
+  "name": "Icehouse",
   "similar": {}
  },
  "Swing Out Sister": {
@@ -2101,14 +2969,39 @@
   "name": "Sade",
   "similar": {}
  },
+ "New Musik": {
+  "url": "https://www.allmusic.com/artist/new-musik-mn0000333903",
+  "name": "New Musik",
+  "similar": {}
+ },
+ "King": {
+  "url": "https://www.allmusic.com/artist/king-mn0000089071",
+  "name": "King",
+  "similar": {}
+ },
+ "Kraftwerk": {
+  "url": "https://www.allmusic.com/artist/kraftwerk-mn0000104714",
+  "name": "Kraftwerk",
+  "similar": {}
+ },
+ "Rodway": {
+  "url": "https://www.allmusic.com/artist/rodway-mn0001581034",
+  "name": "Rodway",
+  "similar": {}
+ },
+ "Taco": {
+  "url": "https://www.allmusic.com/artist/taco-mn0000019028",
+  "name": "Taco",
+  "similar": {}
+ },
+ "Trees": {
+  "url": "https://www.allmusic.com/artist/trees-mn0000014474",
+  "name": "Trees",
+  "similar": {}
+ },
  "Crawling Chaos": {
   "url": "https://www.allmusic.com/artist/crawling-chaos-mn0000644017",
   "name": "Crawling Chaos",
-  "similar": {}
- },
- "Chrome": {
-  "url": "https://www.allmusic.com/artist/chrome-mn0000118327",
-  "name": "Chrome",
   "similar": {}
  },
  "Metal Urbain": {
@@ -2226,14 +3119,14 @@
   "name": "Ymo",
   "similar": {}
  },
- "Man or Astro-man?": {
-  "url": "https://www.allmusic.com/artist/man-or-astro-man-mn0000954597",
-  "name": "Man or Astro-man?",
+ "Buffalo Daughter": {
+  "url": "https://www.allmusic.com/artist/buffalo-daughter-mn0000627258",
+  "name": "Buffalo Daughter",
   "similar": {}
  },
- "Erasure": {
-  "url": "https://www.allmusic.com/artist/erasure-mn0000184811",
-  "name": "Erasure",
+ "Man or Astro-man?": {
+  "url": "https://www.allmusic.com/artist/man-or-astro-man--mn0000954597",
+  "name": "Man or Astro-man?",
   "similar": {}
  },
  "Heaven 17": {
@@ -2276,14 +3169,14 @@
   "name": "Culture Club",
   "similar": {}
  },
- "Kraftwerk": {
-  "url": "https://www.allmusic.com/artist/kraftwerk-mn0000104714",
-  "name": "Kraftwerk",
-  "similar": {}
- },
  "Plastic Bertrand": {
   "url": "https://www.allmusic.com/artist/plastic-bertrand-mn0000298766",
   "name": "Plastic Bertrand",
+  "similar": {}
+ },
+ "Jimmy Somerville": {
+  "url": "https://www.allmusic.com/artist/jimmy-somerville-mn0000771136",
+  "name": "Jimmy Somerville",
   "similar": {}
  },
  "Kas Product": {
@@ -2294,6 +3187,11 @@
  "Modern Talking": {
   "url": "https://www.allmusic.com/artist/modern-talking-mn0000567809",
   "name": "Modern Talking",
+  "similar": {}
+ },
+ "Parade Ground": {
+  "url": "https://www.allmusic.com/artist/parade-ground-mn0001521013",
+  "name": "Parade Ground",
   "similar": {}
  },
  "Paul Young": {
@@ -2321,6 +3219,11 @@
   "name": "Earth Dies Burning",
   "similar": {}
  },
+ "Mouth Congress": {
+  "url": "https://www.allmusic.com/artist/mouth-congress-mn0004154185",
+  "name": "Mouth Congress",
+  "similar": {}
+ },
  "Brian Dewan": {
   "url": "https://www.allmusic.com/artist/brian-dewan-mn0000521600",
   "name": "Brian Dewan",
@@ -2339,6 +3242,16 @@
  "OK Go": {
   "url": "https://www.allmusic.com/artist/ok-go-mn0000390743",
   "name": "OK Go",
+  "similar": {}
+ },
+ "Optiganally Yours": {
+  "url": "https://www.allmusic.com/artist/optiganally-yours-mn0000471623",
+  "name": "Optiganally Yours",
+  "similar": {}
+ },
+ "Otis Ball": {
+  "url": "https://www.allmusic.com/artist/otis-ball-mn0001358056",
+  "name": "Otis Ball",
   "similar": {}
  },
  "Poi Dog Pondering": {
@@ -2366,9 +3279,34 @@
   "name": "The Sugarcubes",
   "similar": {}
  },
+ "Walter Martin": {
+  "url": "https://www.allmusic.com/artist/walter-martin-mn0002456385",
+  "name": "Walter Martin",
+  "similar": {}
+ },
  "Ween": {
   "url": "https://www.allmusic.com/artist/ween-mn0000817754",
   "name": "Ween",
+  "similar": {}
+ },
+ "\"Awesome\"": {
+  "url": "https://www.allmusic.com/artist/awesome-mn0001898941",
+  "name": "\"Awesome\"",
+  "similar": {}
+ },
+ "Alison Faith Levy": {
+  "url": "https://www.allmusic.com/artist/alison-faith-levy-mn0000744161",
+  "name": "Alison Faith Levy",
+  "similar": {}
+ },
+ "Antsy Pants": {
+  "url": "https://www.allmusic.com/artist/antsy-pants-mn0000664578",
+  "name": "Antsy Pants",
+  "similar": {}
+ },
+ "Barely Works": {
+  "url": "https://www.allmusic.com/artist/barely-works-mn0000783839",
+  "name": "Barely Works",
   "similar": {}
  },
  "Beck": {
@@ -2386,9 +3324,19 @@
   "name": "Crash Test Dummies",
   "similar": {}
  },
+ "Dan Bryk": {
+  "url": "https://www.allmusic.com/artist/dan-bryk-mn0000951971",
+  "name": "Dan Bryk",
+  "similar": {}
+ },
  "Eels": {
   "url": "https://www.allmusic.com/artist/eels-mn0000174752",
   "name": "Eels",
+  "similar": {}
+ },
+ "Jon Lajoie": {
+  "url": "https://www.allmusic.com/artist/jon-lajoie-mn0002584364",
+  "name": "Jon Lajoie",
   "similar": {}
  },
  "Joy Poppers": {
@@ -2436,6 +3384,16 @@
   "name": "The Flaming Lips",
   "similar": {}
  },
+ "The Front Bottoms": {
+  "url": "https://www.allmusic.com/artist/the-front-bottoms-mn0002744136",
+  "name": "The Front Bottoms",
+  "similar": {}
+ },
+ "The Monks of Doom": {
+  "url": "https://www.allmusic.com/artist/the-monks-of-doom-mn0000481831",
+  "name": "The Monks of Doom",
+  "similar": {}
+ },
  "The Mountain Goats": {
   "url": "https://www.allmusic.com/artist/the-mountain-goats-mn0000480830",
   "name": "The Mountain Goats",
@@ -2446,6 +3404,11 @@
   "name": "Tiny Lights",
   "similar": {}
  },
+ "Too Much Joy": {
+  "url": "https://www.allmusic.com/artist/too-much-joy-mn0000158771",
+  "name": "Too Much Joy",
+  "similar": {}
+ },
  "Weezer": {
   "url": "https://www.allmusic.com/artist/weezer-mn0000243008",
   "name": "Weezer",
@@ -2454,16 +3417,6 @@
  "Bombadil": {
   "url": "https://www.allmusic.com/artist/bombadil-mn0000543653",
   "name": "Bombadil",
-  "similar": {}
- },
- "Optiganally Yours": {
-  "url": "https://www.allmusic.com/artist/optiganally-yours-mn0000471623",
-  "name": "Optiganally Yours",
-  "similar": {}
- },
- "The Front Bottoms": {
-  "url": "https://www.allmusic.com/artist/the-front-bottoms-mn0002744136",
-  "name": "The Front Bottoms",
   "similar": {}
  },
  "Jonathan Richman": {
@@ -2521,6 +3474,21 @@
   "name": "King Missile",
   "similar": {}
  },
+ "Mojo Nixon": {
+  "url": "https://www.allmusic.com/artist/mojo-nixon-mn0000578028",
+  "name": "Mojo Nixon",
+  "similar": {}
+ },
+ "Night Crickets": {
+  "url": "https://www.allmusic.com/artist/night-crickets-mn0004154726",
+  "name": "Night Crickets",
+  "similar": {}
+ },
+ "The Pogues": {
+  "url": "https://www.allmusic.com/artist/the-pogues-mn0000489876",
+  "name": "The Pogues",
+  "similar": {}
+ },
  "Beat Happening": {
   "url": "https://www.allmusic.com/artist/beat-happening-mn0000154530",
   "name": "Beat Happening",
@@ -2529,11 +3497,6 @@
  "Dark Day": {
   "url": "https://www.allmusic.com/artist/dark-day-mn0000322391",
   "name": "Dark Day",
-  "similar": {}
- },
- "DNA": {
-  "url": "https://www.allmusic.com/artist/dna-mn0000948557",
-  "name": "DNA",
   "similar": {}
  },
  "James Chance": {
@@ -2671,9 +3634,74 @@
   "name": "Nerf Herder",
   "similar": {}
  },
+ "The Cure": {
+  "url": "https://www.allmusic.com/artist/the-cure-mn0000137390",
+  "name": "The Cure",
+  "similar": {}
+ },
+ "The Faint": {
+  "url": "https://www.allmusic.com/artist/the-faint-mn0000058934",
+  "name": "The Faint",
+  "similar": {}
+ },
+ "The Smiths": {
+  "url": "https://www.allmusic.com/artist/the-smiths-mn0000899530",
+  "name": "The Smiths",
+  "similar": {}
+ },
  "Elton Motello": {
   "url": "https://www.allmusic.com/artist/elton-motello-mn0000176470",
   "name": "Elton Motello",
+  "similar": {}
+ },
+ "Henry Kaiser": {
+  "url": "https://www.allmusic.com/artist/henry-kaiser-mn0000673577",
+  "name": "Henry Kaiser",
+  "similar": {}
+ },
+ "Snakefinger": {
+  "url": "https://www.allmusic.com/artist/snakefinger-mn0000034504",
+  "name": "Snakefinger",
+  "similar": {}
+ },
+ "Gizmos": {
+  "url": "https://www.allmusic.com/artist/gizmos-mn0000934320",
+  "name": "Gizmos",
+  "similar": {}
+ },
+ "Burk Price": {
+  "url": "https://www.allmusic.com/artist/burk-price-mn0003474301",
+  "name": "Burk Price",
+  "similar": {}
+ },
+ "Peter Laughner": {
+  "url": "https://www.allmusic.com/artist/peter-laughner-mn0000276273",
+  "name": "Peter Laughner",
+  "similar": {}
+ },
+ "The Numbers Band": {
+  "url": "https://www.allmusic.com/artist/the-numbers-band-mn0000725931",
+  "name": "The Numbers Band",
+  "similar": {}
+ },
+ "Interpol": {
+  "url": "https://www.allmusic.com/artist/interpol-mn0000096576",
+  "name": "Interpol",
+  "similar": {}
+ },
+ "Butthole Surfers": {
+  "url": "https://www.allmusic.com/artist/butthole-surfers-mn0000633181",
+  "name": "Butthole Surfers",
+  "similar": {}
+ },
+ "Guided by Voices": {
+  "url": "https://www.allmusic.com/artist/guided-by-voices-mn0000545726",
+  "name": "Guided by Voices",
+  "similar": {}
+ },
+ "Bizarre Sex Trio": {
+  "url": "https://www.allmusic.com/artist/bizarre-sex-trio-mn0000107035",
+  "name": "Bizarre Sex Trio",
   "similar": {}
  },
  "Wall of Voodoo": {
@@ -2851,6 +3879,36 @@
   "name": "Them Crooked Vultures",
   "similar": {}
  },
+ "Big Black": {
+  "url": "https://www.allmusic.com/artist/big-black-mn0000758520",
+  "name": "Big Black",
+  "similar": {}
+ },
+ "Deche dans Face": {
+  "url": "https://www.allmusic.com/artist/deche-dans-face-mn0001928285",
+  "name": "Deche dans Face",
+  "similar": {}
+ },
+ "Joy Division": {
+  "url": "https://www.allmusic.com/artist/joy-division-mn0000290812",
+  "name": "Joy Division",
+  "similar": {}
+ },
+ "Shellac": {
+  "url": "https://www.allmusic.com/artist/shellac-mn0000748262",
+  "name": "Shellac",
+  "similar": {}
+ },
+ "Steve Albini": {
+  "url": "https://www.allmusic.com/artist/steve-albini-mn0000023358",
+  "name": "Steve Albini",
+  "similar": {}
+ },
+ "The Jesus Lizard": {
+  "url": "https://www.allmusic.com/artist/the-jesus-lizard-mn0000089305",
+  "name": "The Jesus Lizard",
+  "similar": {}
+ },
  "10cc": {
   "url": "https://www.allmusic.com/artist/10cc-mn0000502163",
   "name": "10cc",
@@ -2986,14 +4044,14 @@
   "name": "Essential Logic",
   "similar": {}
  },
- "Necessaries": {
-  "url": "https://www.allmusic.com/artist/necessaries-mn0001527597",
-  "name": "Necessaries",
-  "similar": {}
- },
  "Suburban Lawns": {
   "url": "https://www.allmusic.com/artist/suburban-lawns-mn0000581937",
   "name": "Suburban Lawns",
+  "similar": {}
+ },
+ "The Necessaries": {
+  "url": "https://www.allmusic.com/artist/the-necessaries-mn0001527597",
+  "name": "The Necessaries",
   "similar": {}
  },
  "Paul Ellis": {
@@ -3021,9 +4079,9 @@
   "name": "Rick Wakeman",
   "similar": {}
  },
- "Big Bad Bosses ": {
+ "Big Bad Bosses": {
   "url": "https://www.allmusic.com/artist/big-bad-bosses-mn0003469957",
-  "name": "Big Bad Bosses ",
+  "name": "Big Bad Bosses",
   "similar": {}
  },
  "Kody Nielson": {

@@ -34,3 +34,30 @@ def rankSimilar(title, titles):
 jres = [(x,rankSimilar(x,cbc_titles)[0]) for x in
             cnn_titles]
 
+
+from gensim.test.utils import common_corpus, common_dictionary
+from gensim.similarities import MatrixSimilarity
+import gensim
+import gensim.parsing.preprocessing
+from gensim.corpora import Dictionary
+import gensim.models.tfidfmodel
+from gensim.test.utils import get_tmpfile
+from gensim.matutils import sparse2full, unitvec
+from gensim.models.ldamodel import LdaModel
+
+
+
+
+stripped_documents = [gensim.parsing.preprocessing.preprocess_string(document) for document in cbc_titles + cnn_titles]
+words = Dictionary(stripped_documents)
+corpus = [words.doc2bow(doc) for doc in stripped_documents]
+tfidf = gensim.models.tfidfmodel.TfidfModel(corpus)
+tfidfcorp = [tfidf[doc] for doc in corpus]
+index = gensim.similarities.docsim.MatrixSimilarity(tfidfcorp)
+def doc2query(doc):
+    prep = gensim.parsing.preprocessing.preprocess_string(doc)
+    bow = words.doc2bow(prep)
+    q = tfidf[bow]
+    return q
+    
+index[doc2query(cbc_titles[0])]

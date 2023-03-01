@@ -43,7 +43,7 @@ for elm in links:
 print(json.dumps(graph,indent=1))
 
 def get_artist(artist):
-    uriartist = urllib.urlencode({"":artist})[1:]
+    uriartist = urllib.parse.urlencode({"":artist})[1:]
     fd = GET("http://www.allmusic.com/search/all/%s" % uriartist)
     content = fd.read()
     soup = bs4.BeautifulSoup(content)
@@ -102,5 +102,7 @@ for art in list(graph.keys()):
             print("...")
             # do you want to get banned from crawling?
             time.sleep(2)
+
+open("end.json","w").write(json.dumps(graph,indent=1))
 
 
