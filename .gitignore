@@ -13,3 +13,10 @@ package-lock.json
 css/reveal.min.css
 js/reveal.min.js
 *~
+./CMPUT404-Web-Mining/bk/
+./CMPUT404-Web-Mining/chromedriver
+./CMPUT404-Web-Mining/chromedriver_linux64.zip*
+./ObserverExampleAJAX/static/insipid.html.old
+./WebSocketsExamples/__pycache__/
+./node_modules/
+
